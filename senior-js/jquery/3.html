@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>链表有关题目 | haozi的博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="~不学习就没饭吃( Ĭ ^ Ĭ )~">
+    
+    <link rel="preload" href="/assets/css/0.styles.58c3a8ad.css" as="style"><link rel="preload" href="/assets/js/app.fa467733.js" as="script"><link rel="preload" href="/assets/js/2.a43e2540.js" as="script"><link rel="preload" href="/assets/js/19.58aaa143.js" as="script"><link rel="prefetch" href="/assets/js/10.1ec2c469.js"><link rel="prefetch" href="/assets/js/11.9b624821.js"><link rel="prefetch" href="/assets/js/12.8c5e559f.js"><link rel="prefetch" href="/assets/js/13.87e82666.js"><link rel="prefetch" href="/assets/js/14.637dcb73.js"><link rel="prefetch" href="/assets/js/15.6231d217.js"><link rel="prefetch" href="/assets/js/16.b1127553.js"><link rel="prefetch" href="/assets/js/17.7c5607ce.js"><link rel="prefetch" href="/assets/js/18.8bc9f745.js"><link rel="prefetch" href="/assets/js/20.0a132b6c.js"><link rel="prefetch" href="/assets/js/21.8f59366b.js"><link rel="prefetch" href="/assets/js/22.89508ed3.js"><link rel="prefetch" href="/assets/js/23.4bdb8136.js"><link rel="prefetch" href="/assets/js/24.7f7221ef.js"><link rel="prefetch" href="/assets/js/25.44c1cd2b.js"><link rel="prefetch" href="/assets/js/26.2432c9bb.js"><link rel="prefetch" href="/assets/js/3.062a3a3b.js"><link rel="prefetch" href="/assets/js/4.f4e10edd.js"><link rel="prefetch" href="/assets/js/5.e21b3bb0.js"><link rel="prefetch" href="/assets/js/6.0378b72c.js"><link rel="prefetch" href="/assets/js/7.a14e084f.js"><link rel="prefetch" href="/assets/js/8.5463afaa.js"><link rel="prefetch" href="/assets/js/9.9cac2157.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.58c3a8ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">haozi的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript进阶" class="dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript进阶" class="mobile-dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/senior-js/jquery/" class="nav-link router-link-active">
+  框架的设计 jQuery源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/underscore/" class="nav-link">
+  函数式编程 Underscore源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/module/" class="nav-link">
+  模块化编程 自研模块加载器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="单页应用开发" class="dropdown-title"><span class="title">单页应用开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="单页应用开发" class="mobile-dropdown-title"><span class="title">单页应用开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/spa/react/" class="nav-link">
+  组件化开发 React专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/vue/" class="nav-link">
+  组件化开发 Vue专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/webpack/" class="nav-link">
+  现代前端工程实践方案 解锁webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端APP开发" class="dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="移动端APP开发" class="mobile-dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mobile/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node开发" class="dropdown-title"><span class="title">Node开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node开发" class="mobile-dropdown-title"><span class="title">Node开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/node/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/CoderMonkie/v-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript进阶" class="dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript进阶" class="mobile-dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/senior-js/jquery/" class="nav-link router-link-active">
+  框架的设计 jQuery源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/underscore/" class="nav-link">
+  函数式编程 Underscore源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/module/" class="nav-link">
+  模块化编程 自研模块加载器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="单页应用开发" class="dropdown-title"><span class="title">单页应用开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="单页应用开发" class="mobile-dropdown-title"><span class="title">单页应用开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/spa/react/" class="nav-link">
+  组件化开发 React专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/vue/" class="nav-link">
+  组件化开发 Vue专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/webpack/" class="nav-link">
+  现代前端工程实践方案 解锁webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端APP开发" class="dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="移动端APP开发" class="mobile-dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mobile/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node开发" class="dropdown-title"><span class="title">Node开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node开发" class="mobile-dropdown-title"><span class="title">Node开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/node/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/CoderMonkie/v-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>leetcode题目类型总结</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/senior-js/jquery/1.html" class="sidebar-link">二叉树中的递归思想</a></li><li><a href="/senior-js/jquery/3.html" aria-current="page" class="active sidebar-link">链表有关题目</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/senior-js/jquery/9.html" class="sidebar-link">贪心算法</a></li><li><a href="/senior-js/jquery/11.html" class="sidebar-link">双指针</a></li><li><a href="/senior-js/jquery/12.html" class="sidebar-link">二分查找</a></li><li><a href="/senior-js/jquery/16.html" class="sidebar-link">排序相关题目</a></li><li><a href="/senior-js/jquery/15.html" class="sidebar-link">栈有关的题目</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>web前端开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>机器学习</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ctf以及安全知识</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>计算机网络</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>操作系统</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="链表有关题目"><a href="#链表有关题目" class="header-anchor">#</a> 链表有关题目</h3> <h4 id="_1-合并两个有序链表"><a href="#_1-合并两个有序链表" class="header-anchor">#</a> 1.<a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/" target="_blank" rel="noopener noreferrer">合并两个有序链表<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <p><img src="3.assets/merge_ex1.jpg" alt="img"></p> <div class="language-python extra-class"><pre class="language-python"><code>struct ListNode<span class="token operator">*</span> mergeTwoLists<span class="token punctuation">(</span>struct ListNode<span class="token operator">*</span> list1<span class="token punctuation">,</span> struct ListNode<span class="token operator">*</span> list2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  struct ListNode <span class="token operator">*</span>p<span class="token punctuation">,</span> <span class="token operator">*</span>q<span class="token punctuation">,</span><span class="token operator">*</span>r<span class="token punctuation">;</span>
+  struct ListNode <span class="token operator">*</span>list3<span class="token operator">=</span><span class="token punctuation">(</span>struct ListNode <span class="token operator">*</span><span class="token punctuation">)</span>malloc<span class="token punctuation">(</span>sizeof<span class="token punctuation">(</span>struct ListNode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   p<span class="token operator">=</span>list1<span class="token punctuation">;</span>
+  q<span class="token operator">=</span>list2<span class="token punctuation">;</span>
+  r<span class="token operator">=</span>list3<span class="token punctuation">;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>!p<span class="token operator">&amp;</span><span class="token operator">&amp;</span>!q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> NULL<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">&amp;</span><span class="token operator">&amp;</span>!q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>!p<span class="token operator">&amp;</span><span class="token operator">&amp;</span>q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> q<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+ 
+  <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">&amp;</span><span class="token operator">&amp;</span>q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">-</span><span class="token operator">&gt;</span>val<span class="token operator">&lt;</span>q<span class="token operator">-</span><span class="token operator">&gt;</span>val<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      r<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token operator">=</span>p<span class="token punctuation">;</span>
+      r<span class="token operator">=</span>r<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token punctuation">;</span>
+      p<span class="token operator">=</span>p<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span><span class="token punctuation">{</span>
+      r<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token operator">=</span>q<span class="token punctuation">;</span>
+      r<span class="token operator">=</span>r<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token punctuation">;</span>
+      q<span class="token operator">=</span>q<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">!=</span>NULL<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    r<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token operator">=</span>p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>q<span class="token operator">!=</span>NULL<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    r<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token operator">=</span>q<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> list3<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>思路：新建一个链表，逐个插入即可</p> <p>问题：malloc（）方法的使用问题。该函数返回一个指针 ，指向已分配大小的内存。如果请求失败，则返回 NULL。</p> <h4 id="_2-相交链表"><a href="#_2-相交链表" class="header-anchor">#</a> 2.<a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/" target="_blank" rel="noopener noreferrer">相交链表<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <p><img src="3.assets/160_statement.png" alt="img"></p> <p>方法一：时间复杂度 空间复杂度高</p> <div class="language-python extra-class"><pre class="language-python"><code>struct ListNode <span class="token operator">*</span>getIntersectionNode<span class="token punctuation">(</span>struct ListNode <span class="token operator">*</span>headA<span class="token punctuation">,</span> struct ListNode <span class="token operator">*</span>headB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    struct ListNode <span class="token operator">*</span>p<span class="token punctuation">,</span><span class="token operator">*</span>q<span class="token punctuation">;</span>
+    p<span class="token operator">=</span>headA<span class="token punctuation">;</span>
+    q<span class="token operator">=</span>headB<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">&amp;</span><span class="token operator">&amp;</span>q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    
+        <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">==</span>q<span class="token punctuation">)</span><span class="token keyword">return</span> p<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            q<span class="token operator">=</span>q<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">==</span>q<span class="token punctuation">)</span><span class="token keyword">return</span> p<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        p<span class="token operator">=</span>p<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token punctuation">;</span>
+        q<span class="token operator">=</span>headB<span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> NULL<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>思路：双循环，用b上的每一个结点和a上的结点依次比较</p> <p>补充：条件运算符（conditional operator）有时候也称为三元运算符（ternary operator，或者trinary operator），因为它是唯一需要 3 个操作数的运算符：<strong>条件 ? 表达式1 : 表达式2</strong></p> <p>方法二：</p> <div class="language-python extra-class"><pre class="language-python"><code>struct ListNode <span class="token operator">*</span>getIntersectionNode<span class="token punctuation">(</span>struct ListNode <span class="token operator">*</span>headA<span class="token punctuation">,</span> struct ListNode <span class="token operator">*</span>headB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        struct ListNode <span class="token operator">*</span>p<span class="token punctuation">,</span> <span class="token operator">*</span>q<span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>p <span class="token operator">=</span> headA<span class="token punctuation">,</span> q <span class="token operator">=</span> headB<span class="token punctuation">;</span> p <span class="token operator">!=</span> q<span class="token punctuation">;</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">!=</span> NULL<span class="token punctuation">)</span>
+                p <span class="token operator">=</span> p<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> p <span class="token operator">=</span> headB<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>q <span class="token operator">!=</span> NULL<span class="token punctuation">)</span>
+                q <span class="token operator">=</span> q<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">next</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> q <span class="token operator">=</span> headA<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>思路：双指针，两个指针将图中的每一个点都遍历了一遍，所以会指向同一结点</p> <p><img src="3.assets/1615224578-EBRtwv-Picture1.png" alt="Picture1.png"></p> <h4 id="_3-反转链表"><a href="#_3-反转链表" class="header-anchor">#</a> 3.<a href="https://leetcode-cn.com/problems/reverse-linked-list/" target="_blank" rel="noopener noreferrer">反转链表<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <p><img src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg" alt="img"></p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token operator">*</span> <span class="token function">reverseList</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token operator">*</span> head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token operator">*</span> p<span class="token punctuation">,</span><span class="token operator">*</span>q<span class="token punctuation">,</span><span class="token operator">*</span>r<span class="token punctuation">;</span>
+
+p<span class="token operator">=</span>head<span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>p<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+q<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+p<span class="token operator">-&gt;</span>next<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>q<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> head<span class="token punctuation">;</span><span class="token punctuation">}</span>
+r<span class="token operator">=</span>q<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    q<span class="token operator">-&gt;</span>next<span class="token operator">=</span>p<span class="token punctuation">;</span>
+    p<span class="token operator">=</span>q<span class="token punctuation">;</span>
+    q<span class="token operator">=</span>r<span class="token punctuation">;</span>
+    r<span class="token operator">=</span>r<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    
+<span class="token punctuation">}</span>
+q<span class="token operator">-&gt;</span>next<span class="token operator">=</span>p<span class="token punctuation">;</span> 
+<span class="token keyword">return</span> q<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>思路：<img src="3.assets/D411DEAF317DC7581FCB7111B385AF8F.jpg" alt="img"></p> <h4 id="_4-分隔链表"><a href="#_4-分隔链表" class="header-anchor">#</a> 4.<a href="https://leetcode-cn.com/problems/partition-list/" target="_blank" rel="noopener noreferrer">分隔链表<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <p>给你一个链表的头节点 head 和一个特定值 x ，请你对链表进行分隔，使得所有 小于 x 的节点都出现在 大于或等于 x 的节点之前。</p> <p>你应当 保留 两个分区中每个节点的初始相对位置。</p> <p><img src="https://assets.leetcode.com/uploads/2021/01/04/partition.jpg" alt="img"></p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token operator">*</span> <span class="token function">partition</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token operator">*</span> head<span class="token punctuation">,</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">struct</span> <span class="token class-name">ListNode</span> <span class="token operator">*</span>small<span class="token punctuation">,</span><span class="token operator">*</span>large<span class="token punctuation">,</span><span class="token operator">*</span>p<span class="token punctuation">,</span><span class="token operator">*</span>q<span class="token punctuation">,</span><span class="token operator">*</span>r<span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>head<span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+p<span class="token operator">=</span>head<span class="token punctuation">;</span>
+small<span class="token operator">=</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+large<span class="token operator">=</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+q<span class="token operator">=</span>small<span class="token punctuation">;</span>
+r<span class="token operator">=</span>large<span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">-&gt;</span>val<span class="token operator">&lt;</span>x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+     small<span class="token operator">-&gt;</span>next<span class="token operator">=</span>p<span class="token punctuation">;</span>
+     small<span class="token operator">=</span>small<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span> 
+     p<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span><span class="token punctuation">{</span>
+   large<span class="token operator">-&gt;</span>next<span class="token operator">=</span>p<span class="token punctuation">;</span>
+   large<span class="token operator">=</span>large<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+   p<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+   
+<span class="token punctuation">}</span>
+
+large<span class="token operator">-&gt;</span>next<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+ small<span class="token operator">-&gt;</span>next<span class="token operator">=</span>r<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+
+<span class="token keyword">return</span> q<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span><span class="token punctuation">}</span>
+</code></pre></div><p>思路：按顺序将小于x的组合为一个链表，大于等于x的组合为一个链表，最后将两链表合并</p> <h4 id="_5-环形链表-ii"><a href="#_5-环形链表-ii" class="header-anchor">#</a> 5.<a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/" target="_blank" rel="noopener noreferrer">环形链表 II<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <p><img src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png" alt="img"></p> <p>思路：使用快慢指针，一个一次走一步，一个一次走两步，根据计算，若存在环，则两指针一定会相遇，设链表中环外部分的长度为 a。slow 指针进入环后，又走了 b 的距离与fast 相遇。此时，fast 指针已经走完了环的 n圈，因此它走过的总距离为 a+n(b+c)+b=a+(n+1)b+nc。则<em>a</em>+(<em>n</em>+1)<em>b</em>+<em>n</em>c*=2(<em>a</em>+<em>b</em>)⟹<em>a</em>=<em>c</em>+(<em>n</em>−1)(<em>b</em>+*c)，可以导出会在距离入环口a处相遇。此时在头结点设一指针，与慢指针一起移动，相遇时既是距离头部a步的结点，也是入环点。</p> <div class="language-c extra-class"><pre class="language-c"><code>truct ListNode <span class="token operator">*</span>p<span class="token punctuation">,</span><span class="token operator">*</span>q<span class="token punctuation">,</span><span class="token operator">*</span>r<span class="token punctuation">;</span>
+    p<span class="token operator">=</span>head<span class="token punctuation">;</span>
+    q<span class="token operator">=</span>head<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>q<span class="token operator">&amp;&amp;</span>q<span class="token operator">-&gt;</span>next<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        p<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        q<span class="token operator">=</span>q<span class="token operator">-&gt;</span>next<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">==</span>q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+           r<span class="token operator">=</span>head<span class="token punctuation">;</span>
+           <span class="token keyword">while</span><span class="token punctuation">(</span>r<span class="token operator">!=</span>p<span class="token punctuation">)</span><span class="token punctuation">{</span>
+               p<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+               r<span class="token operator">=</span>r<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+           <span class="token punctuation">}</span>
+           <span class="token keyword">return</span> r<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_6-反转链表-ii"><a href="#_6-反转链表-ii" class="header-anchor">#</a> 6.<a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/" target="_blank" rel="noopener noreferrer">反转链表 II<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <p><img src="https://assets.leetcode.com/uploads/2021/02/19/rev2ex2.jpg" alt="img"></p> <p>思路：使用双指针头插法，用指针标记翻转的头结点的前驱结点，此时需插入的结点，以及该结点的后继结点。并将结点依次插入到头结点之前。需要注意的是这种标记方法可能使指针指向空节点，所以提前在链表头插入一个结点，以免出现错误。</p> <p><img src="3.assets/%E6%97%A0%E6%A0%87%E9%A2%98.png" alt="无标题"></p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token operator">*</span> <span class="token function">reverseBetween</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token operator">*</span> head<span class="token punctuation">,</span> <span class="token keyword">int</span> left<span class="token punctuation">,</span> <span class="token keyword">int</span> right<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>head<span class="token operator">==</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> 
+<span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token operator">*</span>p<span class="token punctuation">,</span><span class="token operator">*</span>q<span class="token punctuation">,</span><span class="token operator">*</span>r<span class="token punctuation">,</span><span class="token operator">*</span>s<span class="token punctuation">;</span>
+p<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+s<span class="token operator">=</span>p<span class="token punctuation">;</span>
+p<span class="token operator">-&gt;</span>next<span class="token operator">=</span>head<span class="token punctuation">;</span>
+
+<span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span>left<span class="token punctuation">)</span><span class="token punctuation">{</span>
+p<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+q<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+i<span class="token operator">=</span>left<span class="token punctuation">;</span>
+r<span class="token operator">=</span>q<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span>right<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>r<span class="token operator">==</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    r<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">ListNode</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    r<span class="token operator">-&gt;</span>next<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+    r<span class="token operator">-&gt;</span>val<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+q<span class="token operator">-&gt;</span>next<span class="token operator">=</span>r<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+r<span class="token operator">-&gt;</span>next<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+p<span class="token operator">-&gt;</span>next<span class="token operator">=</span>r<span class="token punctuation">;</span>
+r<span class="token operator">=</span>q<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+i<span class="token operator">++</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> s<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_7-复制带随机指针的链表"><a href="#_7-复制带随机指针的链表" class="header-anchor">#</a> 7.<a href="https://leetcode-cn.com/problems/copy-list-with-random-pointer/" target="_blank" rel="noopener noreferrer">复制带随机指针的链表<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/01/09/e1.png" alt="img"></p> <p>思路：根据遍历到的原节点创建对应的新节点，每个新创建的节点是在原节点后面，将新节点的随机指针设置为原结点随机指针的next，再将两链表分开，即可得到一个复制出来的新链表。</p> <p><img src="https://pic.leetcode-cn.com/b531fb496fd478a2db6ba7bc805cda08b825771817dd24cdd616946a89800fbb-6.jpg" alt="6.jpg"></p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">struct</span> <span class="token class-name">Node</span><span class="token operator">*</span> <span class="token function">copyRandomList</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Node</span><span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>head<span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">Node</span> <span class="token operator">*</span>p<span class="token punctuation">,</span><span class="token operator">*</span>q<span class="token punctuation">,</span><span class="token operator">*</span>r<span class="token punctuation">,</span><span class="token operator">*</span>Head<span class="token punctuation">;</span>
+    p<span class="token operator">=</span>head<span class="token punctuation">;</span>
+    <span class="token comment">//将所有结点复制一次连接在一起</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        q<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        r<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Node</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Node</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        r<span class="token operator">-&gt;</span>val<span class="token operator">=</span>p<span class="token operator">-&gt;</span>val<span class="token punctuation">;</span>
+        p<span class="token operator">-&gt;</span>next<span class="token operator">=</span>r<span class="token punctuation">;</span>
+        r<span class="token operator">-&gt;</span>next<span class="token operator">=</span>q<span class="token punctuation">;</span>
+        p<span class="token operator">=</span>q<span class="token punctuation">;</span>
+       
+    <span class="token punctuation">}</span>
+    <span class="token comment">//将新结点连到随机指针指向的结点的next</span>
+    p<span class="token operator">=</span>head<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        q<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">-&gt;</span>random<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            q<span class="token operator">-&gt;</span>random<span class="token operator">=</span>p<span class="token operator">-&gt;</span>random<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span><span class="token punctuation">{</span>
+            q<span class="token operator">-&gt;</span>random<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        p<span class="token operator">=</span>q<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+   <span class="token comment">//将两链表分开</span>
+   Head<span class="token operator">=</span>head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+   p<span class="token operator">=</span>head<span class="token punctuation">;</span>
+   q<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+   r<span class="token operator">=</span>q<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+   <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">&amp;&amp;</span>r<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       p<span class="token operator">-&gt;</span>next<span class="token operator">=</span>r<span class="token punctuation">;</span>
+       q<span class="token operator">-&gt;</span>next<span class="token operator">=</span>r<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+       p<span class="token operator">=</span>r<span class="token punctuation">;</span>
+       q<span class="token operator">=</span>p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+       r<span class="token operator">=</span>q<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+       
+   <span class="token punctuation">}</span>
+   p<span class="token operator">-&gt;</span>next<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+   q<span class="token operator">-&gt;</span>next<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> Head<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/senior-js/jquery/1.html" class="prev">
+        二叉树中的递归思想
+      </a></span> <span class="next"><a href="/senior-js/jquery/9.html">
+        贪心算法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fa467733.js" defer></script><script src="/assets/js/2.a43e2540.js" defer></script><script src="/assets/js/19.58aaa143.js" defer></script>
+  </body>
+</html>

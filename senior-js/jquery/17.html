@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>汇编 | haozi的博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="~不学习就没饭吃( Ĭ ^ Ĭ )~">
+    
+    <link rel="preload" href="/assets/css/0.styles.58c3a8ad.css" as="style"><link rel="preload" href="/assets/js/app.fa467733.js" as="script"><link rel="preload" href="/assets/js/2.a43e2540.js" as="script"><link rel="preload" href="/assets/js/3.062a3a3b.js" as="script"><link rel="prefetch" href="/assets/js/10.1ec2c469.js"><link rel="prefetch" href="/assets/js/11.9b624821.js"><link rel="prefetch" href="/assets/js/12.8c5e559f.js"><link rel="prefetch" href="/assets/js/13.87e82666.js"><link rel="prefetch" href="/assets/js/14.637dcb73.js"><link rel="prefetch" href="/assets/js/15.6231d217.js"><link rel="prefetch" href="/assets/js/16.b1127553.js"><link rel="prefetch" href="/assets/js/17.7c5607ce.js"><link rel="prefetch" href="/assets/js/18.8bc9f745.js"><link rel="prefetch" href="/assets/js/19.58aaa143.js"><link rel="prefetch" href="/assets/js/20.0a132b6c.js"><link rel="prefetch" href="/assets/js/21.8f59366b.js"><link rel="prefetch" href="/assets/js/22.89508ed3.js"><link rel="prefetch" href="/assets/js/23.4bdb8136.js"><link rel="prefetch" href="/assets/js/24.7f7221ef.js"><link rel="prefetch" href="/assets/js/25.44c1cd2b.js"><link rel="prefetch" href="/assets/js/26.2432c9bb.js"><link rel="prefetch" href="/assets/js/4.f4e10edd.js"><link rel="prefetch" href="/assets/js/5.e21b3bb0.js"><link rel="prefetch" href="/assets/js/6.0378b72c.js"><link rel="prefetch" href="/assets/js/7.a14e084f.js"><link rel="prefetch" href="/assets/js/8.5463afaa.js"><link rel="prefetch" href="/assets/js/9.9cac2157.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.58c3a8ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">haozi的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript进阶" class="dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript进阶" class="mobile-dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/senior-js/jquery/" class="nav-link router-link-active">
+  框架的设计 jQuery源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/underscore/" class="nav-link">
+  函数式编程 Underscore源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/module/" class="nav-link">
+  模块化编程 自研模块加载器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="单页应用开发" class="dropdown-title"><span class="title">单页应用开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="单页应用开发" class="mobile-dropdown-title"><span class="title">单页应用开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/spa/react/" class="nav-link">
+  组件化开发 React专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/vue/" class="nav-link">
+  组件化开发 Vue专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/webpack/" class="nav-link">
+  现代前端工程实践方案 解锁webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端APP开发" class="dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="移动端APP开发" class="mobile-dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mobile/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node开发" class="dropdown-title"><span class="title">Node开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node开发" class="mobile-dropdown-title"><span class="title">Node开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/node/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/CoderMonkie/v-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript进阶" class="dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript进阶" class="mobile-dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/senior-js/jquery/" class="nav-link router-link-active">
+  框架的设计 jQuery源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/underscore/" class="nav-link">
+  函数式编程 Underscore源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/module/" class="nav-link">
+  模块化编程 自研模块加载器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="单页应用开发" class="dropdown-title"><span class="title">单页应用开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="单页应用开发" class="mobile-dropdown-title"><span class="title">单页应用开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/spa/react/" class="nav-link">
+  组件化开发 React专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/vue/" class="nav-link">
+  组件化开发 Vue专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/webpack/" class="nav-link">
+  现代前端工程实践方案 解锁webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端APP开发" class="dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="移动端APP开发" class="mobile-dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mobile/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node开发" class="dropdown-title"><span class="title">Node开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node开发" class="mobile-dropdown-title"><span class="title">Node开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/node/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/CoderMonkie/v-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>leetcode题目类型总结</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>web前端开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>机器学习</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>ctf以及安全知识</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/senior-js/jquery/19.html" class="sidebar-link">爬虫</a></li><li><a href="/senior-js/jquery/17.html" aria-current="page" class="active sidebar-link">汇编</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>计算机网络</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>操作系统</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="汇编"><a href="#汇编" class="header-anchor">#</a> 汇编</h3> <h4 id="_8086-8088基本指令系统"><a href="#_8086-8088基本指令系统" class="header-anchor">#</a> 8086/8088基本指令系统</h4> <p>汇编指令是从机器指令演化而来，与机器密切相关，采用便于记忆和理解的助记符代替机器指令，专属于某一类型的计算机。</p> <p>一条完整的8086/8088CPU机器指令由<strong>操作码</strong> <strong>+</strong> 操作数1、操作数2组成。</p> <h5 id="_1-汇编指令的格式与属性"><a href="#_1-汇编指令的格式与属性" class="header-anchor">#</a> 1.汇编指令的格式与属性</h5> <p>对应的汇编指令格式也是由操作码字段 + 操作数字段（操作数1、操作数2）组成。</p> <h6 id="双操作数指令"><a href="#双操作数指令" class="header-anchor">#</a> 双操作数指令</h6> <p><img src="/assets/img/image-20220307193554482.7c797fe7.png" alt="image-20220307193554482"></p> <h6 id="单操作数指令"><a href="#单操作数指令" class="header-anchor">#</a> 单操作数指令</h6> <p><img src="/assets/img/image-20220307193617949.92a5a833.png" alt="image-20220307193617949"></p> <h6 id="无操作数指令"><a href="#无操作数指令" class="header-anchor">#</a> 无操作数指令</h6> <p><img src="/assets/img/image-20220307193638851.cab83d90.png" alt="image-20220307193638851"></p> <h6 id="指令长度"><a href="#指令长度" class="header-anchor">#</a> 指令长度</h6> <p><strong>指汇编指令对应机器指令的长度（以字节为单位）</strong></p> <p><strong>指令的长度不同，占用的存储空间也不同。</strong></p> <p><img src="/assets/img/image-20220307193823012.a1f09ae3.png" alt="image-20220307193823012"></p> <h6 id="指令执行时间"><a href="#指令执行时间" class="header-anchor">#</a> 指令执行时间</h6> <p><strong>指执行一条汇编指令需要的节拍（时钟周期）数。</strong></p> <p>如果有多种类型的指令可以完成相同任务，那么选用较快的指令可以有效地压缩程序执行时间。</p> <p><img src="/assets/img/image-20220307194000223.7b5407d3.png" alt="image-20220307194000223"></p> <h5 id="_2-寻址方式-指令获取操作数的方式"><a href="#_2-寻址方式-指令获取操作数的方式" class="header-anchor">#</a> 2.寻址方式：<strong>指令获取操作数的方式</strong></h5> <p>如果操作数放在寄存器中，或者作为立即数直接写在指令中，CPU不需要访问存储器（内存）就可以得到操作数。</p> <p>如果操作数放在存储器中（内存），CPU就需要访问存储器（内存），指令中就要给出操作数的内存地址。</p> <h6 id="寄存器寻址"><a href="#寄存器寻址" class="header-anchor">#</a> 寄存器寻址</h6> <p><strong>如果一条指令中的某个操作数地址是寄存器，那么称该指令按照寄存器寻址获取该操作数</strong></p> <p>寄存器寻址的特点：寄存器在CPU内部，不需要执行系统总线周期，操作数读写速度快</p> <p><img src="/assets/img/image-20220307194853662.5b654748.png" alt="image-20220307194853662"></p> <h6 id="立即数寻址"><a href="#立即数寻址" class="header-anchor">#</a> 立即数寻址</h6> <p><strong>如果指令所需要的操作数直接在指令代码中，称指令按照立即数寻址方式获取该操作数</strong></p> <p>立即数寻址方式只能针对源操作数，不能针对目的操作数，因为立即数是数据本身，不是存储单元地址</p> <p><img src="/assets/img/image-20220307195043489.1b74569e.png" alt="image-20220307195043489"></p> <p><img src="/assets/img/image-20220307195130071.47cf1ce8.png" alt="image-20220307195130071"></p> <h6 id="存储器寻址"><a href="#存储器寻址" class="header-anchor">#</a> 存储器寻址</h6> <p><strong>针对内存单元的各种寻址方式统称为存储器寻址。</strong></p> <p>寄存器寻址针对的操作数在寄存器中，不是针对在内存单元的操作数。</p> <p>立即数寻址针对的操作数在指令中，不能把它和一般的内存操作数混淆起来。</p> <p><img src="/assets/img/image-20220307195815478.d6480b69.png" alt="image-20220307195815478"></p> <p><img src="/assets/img/image-20220307200022036.4d5d4d6f.png" alt="image-20220307200022036"></p> <p>1000H是用数值表示的内存中的地址，源操作数寻址方式为直接寻址方式，位移量直接作为地址。</p> <p><img src="/assets/img/image-20220307200140268.8ff4013c.png" alt="image-20220307200140268"></p> <p><img src="/assets/img/image-20220307200150734.480c0c43.png" alt="image-20220307200150734"></p> <p><img src="/assets/img/image-20220307200223399.cf617127.png" alt="image-20220307200223399"></p> <p><img src="/assets/img/image-20220307200234251.098417e1.png" alt="image-20220307200234251"></p> <p><img src="/assets/img/image-20220307200328135.e1654178.png" alt="image-20220307200328135"></p> <p><img src="/assets/img/image-20220307200513896.bf310541.png" alt="image-20220307200513896"></p> <p><img src="/assets/img/image-20220307202108414.5b8fe867.png" alt="image-20220307202108414"></p> <p><img src="/assets/img/image-20220307202246804.105361a8.png" alt="image-20220307202246804"></p> <h5 id="实验"><a href="#实验" class="header-anchor">#</a> 实验</h5> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">int</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">00</span>A12020  push        ebp  
+<span class="token number">00</span>A12021  mov         ebp<span class="token punctuation">,</span>esp  
+<span class="token number">00</span>A12023  sub         esp<span class="token punctuation">,</span><span class="token number">0</span>C0h  
+<span class="token number">00</span>A12029  push        ebx  
+<span class="token number">00</span>A1202A  push        esi  
+<span class="token number">00</span>A1202B  push        edi  
+<span class="token number">00</span>A1202C  mov         edi<span class="token punctuation">,</span>ebp  
+<span class="token number">00</span>A1202E  xor         ecx<span class="token punctuation">,</span>ecx  
+<span class="token number">00</span>A12030  mov         eax<span class="token punctuation">,</span><span class="token number">0</span>CCCCCCCCh  
+<span class="token number">00</span>A12035  rep stos    dword ptr es<span class="token operator">:</span><span class="token punctuation">[</span>edi<span class="token punctuation">]</span>  
+   __asm <span class="token punctuation">{</span>
+       mov eax<span class="token punctuation">,</span> a<span class="token punctuation">;</span>
+<span class="token number">00</span>A12037  mov         eax<span class="token punctuation">,</span>dword ptr <span class="token punctuation">[</span>a<span class="token punctuation">]</span>  
+       add eax<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
+<span class="token number">00</span>A1203A  add         eax<span class="token punctuation">,</span>dword ptr <span class="token punctuation">[</span>b<span class="token punctuation">]</span>  
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+<span class="token number">00</span>A1203D  pop         edi  
+<span class="token number">00</span>A1203E  pop         esi  
+<span class="token number">00</span>A1203F  pop         ebx  
+<span class="token number">00</span>A12040  add         esp<span class="token punctuation">,</span><span class="token number">0</span>C0h  
+<span class="token number">00</span>A12046  cmp         ebp<span class="token punctuation">,</span>esp  
+<span class="token number">00</span>A12048  call        <span class="token function">__RTC_CheckEsp</span> <span class="token punctuation">(</span><span class="token number">0</span>A11244h<span class="token punctuation">)</span>  
+<span class="token number">00</span>A1204D  mov         esp<span class="token punctuation">,</span>ebp  
+<span class="token number">00</span>A1204F  pop         ebp  
+<span class="token number">00</span>A12050  ret  
+</code></pre></div><h4 id="基本指令系统"><a href="#基本指令系统" class="header-anchor">#</a> 基本指令系统</h4> <h5 id="传送类指令"><a href="#传送类指令" class="header-anchor">#</a> 传送类指令</h5> <p><strong>把数据从一个存储位置搬运到另一个存储位置。</strong></p> <p>传送指令负责把数据、地址或立即数传送到寄存器、存储器或端口号寄存器。它相对于高级语言里的赋值语句。</p> <p>1.<strong>数据传送类指令（Move）</strong></p> <p><strong>指令格式：MOV DEST，SRC</strong></p> <p>在数据传送指令中，可使用各种寻址方式，但两个操作数中，只容许有一个为存储器寻址。</p> <p>MOV BX，0024H  把0024H存在BX中</p> <p>LEA AX， [BX] 把BX地址存在AX中</p> <p>假定逻辑地址0024H指向的内存单元内容为0056H</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/senior-js/jquery/19.html" class="prev">
+        爬虫
+      </a></span> <span class="next"><a href="/senior-js/jquery/14.html">
+        第一章 计算机网络和因特网
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fa467733.js" defer></script><script src="/assets/js/2.a43e2540.js" defer></script><script src="/assets/js/3.062a3a3b.js" defer></script>
+  </body>
+</html>

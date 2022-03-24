@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pytorch一个基于python的科学计算包 | haozi的博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="~不学习就没饭吃( Ĭ ^ Ĭ )~">
+    
+    <link rel="preload" href="/assets/css/0.styles.58c3a8ad.css" as="style"><link rel="preload" href="/assets/js/app.fa467733.js" as="script"><link rel="preload" href="/assets/js/2.a43e2540.js" as="script"><link rel="preload" href="/assets/js/22.89508ed3.js" as="script"><link rel="prefetch" href="/assets/js/10.1ec2c469.js"><link rel="prefetch" href="/assets/js/11.9b624821.js"><link rel="prefetch" href="/assets/js/12.8c5e559f.js"><link rel="prefetch" href="/assets/js/13.87e82666.js"><link rel="prefetch" href="/assets/js/14.637dcb73.js"><link rel="prefetch" href="/assets/js/15.6231d217.js"><link rel="prefetch" href="/assets/js/16.b1127553.js"><link rel="prefetch" href="/assets/js/17.7c5607ce.js"><link rel="prefetch" href="/assets/js/18.8bc9f745.js"><link rel="prefetch" href="/assets/js/19.58aaa143.js"><link rel="prefetch" href="/assets/js/20.0a132b6c.js"><link rel="prefetch" href="/assets/js/21.8f59366b.js"><link rel="prefetch" href="/assets/js/23.4bdb8136.js"><link rel="prefetch" href="/assets/js/24.7f7221ef.js"><link rel="prefetch" href="/assets/js/25.44c1cd2b.js"><link rel="prefetch" href="/assets/js/26.2432c9bb.js"><link rel="prefetch" href="/assets/js/3.062a3a3b.js"><link rel="prefetch" href="/assets/js/4.f4e10edd.js"><link rel="prefetch" href="/assets/js/5.e21b3bb0.js"><link rel="prefetch" href="/assets/js/6.0378b72c.js"><link rel="prefetch" href="/assets/js/7.a14e084f.js"><link rel="prefetch" href="/assets/js/8.5463afaa.js"><link rel="prefetch" href="/assets/js/9.9cac2157.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.58c3a8ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">haozi的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript进阶" class="dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript进阶" class="mobile-dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/senior-js/jquery/" class="nav-link router-link-active">
+  框架的设计 jQuery源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/underscore/" class="nav-link">
+  函数式编程 Underscore源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/module/" class="nav-link">
+  模块化编程 自研模块加载器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="单页应用开发" class="dropdown-title"><span class="title">单页应用开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="单页应用开发" class="mobile-dropdown-title"><span class="title">单页应用开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/spa/react/" class="nav-link">
+  组件化开发 React专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/vue/" class="nav-link">
+  组件化开发 Vue专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/webpack/" class="nav-link">
+  现代前端工程实践方案 解锁webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端APP开发" class="dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="移动端APP开发" class="mobile-dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mobile/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node开发" class="dropdown-title"><span class="title">Node开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node开发" class="mobile-dropdown-title"><span class="title">Node开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/node/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/CoderMonkie/v-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript进阶" class="dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript进阶" class="mobile-dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/senior-js/jquery/" class="nav-link router-link-active">
+  框架的设计 jQuery源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/underscore/" class="nav-link">
+  函数式编程 Underscore源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/module/" class="nav-link">
+  模块化编程 自研模块加载器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="单页应用开发" class="dropdown-title"><span class="title">单页应用开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="单页应用开发" class="mobile-dropdown-title"><span class="title">单页应用开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/spa/react/" class="nav-link">
+  组件化开发 React专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/vue/" class="nav-link">
+  组件化开发 Vue专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/webpack/" class="nav-link">
+  现代前端工程实践方案 解锁webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端APP开发" class="dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="移动端APP开发" class="mobile-dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mobile/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node开发" class="dropdown-title"><span class="title">Node开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node开发" class="mobile-dropdown-title"><span class="title">Node开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/node/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/CoderMonkie/v-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>leetcode题目类型总结</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>web前端开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>机器学习</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/senior-js/jquery/6.html" aria-current="page" class="active sidebar-link">Pytorch一个基于python的科学计算包</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/senior-js/jquery/8.html" class="sidebar-link">利用pytorch实现验证码识别</a></li><li><a href="/senior-js/jquery/13.html" class="sidebar-link">GAN</a></li><li><a href="/senior-js/jquery/7.html" class="sidebar-link">vue框架</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ctf以及安全知识</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>计算机网络</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>操作系统</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="pytorch一个基于python的科学计算包"><a href="#pytorch一个基于python的科学计算包" class="header-anchor">#</a> <strong>Pytorch一个基于python的科学计算包</strong></h3> <p>服务场合：</p> <p>1.替代numpy发挥GPU性能</p> <p>2.提供了高度灵活性和效率的深度学习实验性平台</p> <h4 id="tensors"><a href="#tensors" class="header-anchor">#</a> Tensors</h4> <p>tensor表示张量，是一种类似于array和matrices的数据结构。pytorch一般用tensors表示输入和输出，同时也表示模型参数。</p> <h5 id="_1-初始化矩阵"><a href="#_1-初始化矩阵" class="header-anchor">#</a> <strong>1.初始化矩阵</strong></h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> __future__ <span class="token keyword">import</span> print_function
+<span class="token keyword">import</span> torch
+x <span class="token operator">=</span> torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment"># 构造一个未初始化的5*3的矩阵</span>
+x <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment"># 构造一个随机初始化的矩阵</span>
+y <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre></div><h5 id="_2-将两种同类型矩阵相加"><a href="#_2-将两种同类型矩阵相加" class="header-anchor">#</a> 2.将两种同类型矩阵相加</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#此处 将两个同形矩阵相加有两种语法结构</span>
+x <span class="token operator">+</span> y <span class="token comment"># 语法一</span>
+torch<span class="token punctuation">.</span>add<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token comment"># 语法二</span>
+
+</code></pre></div><h5 id="_3-输出矩阵"><a href="#_3-输出矩阵" class="header-anchor">#</a> 3.输出矩阵</h5> <div class="language-python extra-class"><pre class="language-python"><code>result <span class="token operator">=</span> torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment"># 语法一</span>
+torch<span class="token punctuation">.</span>add<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> out<span class="token operator">=</span>result<span class="token punctuation">)</span> <span class="token comment"># 语法二</span>
+y<span class="token punctuation">.</span>add_<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment"># 将y与x相加</span>
+</code></pre></div><p>tip：任何可以改变tensor内容的操作都会在方法后加一个_</p> <h5 id="_4-切片操作"><a href="#_4-切片操作" class="header-anchor">#</a> 4.切片操作</h5> <div class="language-python extra-class"><pre class="language-python"><code>x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment">#这一操作会输出x矩阵的第二列的所有值</span>
+</code></pre></div><h4 id="numpy桥"><a href="#numpy桥" class="header-anchor">#</a> Numpy桥</h4> <h5 id="_1-tensor转换为numpy"><a href="#_1-tensor转换为numpy" class="header-anchor">#</a> 1.tensor转换为numpy</h5> <div class="language-python extra-class"><pre class="language-python"><code>a <span class="token operator">=</span> torch<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h5 id="_2-修改numpy数组之后-与之相关联的tensor也会相应被修改"><a href="#_2-修改numpy数组之后-与之相关联的tensor也会相应被修改" class="header-anchor">#</a> 2.修改numpy数组之后，与之相关联的tensor也会相应被修改</h5> <div class="language- extra-class"><pre class="language-text"><code>a.add_(1)
+print(a)
+print(b)
+</code></pre></div><h5 id="_3-将numpy的array转换为tensor"><a href="#_3-将numpy的array转换为tensor" class="header-anchor">#</a> 3.将numpy的array转换为tensor</h5> <p>修改numpy也会相应修改关联的tensor</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>from_numpy<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+np<span class="token punctuation">.</span>add<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> out<span class="token operator">=</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+</code></pre></div><h5 id="_4-当cuda可用会进行gpu运算"><a href="#_4-当cuda可用会进行gpu运算" class="header-anchor">#</a> 4.当cuda可用会进行GPU运算</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">if</span> torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x <span class="token operator">=</span> x<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    y <span class="token operator">=</span> y<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    x <span class="token operator">+</span> y
+</code></pre></div><h3 id="pytorch中的神经网络"><a href="#pytorch中的神经网络" class="header-anchor">#</a> Pytorch中的神经网络</h3> <p>pytorch中所有神经网络都来自于autograd包</p> <h5 id="_1-autograd-自动求导"><a href="#_1-autograd-自动求导" class="header-anchor">#</a> 1.autograd：自动求导</h5> <p>autograd包提供tensor所有操作的自动求导方法。</p> <p>autograd.Variable是包中最核心的类。包装一个tensor并几乎支持所有定义在其上的操作（除了部分会修改tensor自身的inplace函数）。完成运算可以调用.backward()自动计算所有梯度。</p> <p>属性.data：访问原始tensor</p> <p>属性.grad：variable的所有梯度</p> <p>属性.creator：引用一个创建Variable的Function</p> <p>example:手动和自动计算<em>y</em>=<em>2x</em>∙<em>e**x</em>+<em>x</em>2∙<em>e**x</em>导数</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''计算y'''</span>
+    y <span class="token operator">=</span> x<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">*</span> t<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> y
+
+<span class="token keyword">def</span> <span class="token function">gradf</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''手动求导函数'''</span>
+    dx <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">*</span>x<span class="token operator">*</span>t<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> x<span class="token operator">**</span><span class="token number">2</span><span class="token operator">*</span>t<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> dx
+
+
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code>x <span class="token operator">=</span> t<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span> requires_grad <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+y <span class="token operator">=</span> f<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+y
+</code></pre></div><p>tensor([[ 0.0928,  0.1978,  0.6754,  0.8037],
+[ 0.9882,  0.3546,  0.2380,  0.0002],
+[ 0.2863,  0.0448,  0.1516,  2.9122]])</p> <div class="language-python extra-class"><pre class="language-python"><code>y<span class="token punctuation">.</span>backward<span class="token punctuation">(</span>t<span class="token punctuation">.</span>ones<span class="token punctuation">(</span>y<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># gradient形状与y一致</span>
+x<span class="token punctuation">.</span>grad
+</code></pre></div><p>tensor([[-0.4146, -0.4610,  2.9016,  3.2831],
+[ 3.8102,  1.8614, -0.4536, -0.0244],
+[-0.4321,  0.5110, -0.4549,  8.6048]])</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># autograd的计算结果与利用公式手动计算的结果一致</span>
+gradf<span class="token punctuation">(</span>x<span class="token punctuation">)</span> 
+</code></pre></div><p>tensor([[-0.4146, -0.4610,  2.9016,  3.2831],
+[ 3.8102,  1.8614, -0.4536, -0.0244],
+[-0.4321,  0.5110, -0.4549,  8.6048]])</p> <hr> <div class="language-python extra-class"><pre class="language-python"><code>x <span class="token operator">=</span> t<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> t<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> requires_grad <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+w <span class="token operator">=</span> t<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> requires_grad <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+y <span class="token operator">=</span> w <span class="token operator">*</span> x <span class="token comment"># 等价于y=w.mul(x)</span>
+z <span class="token operator">=</span> y <span class="token operator">+</span> b <span class="token comment"># 等价于z=y.add(b)</span>
+</code></pre></div><p>在PyTorch实现中，autograd会随着用户的操作，记录生成当前variable的所有操作，并由此建立一个有向无环图。用户每进行一个操作，相应的计算图就会发生改变。更底层的实现中，图中记录了操作Function，每一个变量在图中的位置可通过其grad_fn属性在图中的位置推测得到。在反向传播过程中**，autograd沿着这个图从当前变量（根节点z ）溯源，可以利用链式求导法则计算所有叶子节点的梯度**。每一个前向传播操作的函数都有与之对应的反向传播函数用来计算输入的各个variable的梯度，这些函数的函数名通常以Backward结尾。</p> <div class="language-python extra-class"><pre class="language-python"><code>x<span class="token punctuation">.</span>requires_grad<span class="token punctuation">,</span> b<span class="token punctuation">.</span>requires_grad<span class="token punctuation">,</span> w<span class="token punctuation">.</span>requires_grad<span class="token punctuation">,</span> y<span class="token punctuation">.</span>requires_grad
+</code></pre></div><p>False   True   True   True</p> <p>变量的<code>requires_grad</code><strong>属性默认为False</strong>，如果某一个节点requires_grad被设置为True，那么<strong>所有依赖它的节点<code>requires_grad</code>都是True</strong>。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 使用retain_graph来保存buffer</span>
+z<span class="token punctuation">.</span>backward<span class="token punctuation">(</span>retain_graph<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+w<span class="token punctuation">.</span>grad
+</code></pre></div><p>计算w的梯度的时候，需要用到x的数值，这些数值在前向过程中会保存成buffer，在计算完梯度之后会自动清空。为了能够多次反向传播需要指定<code>retain_graph</code>来保留这些buffer。</p> <div class="language-python extra-class"><pre class="language-python"><code>a <span class="token operator">=</span> t<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span>requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> t<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span>requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> a <span class="token operator">*</span> b
+
+a<span class="token punctuation">.</span>data <span class="token comment"># 还是一个tensor</span>
+</code></pre></div><p>tensor([[ 1.,  1.,  1.,  1.],
+[ 1.,  1.,  1.,  1.],
+[ 1.,  1.,  1.,  1.]])</p> <div class="language-python extra-class"><pre class="language-python"><code>d <span class="token operator">=</span> a<span class="token punctuation">.</span>data<span class="token punctuation">.</span>sigmoid_<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token comment"># sigmoid_ 是个inplace操作，会修改a自身的值</span>
+a
+</code></pre></div><p>tensor([[ 0.7311,  0.7311,  0.7311,  0.7311],
+[ 0.7311,  0.7311,  0.7311,  0.7311],
+[ 0.7311,  0.7311,  0.7311,  0.7311]])</p> <p>如果我们想要修改tensor的数值，但是又不希望被autograd记录，那么我么可以<strong>对tensor.data进行操作</strong></p> <hr> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> torch<span class="token punctuation">.</span>autograd <span class="token keyword">import</span> Variable
+x <span class="token operator">=</span> Variable<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> requires_grad <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+y <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">2</span>
+y<span class="token punctuation">.</span>creator
+
+<span class="token comment"># y 是作为一个操作的结果创建的因此y有一个creator </span>
+z <span class="token operator">=</span> y <span class="token operator">*</span> y <span class="token operator">*</span> <span class="token number">3</span>
+out <span class="token operator">=</span> z<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 现在我们来使用反向传播</span>
+out<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># out.backward()和操作out.backward(torch.Tensor([1.0]))是等价的</span>
+<span class="token comment"># 在此处输出 d(out)/dx</span>
+x<span class="token punctuation">.</span>grad
+</code></pre></div><p>最终得出的结果应该是一个全是4.5的矩阵。设置输出的变量为<strong>o</strong>。我们通过这一公式来计算：</p> <p><img src="https://www.zhihu.com/equation?tex=o+%3D+%5Cfrac%7B1%7D%7B4%7D%5Csum_i+z_i" alt="[公式]">，<img src="https://www.zhihu.com/equation?tex=z_i+%3D+3%28x_i%2B2%29%5E2" alt="[公式]">，<img src="https://www.zhihu.com/equation?tex=z_i%5Cbigr%5Crvert_%7Bx_i%3D1%7D+%3D+27" alt="[公式]">，因此，<img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+o%7D%7B%5Cpartial+x_i%7D+%3D+%5Cfrac%7B3%7D%7B2%7D%28x_i%2B2%29" alt="[公式]">，最后有<img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+o%7D%7B%5Cpartial+x_i%7D%5Cbigr%5Crvert_%7Bx_i%3D1%7D+%3D+%5Cfrac%7B9%7D%7B2%7D+%3D+4.5" alt="[公式]"></p> <p>如果你想要进行求导计算，你可以在Variable上调用.backward()。 如果Variable是一个标量（例如它包含一个单元素数据），你无需对backward()指定任何参数，然而如果它有更多的元素，你需要指定一个和tensor的形状想匹配的grad_output参数。</p> <h5 id="_2-神经网络"><a href="#_2-神经网络" class="header-anchor">#</a> 2.神经网络</h5> <p>使用torch.nn可以进行神经网络构建。</p> <p>nn.Module包含神经网络的层，forward（input）方法能将output返回。</p> <p><img src="6.assets/v2-06a914f4ee93f25c0d6c924df9b4b4cb_r.jpg" alt="preview"></p> <p>典型的神经网络训练过程：</p> <ul><li>定义一个有着可学习的参数（或者权重）的神经网络</li> <li>对着一个输入的数据集进行迭代:
+<ul><li>用神经网络对输入进行处理</li> <li>计算代价值（对输入的修正）</li> <li>将梯度传播回神经网络参数中</li> <li>更新网络中的权重</li></ul></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/senior-js/jquery/5.html" class="prev">
+        Node.js
+      </a></span> <span class="next"><a href="/senior-js/jquery/8.html">
+        利用pytorch实现验证码识别
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fa467733.js" defer></script><script src="/assets/js/2.a43e2540.js" defer></script><script src="/assets/js/22.89508ed3.js" defer></script>
+  </body>
+</html>

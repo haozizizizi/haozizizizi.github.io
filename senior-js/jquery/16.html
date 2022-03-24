@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>排序相关题目 | haozi的博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="~不学习就没饭吃( Ĭ ^ Ĭ )~">
+    
+    <link rel="preload" href="/assets/css/0.styles.58c3a8ad.css" as="style"><link rel="preload" href="/assets/js/app.fa467733.js" as="script"><link rel="preload" href="/assets/js/2.a43e2540.js" as="script"><link rel="preload" href="/assets/js/15.6231d217.js" as="script"><link rel="prefetch" href="/assets/js/10.1ec2c469.js"><link rel="prefetch" href="/assets/js/11.9b624821.js"><link rel="prefetch" href="/assets/js/12.8c5e559f.js"><link rel="prefetch" href="/assets/js/13.87e82666.js"><link rel="prefetch" href="/assets/js/14.637dcb73.js"><link rel="prefetch" href="/assets/js/16.b1127553.js"><link rel="prefetch" href="/assets/js/17.7c5607ce.js"><link rel="prefetch" href="/assets/js/18.8bc9f745.js"><link rel="prefetch" href="/assets/js/19.58aaa143.js"><link rel="prefetch" href="/assets/js/20.0a132b6c.js"><link rel="prefetch" href="/assets/js/21.8f59366b.js"><link rel="prefetch" href="/assets/js/22.89508ed3.js"><link rel="prefetch" href="/assets/js/23.4bdb8136.js"><link rel="prefetch" href="/assets/js/24.7f7221ef.js"><link rel="prefetch" href="/assets/js/25.44c1cd2b.js"><link rel="prefetch" href="/assets/js/26.2432c9bb.js"><link rel="prefetch" href="/assets/js/3.062a3a3b.js"><link rel="prefetch" href="/assets/js/4.f4e10edd.js"><link rel="prefetch" href="/assets/js/5.e21b3bb0.js"><link rel="prefetch" href="/assets/js/6.0378b72c.js"><link rel="prefetch" href="/assets/js/7.a14e084f.js"><link rel="prefetch" href="/assets/js/8.5463afaa.js"><link rel="prefetch" href="/assets/js/9.9cac2157.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.58c3a8ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">haozi的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript进阶" class="dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript进阶" class="mobile-dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/senior-js/jquery/" class="nav-link router-link-active">
+  框架的设计 jQuery源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/underscore/" class="nav-link">
+  函数式编程 Underscore源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/module/" class="nav-link">
+  模块化编程 自研模块加载器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="单页应用开发" class="dropdown-title"><span class="title">单页应用开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="单页应用开发" class="mobile-dropdown-title"><span class="title">单页应用开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/spa/react/" class="nav-link">
+  组件化开发 React专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/vue/" class="nav-link">
+  组件化开发 Vue专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/webpack/" class="nav-link">
+  现代前端工程实践方案 解锁webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端APP开发" class="dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="移动端APP开发" class="mobile-dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mobile/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node开发" class="dropdown-title"><span class="title">Node开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node开发" class="mobile-dropdown-title"><span class="title">Node开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/node/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/CoderMonkie/v-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript进阶" class="dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript进阶" class="mobile-dropdown-title"><span class="title">JavaScript进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/senior-js/jquery/" class="nav-link router-link-active">
+  框架的设计 jQuery源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/underscore/" class="nav-link">
+  函数式编程 Underscore源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/senior-js/module/" class="nav-link">
+  模块化编程 自研模块加载器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="单页应用开发" class="dropdown-title"><span class="title">单页应用开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="单页应用开发" class="mobile-dropdown-title"><span class="title">单页应用开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/spa/react/" class="nav-link">
+  组件化开发 React专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/vue/" class="nav-link">
+  组件化开发 Vue专题
+</a></li><li class="dropdown-item"><!----> <a href="/spa/webpack/" class="nav-link">
+  现代前端工程实践方案 解锁webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端APP开发" class="dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="移动端APP开发" class="mobile-dropdown-title"><span class="title">移动端APP开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mobile/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/mobile/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node开发" class="dropdown-title"><span class="title">Node开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node开发" class="mobile-dropdown-title"><span class="title">Node开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/node/TODO1/" class="nav-link">
+  TODO-1
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO2/" class="nav-link">
+  TODO-2
+</a></li><li class="dropdown-item"><!----> <a href="/node/TODO3/" class="nav-link">
+  TODO-3
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/CoderMonkie/v-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>leetcode题目类型总结</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/senior-js/jquery/1.html" class="sidebar-link">二叉树中的递归思想</a></li><li><a href="/senior-js/jquery/3.html" class="sidebar-link">链表有关题目</a></li><li><a href="/senior-js/jquery/9.html" class="sidebar-link">贪心算法</a></li><li><a href="/senior-js/jquery/11.html" class="sidebar-link">双指针</a></li><li><a href="/senior-js/jquery/12.html" class="sidebar-link">二分查找</a></li><li><a href="/senior-js/jquery/16.html" aria-current="page" class="active sidebar-link">排序相关题目</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/senior-js/jquery/15.html" class="sidebar-link">栈有关的题目</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>web前端开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>机器学习</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ctf以及安全知识</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>计算机网络</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>操作系统</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="排序相关题目"><a href="#排序相关题目" class="header-anchor">#</a> 排序相关题目</h3> <h4 id="_1-合并两个有序数组"><a href="#_1-合并两个有序数组" class="header-anchor">#</a> 1.<a href="https://leetcode-cn.com/problems/merge-sorted-array/" target="_blank" rel="noopener noreferrer">合并两个有序数组<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <div class="language- extra-class"><pre class="language-text"><code>输入：nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+输出：[1,2,2,3,5,6]
+解释：需要合并 [1,2,3] 和 [2,5,6] 。
+合并结果是 [1,2,2,3,5,6] ，其中斜体加粗标注的为 nums1 中的元素。
+</code></pre></div><p>思路：双指针从两个数组的尾部结点开始遍历，较大的放到数组1的尾部，数组1遍历完毕后若数组2还有未遍历数组，则将数组2的剩余部分迁移到数组1最前部分。</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">void</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span> nums1<span class="token punctuation">,</span> <span class="token keyword">int</span> nums1Size<span class="token punctuation">,</span> <span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">*</span> nums2<span class="token punctuation">,</span> <span class="token keyword">int</span> nums2Size<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token operator">=</span>m<span class="token operator">+</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> j<span class="token operator">=</span>m<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> k<span class="token operator">=</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    nums1Size<span class="token operator">=</span>m<span class="token operator">+</span>n<span class="token punctuation">;</span>
+    nums2Size<span class="token operator">=</span>n<span class="token punctuation">;</span>
+   
+<span class="token keyword">while</span><span class="token punctuation">(</span>k<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>j<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>nums1<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&gt;=</span>nums2<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   nums1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>nums1<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+   j<span class="token operator">--</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span><span class="token punctuation">{</span>
+    nums1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>nums2<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    k<span class="token operator">--</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+i<span class="token operator">--</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+    <span class="token keyword">while</span><span class="token punctuation">(</span>k<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        nums1<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span>nums2<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        k<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/senior-js/jquery/12.html" class="prev">
+        二分查找
+      </a></span> <span class="next"><a href="/senior-js/jquery/15.html">
+        栈有关的题目
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fa467733.js" defer></script><script src="/assets/js/2.a43e2540.js" defer></script><script src="/assets/js/15.6231d217.js" defer></script>
+  </body>
+</html>
