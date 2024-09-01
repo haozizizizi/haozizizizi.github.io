@@ -27,6 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240826174010850.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240826174502844.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240826174831003.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240827182010010.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240827182255625.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240827165116947.png">
@@ -35,9 +36,9 @@
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240827182944506.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240827183008080.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240827183758744.png">
-<meta property="og:image" content="file:///Users/zhangyuhao/Library/Application%20Support/typora-user-images/image-20240827183845491.png?lastModify=1725179852">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240827183845491.png">
 <meta property="article:published_time" content="2024-09-01T08:46:46.000Z">
-<meta property="article:modified_time" content="2024-09-01T08:52:27.158Z">
+<meta property="article:modified_time" content="2024-09-01T08:58:31.414Z">
 <meta property="article:author" content="haozizizi">
 <meta property="article:tag" content="深度学习推荐系统 王喆">
 <meta name="twitter:card" content="summary">
@@ -545,8 +546,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-01 16:52:27</span>
-            <span class="mobile">2024-09-01 16:52:27</span>
+            <span class="desktop">2024-09-01 16:58:31</span>
+            <span class="mobile">2024-09-01 16:58:31</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -618,7 +619,12 @@
                       alt="image-20240826174502844"
                 ></p>
 <p>矩阵分解算法将m×n维的共现矩阵R分解为m×k维的用户矩阵U和k×n维的物品矩阵V相乘的形式。其中m是用户数量，n是物品数量，k是隐向量的维度。k的大小决定了隐向量表达能力的强弱。k的取值越小，隐向量包含的信息越少，模型的泛化程度越高；反之，k的取值越大，隐向量的表达能力越强，但泛化程度相应降低。</p>
-<p>![image-20240826174831003](&#x2F;Users&#x2F;zhangyuhao&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20240826174831003.png)</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20240826174831003.png"
+                      alt="image-20240826174831003"
+                ></p>
 <h5 id="矩阵分解的求解过程"><a href="#矩阵分解的求解过程" class="headerlink" title="矩阵分解的求解过程"></a>矩阵分解的求解过程</h5><p>对矩阵进行矩阵分解的主要方法有三种：特征值分解(EigenDecomposition)、奇异值分解(Singular ValueDecomposition，SVD)和梯度下降(Gradient Descent)。其中，特征值分解只能作用于方阵，显然不适用于分解用户-物品矩阵。</p>
 <p><strong>奇异值分解</strong></p>
 <p>假设矩阵M是一个m×n的矩阵，则一定存在一个分解M&#x3D;UΣVT，其中U是m×m的正交矩阵，V是n×n的正交矩阵，Σ是m×n的对角阵。</p>
@@ -702,7 +708,7 @@
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="file:///Users/zhangyuhao/Library/Application%20Support/typora-user-images/image-20240827183845491.png?lastModify=1725179852"
+                     data-src="/images/image-20240827183845491.png"
                       alt="image-20240827183845491"
                 ></p>
 <p>加入用户和物品的打分偏差项之后，矩阵分解得到的隐向量更能反映不同用户对不同物品的“真实”态度差异，也就更容易捕捉评价数据中有价值的信息，从而避免推荐结果有偏。</p>
@@ -727,7 +733,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-09-01 16:52:27
+                    :</strong> 2024-09-01 16:58:31
             </li>
         
         <li>
