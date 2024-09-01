@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="haozizizi">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://haozizizizi.github.io/2024/09/01/transformer/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="Transformer在引入transformer之前，首先简述一下attention注意力机制 注意力机制（attention）在机器翻译，智能问答等场景中，源语言和目标语言的句子通常没有相同的长度，由此引出了RNN（ N vs N 的循环神经网络）的变种：N vs M。这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型，该模型可以用于机器翻译等应用场景。 eg :">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Transformer">
+<meta property="og:url" content="https://haozizizizi.github.io/2024/09/01/Transformer/index.html">
+<meta property="og:site_name" content="haozizizi的个人主页">
+<meta property="og:description" content="Transformer在引入transformer之前，首先简述一下attention注意力机制 注意力机制（attention）在机器翻译，智能问答等场景中，源语言和目标语言的句子通常没有相同的长度，由此引出了RNN（ N vs N 的循环神经网络）的变种：N vs M。这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型，该模型可以用于机器翻译等应用场景。 eg :">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20231020093737373.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20231020093803797.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200725175156507.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NoZXJtYWNr,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0cc870d469f64fdbbd0be1ea560c8df5.png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJjicWqS5icy5qBnmFex4vmpURichMyl6iadbtiaKz9We2uSWmjl9PTiczTicNA/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://latex.csdn.net/eq?%5Csqrt%7Bd_k%7D">
+<meta property="og:image" content="https://latex.csdn.net/eq?%5Csqrt%7Bd_k%7D">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJDgRkib88jBk0TNA751qMebKuYPerVQaYdatkEFnHYicuZnmS1yyFzODg/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJp46qropMV7aPMdcCcjUvmIkHfVNXbCSE53N61qG6iaZo5miauXibs3OeQ/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJFicraQlAa2rmSxBSerTeWpMOUZicUoIEJ9KzDqPbvdbk7aeTtibBqyia8Q/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJC9ga43XmCicY3VqgMYLyX1QtVIW9r5s2XfN7pmsJJYtEqPFe72yw0cA/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f6c775a790454c978d4b8b2f0e9b57ab.png">
+<meta property="og:image" content="https://latex.csdn.net/eq?1*d_v">
+<meta property="og:image" content="https://latex.csdn.net/eq?n%20*%20%7Bd_v%7D">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20231124160521030.png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJLFcy3zKnLria4har3TUtM6t6j854gYAibQBx1vria3dGmniaQbCFF4c9SA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJBedvXWaYmdhQX8xQaeic3gYiaaXsMJqZMI2T5ia4g5LmDJmP7UegeR5uA/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/491379e6009146dba4e8c1bb69bfe9cd.jpeg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0b4bcf37a1bc46318c1b0841adec9775.jpeg">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20231016114010938.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20231018172341469.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/22206660-b2a6459bfd93f453.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1095">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20231020093841896.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20231125173323563.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20231125183728822.png">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-7f13d7b1a43c6cb7f23b47ed3d124078_1440w.webp">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20231125184233811.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20231125185501128.png">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-92ce89de7daece69cdabc1e44c1a03b3_1440w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-635af20c22be9977bab516c2324e0150_1440w.webp">
+<meta property="article:published_time" content="2024-09-01T10:15:08.000Z">
+<meta property="article:modified_time" content="2024-09-01T10:22:55.401Z">
+<meta property="article:author" content="haozizizi">
+<meta property="article:tag" content="原创">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://haozizizizi.github.io/images/image-20231020093737373.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Transformer -
+        
+        haozizizi
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"haozizizizi.github.io","root":"/","language":"zh-CN"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"haozi的个人主页","subtitle":{"text":["随便记录一下(ง •_•)ง"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-list"},"ShuoShuo":{"icon":"fa-solid fa-comment-dots","path":"/shuoshuo"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2024/8/30 16:30:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        haozizizi
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                haozizizi
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-list fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/shuoshuo"
+                                        >
+                                    <i class="fa-solid fa-comment-dots fa-fw"></i>
+                                    说说
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-list fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/shuoshuo"
+                        >
+                            <span>
+                                说说
+                            </span>
+                            
+                                <i class="fa-solid fa-comment-dots fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">12</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Transformer</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">haozizizi</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-09-01 18:15:08</span>
+        <span class="mobile">2024-09-01 18:15:08</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-09-01 18:22:55</span>
+            <span class="mobile">2024-09-01 18:22:55</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%8E%9F%E5%88%9B/">原创</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p>在引入transformer之前，首先简述一下attention注意力机制</p>
+<h4 id="注意力机制（attention）"><a href="#注意力机制（attention）" class="headerlink" title="注意力机制（attention）"></a>注意力机制（attention）</h4><p>在机器翻译，智能问答等场景中，源语言和目标语言的句子通常没有相同的长度，由此引出了RNN（ <strong>N vs N</strong> 的循环神经网络）的变种：<strong>N vs M</strong>。这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型，该模型可以用于机器翻译等应用场景。</p>
+<p>eg : 机器学习翻译成 machine learning</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20231020093737373.png"
+                      alt="image-20231020093737373"
+                ></p>
+<p><strong>问题：</strong>在生成目标句子的单词时，不论生成哪个单词，它们使用的输入句子的语义编码都是C，没有任何区别。而语义编码C是由原句子中的每个单词编码生成，意味着<strong>原句子中的任意单词对生成的目标单词影响力是相同的</strong>。</p>
+<p>在上边那个例子中在生成“machine”时，”机”,”器”,”学”,””习”的贡献是相同的。很显然，”机”,”器”，对于翻译成”machine”更为重要，所以该方法存在一定不合理性。我们希望在模型翻译”machine”的时候，”机”，”器”两个字的贡献(权重)更大，当在翻译成”learning”时，”学”，”习”两个字贡献(权重)更大。</p>
+<p>由此而提出的注意力机制，目的是通过计算权重，使模型关注对于其影响更大的部分。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20231020093803797.png"
+                      alt="image-20231020093803797"
+                ></p>
+<h4 id="自注意力机制（Self-Attention）"><a href="#自注意力机制（Self-Attention）" class="headerlink" title="自注意力机制（Self-Attention）"></a>自注意力机制（Self-Attention）</h4><p>Self-Attention是一个过程，在其中一个向量序列x被编码成另一个向量序列z。每一个原始向量只是一个代表一个单词的数字块。<strong>它对应的z向量既表示原始单词，也表示它与周围其他单词的关系。</strong>如下图所示，其表示单词”it”的注意力集中在了哪些词上，也是对于单词”it”进行Self-Attention后得到的结果。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/20200725175156507.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NoZXJtYWNr,size_16,color_FFFFFF,t_70"
+                      alt="img"
+                ></p>
+<p>自注意力机制顾名思义就是自己和自己计算一遍注意力，即对每一个输入的词向量，我们都需要构建self-attention的输入。在这里，transformer首先将词向量乘上三个权重矩阵Wq Wk Wv，得到三个新的向量Q K V，之所以乘上三个矩阵参数而不是直接用原本的词向量是因为这样可以<strong>增加更多的参数，提高模型效果</strong>。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/0cc870d469f64fdbbd0be1ea560c8df5.png"
+                      alt="img" style="zoom:50%;" 
+                >
+
+<p>首先需要理解的就是三个矩阵Q K V，也就是self-attention的输入。这三个向量都是对词向量线性运算得到的，其实就是一个矩阵乘法。先用通俗的语言理解这三个向量。Query，Key，Value的概念取自于信息检索系统，举个简单的搜索的例子来说。当你在某电商平台搜索某件商品（年轻女士冬季穿的红色薄款羽绒服）时，你在搜索引擎上输入的内容便是Query，然后搜索引擎根据Query为你匹配Key（例如商品的种类，颜色，描述等），然后根据Query和Key的相似度得到匹配的内容（Value)。</p>
+<p>具体计算步骤如下:</p>
+<ol>
+<li><p>首先，我们将每个单词与Q K V 对应起来。这些对由学习到的矩阵和该单词的嵌入向量相乘得到。</p>
+</li>
+<li><p>Q 可以看作是对单词的一个问题，例如，对地点单词”Africa”的问题可能是”那里发生了什么？”。表示两个向量之间的关系可以用<strong>内积</strong>的方式，两个向量内积的结果一定是一个值。如果他们正交的话，那就是完全没有关系，内积就为0，如果重合那就关系非常大，算出来的内积的结果的值也会很大。<strong>因此这里计算Q和每个K的内积，来确定其他单词对查询问题的回答的质量。</strong><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJjicWqS5icy5qBnmFex4vmpURichMyl6iadbtiaKz9We2uSWmjl9PTiczTicNA/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
+                      alt="图片"
+                ></p>
+</li>
+<li><p>算出的结果除以<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://latex.csdn.net/eq?%5Csqrt%7Bd_k%7D"
+                      alt="\sqrt{d_k}"
+                >（K向量的维度的平方根，通常K向量的维度是64)：向量的维度越大，内积的结果越大，将softmax函数推入具有极小梯度的区域，除以<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://latex.csdn.net/eq?%5Csqrt%7Bd_k%7D"
+                      alt="\sqrt{d_k}"
+                >后梯度会更加稳定<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJDgRkib88jBk0TNA751qMebKuYPerVQaYdatkEFnHYicuZnmS1yyFzODg/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
+                      alt="图片"
+                ></p>
+</li>
+<li><p>我们对所有内积结果进行softmax运算，这样可以获得每个单词的注意力值。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJp46qropMV7aPMdcCcjUvmIkHfVNXbCSE53N61qG6iaZo5miauXibs3OeQ/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
+                      alt="图片"
+                ></p>
+</li>
+<li><p>最后，我们将得到的softmax值与相应单词的值向量V相乘，这个思想主要是为了保持我们想要关注的单词的值不变，而掩盖掉那些不相关的单词（例如将他们乘上很小的数字）<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJFicraQlAa2rmSxBSerTeWpMOUZicUoIEJ9KzDqPbvdbk7aeTtibBqyia8Q/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
+                      alt="图片"
+                ></p>
+</li>
+<li><p>将带权重的各个V向量加起来，至此，产生在这个位置上单词的self-attention层的输出，其余位置的self-attention输出也是同样的计算方式。<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJC9ga43XmCicY3VqgMYLyX1QtVIW9r5s2XfN7pmsJJYtEqPFe72yw0cA/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
+                      alt="图片"
+                ></p>
+</li>
+</ol>
+<p>将上述的过程总结为一个公式就可以用下图表示：</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/f6c775a790454c978d4b8b2f0e9b57ab.png"
+                      alt="img" style="zoom:50%;" 
+                >
+
+<p>每一个词的v向量维度为<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://latex.csdn.net/eq?1*d_v"
+                      alt="1*d_v"
+                >,注意力矩阵的维度为n*n，注意力矩阵与n个V向量进行矩阵乘法操作，得到Z向量，维度为<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://latex.csdn.net/eq?n%20*%20%7Bd_v%7D"
+                      alt="n * {d_v}"
+                ></p>
+<h4 id="多头注意力机制（Multi-Head-attention）"><a href="#多头注意力机制（Multi-Head-attention）" class="headerlink" title="多头注意力机制（Multi-Head attention）"></a>多头注意力机制（Multi-Head attention）</h4><p>Multi-Head Attention 机制对自注意力机制进行拓展，允许模型联合学习序列的不同表示子空间。</p>
+<p>多头注意力将输入序列重复进行自注意力计算n次，每次使用不同的权重矩阵,得到n个注意力向量序列。然后将这n个序列拼接并线性转换，得到最终的序列表示,即:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20231124160521030.png"
+                      alt="image-20231020093737373"
+                ></p>
+<p>多头注意力的计算过程与自注意力一致，在每个头中使用了不同的权重矩阵并且将所有的注意力向量（一般情况下是8个）进行拼接。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://mmbiz.qpic.cn/mmbiz_png/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJLFcy3zKnLria4har3TUtM6t6j854gYAibQBx1vria3dGmniaQbCFF4c9SA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
+                      alt="图片" style="zoom:50%;" 
+                >
+
+<p>由于前馈神经网络的输入只需要一个矩阵，因此得到的注意力向量需要再乘以一个权重矩阵，该权重矩阵也是在模型中联合训练得到的。最后得到的结果就是多头注意力的输出，维度与单个self-attention输出的维度相同。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://mmbiz.qpic.cn/mmbiz_jpg/AIR6eRePgjOe1tpbagf5FmvDV6XvD9bJBedvXWaYmdhQX8xQaeic3gYiaaXsMJqZMI2T5ia4g5LmDJmP7UegeR5uA/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
+                      alt="图片" style="zoom: 67%;" 
+                >
+
+<p>在实际计算中，由于不同”头”的计算不共享权重矩阵，互不影响，因此可以同时计算所有的”头”，即并行计算，以提高计算效率。</p>
+<p>多头注意力参考CNN的多通道模式，从多个角度提取特征，如果将这个机制进行可视化，可以表示为：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/491379e6009146dba4e8c1bb69bfe9cd.jpeg"
+                      alt="img" style="zoom:50%;" 
+                ><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/0b4bcf37a1bc46318c1b0841adec9775.jpeg"
+                      alt="img" style="zoom:50%;" 
+                ></p>
+<p>“多头注意力机制”从两个方面提高了自注意力层的性能。</p>
+<p>1.它扩展了模型专注于不同位置的能力。在上面的例子中，虽然每个编码都在z1中有或多或少的体现，但是它可能被实际的单词本身所支配。如果我们翻译一个句子，比如“The animal didn’t cross the street because it was too tired”，我们会想知道“it”指的是哪个词，这时模型的“多头”注意机制会起到作用。</p>
+<p>2.它给出了注意力层的多个“表示子空间”（representation subspaces）。接下来我们将看到，对于“多头”注意机制，我们有多个查询&#x2F;键&#x2F;值权重矩阵集(Transformer使用八个注意力头，因此我们对于每个编码器&#x2F;解码器有八个矩阵集合)。这些集合中的每一个都是随机初始化的，在训练之后，每个集合都被用来将输入词嵌入(或来自较低编码器&#x2F;解码器的向量)投影到不同的表示子空间中。</p>
+<p>总的来说，多头注意力机制可以为每个单词学习到更丰富、更好的表示，每个”头”都能从不同的角度去理解序列中的每个单词。</p>
+<h4 id="模型架构"><a href="#模型架构" class="headerlink" title="模型架构"></a>模型架构</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20231016114010938.png"
+                      alt="image-20231020093737373"
+                ></p>
+<h5 id="编码器输入"><a href="#编码器输入" class="headerlink" title="编码器输入"></a>编码器输入</h5><p>在了解tranformer的核心架构（编码器 解码器）之前，首先学习其对input的处理。</p>
+<p>输入部分是Transformer模型的第一部分，它的主要任务是将原始的输入序列转化为模型可以处理的向量表示。输入部分包括两个主要组件：<strong>文本嵌入层（Embedding Layer）和位置编码器（Positional Encoding）</strong></p>
+<p>1.<strong>文本嵌入层</strong>负责将输入序列中的每个词元（单词或字符）映射为一个固定长度的向量表示。这个向量被称为嵌入向量，它包含了该词元在语义空间中的含义和上下文信息。这种嵌入向量是通过预训练的语言模型（例如Word2Vec或BERT）学习得到的。通过这种嵌入层，原始的文本数据被转化为统一的向量表示，这使得模型可以更加方便地处理和分析这些数据。</p>
+<p>每个词的词向量 Word Embedding 是一个 n 维的向量，例如：</p>
+<div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">king = [ 0.50451 , 0.68607 ,........., -0.51042 ]</span><br></pre></td></tr></table></figure></div>
+
+<p>2.<strong>位置编码器</strong>负责给输入序列中的每个词元分配一个唯一的向量表示，这个向量包含了该词元在序列中的位置信息。</p>
+<p><strong>Transformer需要位置编码的原因</strong>：在RNN模型中，位置信息是通过神经网络严格的顺序计算来保证的。由于Transformer模型是纯粹的注意力模型，它不能自然地处理输入序列中次元之间的相对位置关系，因此需要使用位置编码器来显式地编码这种位置信息。</p>
+<p>位置编码器一般采用正弦和余弦函数组合的方式生成位置向量，这样每个位置都可以被表示为一个唯一的向量，并且这个向量包含了该位置在序列中的相对距离和方向信息。在transformer中，采用余弦位置编码来提供位置信息，计算公式如下：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20231018172341469.png"
+                      alt="image-20231020093737373"
+                ></p>
+<p>上面公式中， pos表示单词在句子中的位置， i表示位置向量的维度下标， i的最大值，也就是位置向量的维度，等于词向量的维度，dmodel表示词向量的维度。 2i表示位置向量维度为偶数部分， 2i+1表示位置向量维度为奇数部分。可以看到，位置向量奇数部分和偶数部分，分别采用了正弦函数和余弦函数来计算。下图展示了一个6*4的位置矩阵计算过程。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://upload-images.jianshu.io/upload_images/22206660-b2a6459bfd93f453.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1095"
+                      alt="img"
+                ></p>
+<p><strong>注意的一点是，位置编码没有梯度更新，不参与训练</strong></p>
+<p>余弦位置编码计算的是绝对位置，但其另一个特点是，可以让模型获取相对位置。这里涉及较为复杂的数学计算，之后补充。</p>
+<p>3.<strong>模型输入</strong> 词向量加上位置向量就是Transformer的输入</p>
+<p>具体而言，假设：</p>
+<p>B : 表示模型输入的batch size；</p>
+<p>S : 表示模型输入句子的最大长度；</p>
+<p>D : 表示词向量的维度；</p>
+<p>对于一个Shape &#x3D; [B, S] 的‘文本矩阵’：</p>
+<ol>
+<li>获取词向量，得到Shape &#x3D; [B, S, D] 的张量（T1）;</li>
+<li>获取位置向量，得到Shape &#x3D; [B, S, D]的张量（T2）;</li>
+</ol>
+<p>将两个张量相加得到模型输入 X &#x3D; T1 + T2  Shape &#x3D; [B, S, D]</p>
+<p>transformer模型主要由两部分组成，Encoder（左）和Decoder（右）。当输入一个文本的时候，该文本数据会先经过encoders（N个encoder 原文中N为6）模块，对该文本进行编码，然后将编码后的数据再传入decoders（N个decoder 原文中N为6）模块进行解码，解码后就得到了翻译后的文本，对应的我们称Encoder为编码器，Decoder为解码器。</p>
+<p>可以通过下方简图对编码解码过程进行大致的了解。在编码部分，每一个的小编码器的输入是前一个小编码器的输出，而每一个小解码器的输入不光是它的前一个解码器的输出，还包括了整个编码部分的输出。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20231020093841896.png"
+                      alt="image-20231020093737373"
+                ></p>
+<h5 id="编码器-encoder"><a href="#编码器-encoder" class="headerlink" title="编码器 encoder"></a>编码器 encoder</h5><p>接下来，对encoder的内部进行学习。通过观察模型架构的左半部分，可以发现编码器的内部结构是一个多头自注意力机制加上一个前馈神经网络。<strong>此处需要注意的是，所有编码器结构相同但并不共享参数。</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20231125173323563.png"
+                      alt="image-20231020093737373"
+                ></p>
+<p>输入数据通过Multi-Head Attention层处理后，会经过一个Add &amp; Norm处理。其中，Add为residule block（残差模块），数据在这里进行residule connection（残差连接）。而Norm即为Normalization（标准化）模块。Transformer中采用的是Layer Normalization（层标准化）方式。</p>
+<p><strong>ADD （Residule残差）</strong></p>
+<p>Residual的做法就是将输入加到输出上，作为最后的输出。</p>
+<p>原因：在self-attention中，输入是这个词的特征，输出也是这个词的特征。它就是将这个词融入了一下上下文的语境，相当于重构了一下，维度与特征个数都没有变，特征值变了。通过self- attention的堆叠特征一定会变得更好吗？这里引入了2015年残差神经网络的思想，加入残差连接机制避免堆叠特征反而变差的问题。就是这个y &#x3D; f(x)+x策略，y的结果一定不会比f(x)的结果差。</p>
+<p>好处：</p>
+<ol>
+<li><p>随着网络层数的增加，越深的网络层，其保留的原始信息越少，通过在网络中跨越多个层级直接传递信息，可以使得后续的网络可以提取有效的高层次信息，避免信息的丢失。</p>
+</li>
+<li><p>解决了深度神经网络的退化问题，同等层数的前提下残差网络也收敛得更快（这里可以理解为通过计算残差，下一层中只需继续优化未匹配的地方，所以收敛快）</p>
+</li>
+</ol>
+<p><strong>Layer normalization</strong></p>
+<p>Layer normalization是数据归一化的一种方式，计算均值和方差。</p>
+<p>作用：将每一层网络转成均值方差都一样的分布，加快模型收敛。</p>
+<p>在图像问题中，LN是指对一整张图片进行标准化处理，即在一张图片所有channel的pixel范围内计算均值和方差。而在NLP的问题中，LN是指在一个句子的一个token的范围内进行标准化。 BN（batch normalization）是在特征间进行标准化操作（<strong>横向操作</strong>），而LN是在整条数据间进行标准化操作（<strong>纵向操作</strong>）。 </p>
+<p>Add&amp;Norm在transform中是一个通用的网络结构，Add&amp;Norm不会改变张量的shape，计算公式如下：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20231125183728822.png"
+                      alt="image-20231020093737373"
+                ></p>
+<p><strong>Feed Forward</strong></p>
+<p>Feed Forward由两层全连接神经网络以及一个非线形激活函数ReLu组成</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic1.zhimg.com/80/v2-7f13d7b1a43c6cb7f23b47ed3d124078_1440w.webp"
+                      alt="img" style="zoom: 25%;" 
+                >
+
+<p>计算公式为：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20231125184233811.png"
+                      alt="image-20231020093737373"
+                ></p>
+<p>作用：前面每一步都在做线性变换，线性变化的学习能力不如非线形变化强（线性变化就是空间中平移和扩大缩小），通过 Feed Forward中的 Relu 做一次非线性变换，提升了每个单词的表达能力。</p>
+<p>由上面的描述可知，一个Encode block是由Multi-Head Attention, Add &amp; Norm, Feed Forward, Add &amp; Norm组成一个 Encoder block。通过多个Encoder block可以组成一个Encoder。具体过程如下：</p>
+<p>第一个 Encoder block 的输入为句子单词的表示向量矩阵，后续 Encoder block 的输入是前一个 Encoder block 的输出，最后一个 Encoder block 输出的矩阵就是<strong>编码信息矩阵</strong> ，这一矩阵后续会用到 Decoder 中。</p>
+<h5 id="解码器输入"><a href="#解码器输入" class="headerlink" title="解码器输入"></a>解码器输入</h5><p>根据模型架构图可以看到编码器与解码器输入的区别是，解码器多了一个Shifted right。</p>
+<p>原因：编码器一次性可以看到整个句子。解码器只能一个一个生成（自回归auto-regressive，根据前面已经预测过的词预测后面待预测的词）。Shifted right 指的是 decoder 在之前时刻的一些输出，作为此时的输入。一个一个往右移。</p>
+<p>在对话的过程中单词是顺序生成的，即生成完第 i 个单词，才可以生成第 i+1 个单词。输出嵌入矩阵Output Embeddings就是依次的输出结果转换为对应的Embedding。</p>
+<p>比如：在开始时我们将初始的输出设为<start>， 将<start>生成其Embedding 作为输入送到Decoder矩阵中，输出预测的输出“You”。然后”You”转换为对应的Embedding矩阵，和<start>的矩阵在一起送入Decoder中，预测出下一个输出为”Win“，如此往复直到最后一个单词。</p>
+<h5 id="解码器-decoder"><a href="#解码器-decoder" class="headerlink" title="解码器 decoder"></a>解码器 decoder</h5><p>先来整体看下decoder，可以看出它与encoder存在很多共通之处：</p>
+<ul>
+<li>包含两个 Multi-Head Attention 层。第一个 Multi-Head Attention 层采用了 Masked 操作，后面进行详细解释。第二个 Multi-Head Attention 层的 <strong>K，V</strong>矩阵使用 Encoder 输出的<strong>编码信息矩阵</strong>进行计算，而Q使用Decoder block自身的上一层的输出计算。</li>
+<li>包含多个Add &amp; Norm层，一个Feed Forward</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20231125185501128.png"
+                      alt="image-20231020093737373"
+                ></p>
+<p><strong>Masked Multi-Head Attention</strong></p>
+<p>解码器是自回归的，当前时刻的输入集合是之前一些时刻的输入，所以通过掩码的注意力层避免在 t 时刻，看到 t 时刻以后的输入。</p>
+<p>例如，我们将对话 ”Fool! No man can kill me“ ”I am mo man“ 送入模型训练，此时我们是知道对话的结果的，就像模拟考试一样，我们需要先将回话部分给mask，防止抄答案。</p>
+<p>在mask对话的结果后，我们将对话”Fool! No man can kill me“送到模型Encoder中进行训练，同时将<start>送入Decoder， 此时可能给出一个预测的单侧为”You“，将其与标准答案”I“之间计算loss，并调整模型的参数。最终使得模型预测的结果可以更靠近标准的结果”I am mo man“。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic4.zhimg.com/80/v2-92ce89de7daece69cdabc1e44c1a03b3_1440w.webp"
+                      alt="img"
+                ></p>
+<p>但是注意，这里的mask只是mask将要预测输出的单词以及之后。如上图所示，我们使用-inf作为mask区域，0作为非mask区域，然后将两个矩阵进行相加。值为0的区域，不会改变其原值。</p>
+<p>然后接下来的计算就与之前self-Attention的计算过程一致了。最后在经过一层Add&amp;Norm后，我们将其输出与Encoder的输出一起送入下一个Multi-Head Attention。</p>
+<p><strong>Multi-Head Attention</strong></p>
+<p>这个Multi-Head Attention与Encoder中的基本没有区别，主要的区别在于其中 Self-Attention 的 <strong>K, V</strong>矩阵不是使用 上一个 Decoder block 的输出计算的，而是使用 <strong>Encoder 的编码信息矩阵 C</strong> 计算的。根据 Encoder 的输出 <strong>C</strong>计算得到 <strong>K, V</strong>，根据上一个 Decoder block 的输出 <strong>Z</strong> 计算 <strong>Q</strong> (如果是第一个 Decoder block 则使用输入矩阵 <strong>X</strong> 进行计算)，后续的计算方法与之前描述的一致。</p>
+<p>原因：每一位单词都可以利用到 Encoder 所有单词的信息 (这些信息无需 Mask)。</p>
+<p>由上图可知，剩余部分在linear层前与Encoder完全一样。</p>
+<p><strong>Linear &amp; Softmax 预测输出单词</strong></p>
+<p>解码器的输出会作为输入进入Linear层，它是一个全连接层，通过将解码器的隐藏状态传入线性层进行线性变换。这个线性变换将解码器的隐藏状态映射为一个与目标词汇表大小相同的向量，相当于将输出的结果矩阵与词汇表向量相乘，然后可以通过 softmax 操作将其转化为概率分布，得出词汇表中每一个单词成为预测单词的概率。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic1.zhimg.com/80/v2-635af20c22be9977bab516c2324e0150_1440w.webp"
+                      alt="img" style="zoom:50%;" 
+                >
+
+<p>如上图所示，词汇表中单词”You“的概率最大，那么它将会成为这次的输出。</p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p>Vaswani A , Shazeer N , Parmar N ,et al.Attention Is All You Need[J].arXiv, 2017.DOI:10.48550&#x2F;arXiv.1706.03762.</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/645250967" >https://zhuanlan.zhihu.com/p/645250967 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/609618838" >https://zhuanlan.zhihu.com/p/609618838 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_50592077/article/details/131474803" >https://blog.csdn.net/weixin_50592077/article/details/131474803 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44762713/article/details/118490372" >https://blog.csdn.net/weixin_44762713/article/details/118490372 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> Transformer</li>
+        <li><strong>作者:</strong> haozizizi</li>
+        <li><strong>创建于
+                :</strong> 2024-09-01 18:15:08</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2024-09-01 18:22:55
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://haozizizizi.github.io/2024/09/01/Transformer/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E5%8E%9F%E5%88%9B/">#原创</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/09/01/%E4%BC%A0%E7%BB%9F%E6%8E%A8%E8%8D%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%89%B9%E7%82%B9%E6%80%BB%E7%BB%93/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">传统推荐模型的特点总结</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://waline-git-main-haozizizis-projects.vercel.app/',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">Transformer</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Transformer"><span class="nav-text">Transformer</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">haozizizi</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 12 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
