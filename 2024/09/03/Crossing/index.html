@@ -13,20 +13,27 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://haozizizizi.github.io/categories/深度学习/"/>
+    <link rel="canonical" href="https://haozizizizi.github.io/2024/09/03/crossing/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="haozizizi的个人主页">
-<meta property="og:type" content="website">
-<meta property="og:title" content="haozizizi的个人主页">
-<meta property="og:url" content="https://haozizizizi.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.html">
+        <meta name="description" content="Deep Crossing模型——经典的深度学习架构相比AutoRec模型过于简单的网络结构带来的一些表达能力不强的问题，Deep Crossing模型完整地解决了从特征工程、稀疏向量稠密化、多层神经网络进行优化目标拟合等一系列深度学习在推荐系统中的应用问题，为后续的研究打下了良好的基础。 Deep Crossing模型的应用场景Deep Crossing模型的应用场景是微软搜索引擎Bing中的搜">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Crossing">
+<meta property="og:url" content="https://haozizizizi.github.io/2024/09/03/Crossing/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="haozizizi的个人主页">
+<meta property="og:description" content="Deep Crossing模型——经典的深度学习架构相比AutoRec模型过于简单的网络结构带来的一些表达能力不强的问题，Deep Crossing模型完整地解决了从特征工程、稀疏向量稠密化、多层神经网络进行优化目标拟合等一系列深度学习在推荐系统中的应用问题，为后续的研究打下了良好的基础。 Deep Crossing模型的应用场景Deep Crossing模型的应用场景是微软搜索引擎Bing中的搜">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240903152911812.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240903153928794.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240903154733995.png">
+<meta property="article:published_time" content="2024-09-03T08:13:39.000Z">
+<meta property="article:modified_time" content="2024-09-03T08:16:17.886Z">
 <meta property="article:author" content="haozizizi">
+<meta property="article:tag" content="深度学习推荐系统 王喆">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://haozizizizi.github.io/images/image-20240903152911812.png">
     
     
     <!--- Icon Part-->
@@ -38,7 +45,7 @@
     
     <title>
         
-            分类: 深度学习 -
+            Crossing -
         
         haozizizi
     </title>
@@ -328,7 +335,7 @@
 
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="active"
+                                <a class=""
                                    href="/categories"
                                         >
                                     <i class="fa-regular fa-list fa-fw"></i>
@@ -426,7 +433,7 @@
 
                     <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
                         
-                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
                            href="/categories"
                         >
                             <span>
@@ -496,45 +503,297 @@
             <div class="main-content">
 
                 
-                    <div class="category-container">
-    <div class="category-name">
-        <i class="fa-solid fa-folder"></i>&nbsp;深度学习
-    </div>
-    <div class="category-post-list">
-        
-<div class="archive-list-container">
-    
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2024</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">1</span>
-            </div>
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
             
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Crossing</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">haozizizi</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-09-03 16:13:39</span>
+        <span class="mobile">2024-09-03 16:13:39</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-09-03 16:16:17</span>
+            <span class="mobile">2024-09-03 16:16:17</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
                 
                     
+                        
+                        <li>
+                            <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/">推荐系统</a>&nbsp;
+                        </li>
                     
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-01'>
-                    
-                    <a href="/2024/09/01/Transformer/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">Transformer</span>
-                    </a>
                     
                 
-                </li> <!-- Ensure the last item is properly closed -->
             </ul>
-        </section>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-%E7%8E%8B%E5%96%86/">深度学习推荐系统 王喆</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
-    </div>
-</div>
-<div class="category-paginator">
-    <div class="paginator">
-    <span class="page-number current">1</span>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h4 id="Deep-Crossing模型——经典的深度学习架构"><a href="#Deep-Crossing模型——经典的深度学习架构" class="headerlink" title="Deep Crossing模型——经典的深度学习架构"></a>Deep Crossing模型——经典的深度学习架构</h4><p>相比AutoRec模型过于简单的网络结构带来的一些表达能力不强的问题，Deep Crossing模型完整地解决了从特征工程、稀疏向量稠密化、多层神经网络进行优化目标拟合等一系列深度学习在推荐系统中的应用问题，为后续的研究打下了良好的基础。</p>
+<h5 id="Deep-Crossing模型的应用场景"><a href="#Deep-Crossing模型的应用场景" class="headerlink" title="Deep Crossing模型的应用场景"></a>Deep Crossing模型的应用场景</h5><p>Deep Crossing模型的应用场景是微软搜索引擎Bing中的搜索广告推荐场景。</p>
+<p>用户在搜索引擎中输入搜索词之后，搜索引擎除了会返回相关结果，还会返回与搜索词相关的广告，这也是大多数搜索引擎的主要赢利模式。</p>
+<p>尽可能地增加搜索广告的点击率，准确地预测广告点击率，并以此作为广告排序的指标之一，是非常重要的工作，也是Deep Crossing模型的优化目标。</p>
+<p>针对该使用场景，微软使用的特征如表3-1所示</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20240903152911812.png"
+                      alt="image-20240903152911812"
+                ></p>
+<p>这些特征可以分为三类：</p>
+<ul>
+<li>可以被处理成one-hot或者multi-hot向量的类别型特征，包括用户搜索词(query)、广告关键词(keyword)、广告标题(title)、落地页(landing page)、匹配类型(match type)</li>
+<li>数值型特征，微软称其为计数型(counting)特征，包括点击率、预估点击率(click prediction)</li>
+<li>需要进一步处理的特征，包括广告计划(campaign)、曝光样例(impression)、点击样例(click)</li>
+</ul>
+<p>严格来说，这些都不是独立的特征，而是一个特征的组别，需要进一步处理。</p>
+<p>类别型特征可以通过one-hot或multi-hot编码生成特征向量，数值型特征则可以直接拼接进特征向量中，在生成所有输入特征的向量表达后，Deep Crossing模型利用该特征向量进行CTR 预估。</p>
+<p>深度学习网络的特点是可以根据需求灵活地对网络结构进行调整，从而达成从原始特征向量到最终的优化目标的端到端的训练目的。</p>
+<h5 id="Deep-Crossing模型的网络结构"><a href="#Deep-Crossing模型的网络结构" class="headerlink" title="Deep Crossing模型的网络结构"></a>Deep Crossing模型的网络结构</h5><p>为完成端到端的训练，Deep Crossing模型要在其内部网络中解决如下问题。</p>
+<ol>
+<li>离散类特征编码后过于稀疏，不利于直接输入神经网络进行训练，如何解决稀疏特征向量稠密化的问题。</li>
+<li>如何解决特征自动交叉组合的问题。</li>
+<li>如何在输出层中达成问题设定的优化目标。</li>
+</ol>
+<p>Deep Crossing模型分别设置了不同的神经网络层来解决上述问题。如图3-6所示，其网络结构主要包括4层——Embedding层、Stacking层、Multiple Residual Units层和Scoring层。接下来，从下至上依次介绍各层的功能和实现。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20240903153928794.png"
+                      alt="image-20240903153928794"
+                ></p>
+<p><strong>Embedding 层：</strong>Embedding 层的作用是将稀疏的<strong>类别型特征</strong>转换成稠密的Embedding向量。</p>
+<p>从图3-6中可以看到，每一个类别特征（如Feature＃1，这里指的是经one-hot 编码后的稀疏特征向量）经过Embedding 层后，会转换成对应的Embedding向量（如Embedding＃1）。一般来说，Embedding向量的维度应远小于原始的稀疏特征向量，几十到上百维一般就能满足需求。</p>
+<p>Embedding层的结构以经典的全连接层(FullyConnected Layer)结构为主，但Embedding 技术本身作为深度学习中研究非常广泛的话题，已经衍生出了Word2vec、Graph Embedding等多种不同的Embedding方法。</p>
+<p><strong>Stacking层：</strong>Stacking层（堆叠层）的作用比较简单，是把不同的Embedding特征和数值型特征拼接在一起，形成新的包含全部特征的特征向量，该层通常也被称为连接(concatenate)层。</p>
+<p><strong>Multiple Residual Units层：</strong>该层的主要结构是多层感知机，相比标准的以感知机为基本单元的神经网络，Deep Crossing模型采用了多层残差网络(Multi-Layer Residual Network)作为MLP的具体实现。最著名的残差网络是在ImageNet大赛中由何恺明提出的152层残差网络。在推荐模型中的应用，也是残差网络首次在图像识别领域之外的成功推广。</p>
+<p>通过多层残差网络对特征向量各个维度进行充分的交叉组合，使模型能够抓取到更多的非线性特征和组合特征的信息，进而使深度学习模型在表达能力上较传统机器学习模型大为增强。</p>
+<p><strong>基础知识——残差神经网络</strong></p>
+<p>残差神经网络就是由残差单元(Residual Unit)组成的神经网络。残差单元的具体结构如图所示。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20240903154733995.png"
+                      alt="image-20240903154733995"
+                ></p>
+<p>与传统的感知机不同，残差单元的特点主要有两个：</p>
+<p> (1)输入经过两层以ReLU为激活函数的全连接层后，生成输出向量。</p>
+<p> (2)输入可以通过一个短路(shortcut)通路直接与输出向量进行元素加(element-wise plus)操作，生成最终的输出向量。</p>
+<p>在这样的结构下，残差单元中的两层ReLU网络其实拟合的是输出和输入之间的“残差”(x<del>o</del>-x<del>i</del>)，这就是残差神经网络名称的由来。</p>
+<p>残差神经网络的诞生主要是为了解决两个问题：</p>
+<ol>
+<li>神经网络是不是越深越好？对于传统的基于感知机的神经网络，当网络加深之后，往往存在过拟合现象，即网络越深，在测试集上的表现越差。而在残差神经网络中，由于有输入向量短路的存在，很多时候可以越过两层ReLU网络，减少过拟合现象的发生。</li>
+<li>当神经网络足够深时，往往存在严重的梯度消失现象。梯度消失现象是指在梯度反向传播过程中，越靠近输入端，梯度的幅度越小，参数收敛的速度越慢。为了解决这个问题，残差单元使用了ReLU 激活函数取代原来的sigmoid 激活函数。此外，输入向量短路相当于直接把梯度毫无变化地传递到下一层，这也使残差网络的收敛速度更快。</li>
+</ol>
+<p><strong>Scoring层：</strong>Scoring层作为输出层，就是为了拟合优化目标而存在的。对于CTR 预估这类二分类问题，Scoring 层往往使用的是逻辑回归模型，而对于图像分类等多分类问题，Scoring层往往采用softmax模型。</p>
+<h5 id="Deep-Crossing模型对特征交叉方法的革命"><a href="#Deep-Crossing模型对特征交叉方法的革命" class="headerlink" title="Deep Crossing模型对特征交叉方法的革命"></a>Deep Crossing模型对特征交叉方法的革命</h5><p>从历史的尺度看，Deep Crossing模型的出现是有革命意义的。Deep Crossing模型中没有任何人工特征工程的参与，原始特征经Embedding后输入神经网络层，将全部特征交叉的任务交给模型。相比之前介绍的FM、FFM模型只具备二阶特征交叉的能力，DeepCrossing模型可以通过调整神经网络的深度进行特征之间的“深度交叉”，这也是Deep Crossing名称的由来。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> Crossing</li>
+        <li><strong>作者:</strong> haozizizi</li>
+        <li><strong>创建于
+                :</strong> 2024-09-03 16:13:39</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2024-09-03 16:16:17
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://haozizizizi.github.io/2024/09/03/Crossing/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
 </div>
 
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-%E7%8E%8B%E5%96%86/">#深度学习推荐系统 王喆</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/09/03/NeuralCF/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">NeuralCF</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/09/02/AutoRec/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">AutoRec</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://waline-git-main-haozizizis-projects.vercel.app/',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">Crossing</div>
+        
+
+    </div>
+</div>
+        </div>
+    
 </div>
 
 
@@ -619,6 +878,27 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">
