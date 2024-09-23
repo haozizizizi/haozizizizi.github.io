@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="GBDT+LR——特征工程模型化的开端FFM模型采用引入特征域的方式增强了模型的特征交叉能力，但无论如何，FFM只能做二阶的特征交叉，如果继续提高特征交叉的维度，会不可避免地产生组合爆炸和计算复杂度过高的问题。因此，2014年，Facebook提出了基于GBDT+LR组合模型的解决方案。 基础知识 – 什么是GBDT模型GBDT的基本结构是决策树组成的树林，学习的方式是梯度提升。  具体地讲，GB">
+        <meta name="description" content="¶GBDT+LR——特征工程模型化的开端 FFM模型采用引入特征域的方式增强了模型的特征交叉能力，但无论如何，FFM只能做二阶的特征交叉，如果继续提高特征交叉的维度，会不可避免地产生组合爆炸和计算复杂度过高的问题。因此，2014年，Facebook提出了基于GBDT+LR组合模型的解决方案。 ¶基础知识 – 什么是GBDT模型 GBDT的基本结构是决策树组成的树林，学习的方式是梯度提升。  具体地">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GBDT+LR">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/01/GBDT-LR/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="GBDT+LR——特征工程模型化的开端FFM模型采用引入特征域的方式增强了模型的特征交叉能力，但无论如何，FFM只能做二阶的特征交叉，如果继续提高特征交叉的维度，会不可避免地产生组合爆炸和计算复杂度过高的问题。因此，2014年，Facebook提出了基于GBDT+LR组合模型的解决方案。 基础知识 – 什么是GBDT模型GBDT的基本结构是决策树组成的树林，学习的方式是梯度提升。  具体地讲，GB">
+<meta property="og:description" content="¶GBDT+LR——特征工程模型化的开端 FFM模型采用引入特征域的方式增强了模型的特征交叉能力，但无论如何，FFM只能做二阶的特征交叉，如果继续提高特征交叉的维度，会不可避免地产生组合爆炸和计算复杂度过高的问题。因此，2014年，Facebook提出了基于GBDT+LR组合模型的解决方案。 ¶基础知识 – 什么是GBDT模型 GBDT的基本结构是决策树组成的树林，学习的方式是梯度提升。  具体地">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240901172146122.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240901172318757.png">
@@ -596,8 +596,10 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="GBDT-LR——特征工程模型化的开端"><a href="#GBDT-LR——特征工程模型化的开端" class="headerlink" title="GBDT+LR——特征工程模型化的开端"></a>GBDT+LR——特征工程模型化的开端</h4><p>FFM模型采用引入特征域的方式增强了模型的特征交叉能力，但无论如何，FFM只能做二阶的特征交叉，如果继续提高特征交叉的维度，会不可避免地产生组合爆炸和计算复杂度过高的问题。因此，2014年，Facebook提出了基于GBDT+LR组合模型的解决方案。</p>
-<h5 id="基础知识-–-什么是GBDT模型"><a href="#基础知识-–-什么是GBDT模型" class="headerlink" title="基础知识 – 什么是GBDT模型"></a>基础知识 – 什么是GBDT模型</h5><p>GBDT的基本结构是决策树组成的树林，学习的方式是梯度提升。</p>
+            <h4 id="GBDT-LR——特征工程模型化的开端"><a class="header-anchor" href="#GBDT-LR——特征工程模型化的开端">¶</a>GBDT+LR——特征工程模型化的开端</h4>
+<p>FFM模型采用引入特征域的方式增强了模型的特征交叉能力，但无论如何，FFM只能做二阶的特征交叉，如果继续提高特征交叉的维度，会不可避免地产生组合爆炸和计算复杂度过高的问题。因此，2014年，Facebook提出了基于GBDT+LR组合模型的解决方案。</p>
+<h5 id="基础知识-–-什么是GBDT模型"><a class="header-anchor" href="#基础知识-–-什么是GBDT模型">¶</a>基础知识 – 什么是GBDT模型</h5>
+<p>GBDT的基本结构是决策树组成的树林，学习的方式是梯度提升。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -634,7 +636,8 @@
                       alt="image-20240901172624534"
                 ></p>
 <p>理论上，如果可以无限生成决策树，那么GBDT可以无限逼近由所有训练集样本组成的目标拟合函数，从而达到减小预测误差的目的。</p>
-<h5 id="GBDT-LR组合模型的结构"><a href="#GBDT-LR组合模型的结构" class="headerlink" title="GBDT+LR组合模型的结构"></a>GBDT+LR组合模型的结构</h5><p>Facebook 提出了一种利用GBDT 自动进行特征筛选和组合，进而生成新的离散特征向量，再把该特征向量当作LR模型输入，预估CTR的模型结构。</p>
+<h5 id="GBDT-LR组合模型的结构"><a class="header-anchor" href="#GBDT-LR组合模型的结构">¶</a>GBDT+LR组合模型的结构</h5>
+<p>Facebook 提出了一种利用GBDT 自动进行特征筛选和组合，进而生成新的离散特征向量，再把该特征向量当作LR模型输入，预估CTR的模型结构。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -643,7 +646,8 @@
                 ></p>
 <p>需要强调的是，用GBDT 构建特征工程，利用LR 预估CTR 这两步是独立训练的，所以不存在如何将LR的梯度回传到GBDT 这类复杂的问题。</p>
 <p>GBDT是由多棵回归树组成的树林，后一棵树以前面树林的结果与真实结果的残差为拟合目标。每棵树生成的过程是一棵标准的回归树生成过程，因此回归树中每个节点的分裂是一个自然的特征选择的过程，而多层节点的结构则对特征进行了有效的自动组合，也就非常高效地解决了过去棘手的特征选择和特征组合的问题。</p>
-<h5 id="GBDT进行特征转换的过程"><a href="#GBDT进行特征转换的过程" class="headerlink" title="GBDT进行特征转换的过程"></a>GBDT进行特征转换的过程</h5><p>利用训练集训练好GBDT模型之后，就可以利用该模型完成从原始特征向量到新的离散型特征向量的转化。具体过程如下。</p>
+<h5 id="GBDT进行特征转换的过程"><a class="header-anchor" href="#GBDT进行特征转换的过程">¶</a>GBDT进行特征转换的过程</h5>
+<p>利用训练集训练好GBDT模型之后，就可以利用该模型完成从原始特征向量到新的离散型特征向量的转化。具体过程如下。</p>
 <p>一个训练样本在输入GBDT的某一子树后，会根据每个节点的规则最终落入某一叶子节点，把该叶子节点置为1，其他叶子节点置为0，所有叶子节点组成的向量即形成了该棵树的特征向量。</p>
 <p>举例来说，如下图所示，GBDT 由三棵子树构成，每棵子树有4 个叶子节点，输入一个训练样本后，其先后落入“子树1”的第3个叶节点中，那么特征向量就是[0，0，1，0]，“子树2”的第1个叶节点，特征向量为[1，0，0，0]，“子树3”的第4 个叶节点，特征向量为[0，0，0，1]，最后连接所有特征向量，形成最终的特征向量[0，0，1，0，1，0，0，0，0，0，0，1]。</p>
 <p><img  
@@ -654,7 +658,8 @@
                 ></p>
 <p>决策树的深度决定了特征交叉的阶数。如果决策树的深度为4，则通过3次节点分裂，最终的叶节点实际上是进行三阶特征组合后的结果，如此强的特征组合能力显然是FM系的模型不具备的</p>
 <p>问题：GBDT容易产生过拟合，以及GBDT的特征转换方式实际上丢失了大量特征的数值信息，因此不能简单地说GBDT的特征交叉能力强，效果就比FFM 好，在模型的选择和调试上，永远都是多种因素综合作用的结果。</p>
-<h5 id="GBDT-LR组合模型开启的特征工程新趋势"><a href="#GBDT-LR组合模型开启的特征工程新趋势" class="headerlink" title="GBDT+LR组合模型开启的特征工程新趋势"></a>GBDT+LR组合模型开启的特征工程新趋势</h5><p>GBDT+LR组合模型对于推荐系统领域的重要性在于，它大大推进了特征工程模型化这一重要趋势。在GBDT+LR组合模型出现之前，特征工程的主要解决方法有两个：</p>
+<h5 id="GBDT-LR组合模型开启的特征工程新趋势"><a class="header-anchor" href="#GBDT-LR组合模型开启的特征工程新趋势">¶</a>GBDT+LR组合模型开启的特征工程新趋势</h5>
+<p>GBDT+LR组合模型对于推荐系统领域的重要性在于，它大大推进了特征工程模型化这一重要趋势。在GBDT+LR组合模型出现之前，特征工程的主要解决方法有两个：</p>
 <ul>
 <li>进行人工的或半人工的特征组合和特征筛选；</li>
 <li>通过改造目标函数，改进模型结构，增加特征交叉项的方式增强特征组合能力。</li>

@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="NeuralCF模型——CF与深度学习的结合沿着矩阵分解的技术脉络，结合深度学习知识，新加坡国立大学的研究人员于2017年提出了基于深度学习的协同过滤模型NeuralCF。 从深度学习的视角重新审视矩阵分解模型Deep Crossing模型的介绍中提到，Embedding层的主要作用是将稀疏向量转换成稠密向量。事实上，如果从深度学习的视角看待矩阵分解模型，那么矩阵分解层的用户隐向量和物品隐向量完全">
+        <meta name="description" content="¶NeuralCF模型——CF与深度学习的结合 沿着矩阵分解的技术脉络，结合深度学习知识，新加坡国立大学的研究人员于2017年提出了基于深度学习的协同过滤模型NeuralCF。 ¶从深度学习的视角重新审视矩阵分解模型 Deep Crossing模型的介绍中提到，Embedding层的主要作用是将稀疏向量转换成稠密向量。事实上，如果从深度学习的视角看待矩阵分解模型，那么矩阵分解层的用户隐向量和物品隐">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NeuralCF">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/03/NeuralCF/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="NeuralCF模型——CF与深度学习的结合沿着矩阵分解的技术脉络，结合深度学习知识，新加坡国立大学的研究人员于2017年提出了基于深度学习的协同过滤模型NeuralCF。 从深度学习的视角重新审视矩阵分解模型Deep Crossing模型的介绍中提到，Embedding层的主要作用是将稀疏向量转换成稠密向量。事实上，如果从深度学习的视角看待矩阵分解模型，那么矩阵分解层的用户隐向量和物品隐向量完全">
+<meta property="og:description" content="¶NeuralCF模型——CF与深度学习的结合 沿着矩阵分解的技术脉络，结合深度学习知识，新加坡国立大学的研究人员于2017年提出了基于深度学习的协同过滤模型NeuralCF。 ¶从深度学习的视角重新审视矩阵分解模型 Deep Crossing模型的介绍中提到，Embedding层的主要作用是将稀疏向量转换成稠密向量。事实上，如果从深度学习的视角看待矩阵分解模型，那么矩阵分解层的用户隐向量和物品隐">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240903155644618.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240903155926255.png">
@@ -592,8 +592,10 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="NeuralCF模型——CF与深度学习的结合"><a href="#NeuralCF模型——CF与深度学习的结合" class="headerlink" title="NeuralCF模型——CF与深度学习的结合"></a>NeuralCF模型——CF与深度学习的结合</h4><p>沿着矩阵分解的技术脉络，结合深度学习知识，新加坡国立大学的研究人员于2017年提出了基于深度学习的协同过滤模型NeuralCF。</p>
-<h5 id="从深度学习的视角重新审视矩阵分解模型"><a href="#从深度学习的视角重新审视矩阵分解模型" class="headerlink" title="从深度学习的视角重新审视矩阵分解模型"></a>从深度学习的视角重新审视矩阵分解模型</h5><p>Deep Crossing模型的介绍中提到，Embedding层的主要作用是将稀疏向量转换成稠密向量。事实上，如果从深度学习的视角看待矩阵分解模型，那么矩阵分解层的用户隐向量和物品隐向量完全可以看作一种Embedding方法。最终的“Scoring层”就是将用户隐向量和物品隐向量进行内积操作后得到“相似度”，这里的“相似度”就是对评分的预测。</p>
+            <h4 id="NeuralCF模型——CF与深度学习的结合"><a class="header-anchor" href="#NeuralCF模型——CF与深度学习的结合">¶</a>NeuralCF模型——CF与深度学习的结合</h4>
+<p>沿着矩阵分解的技术脉络，结合深度学习知识，新加坡国立大学的研究人员于2017年提出了基于深度学习的协同过滤模型NeuralCF。</p>
+<h5 id="从深度学习的视角重新审视矩阵分解模型"><a class="header-anchor" href="#从深度学习的视角重新审视矩阵分解模型">¶</a>从深度学习的视角重新审视矩阵分解模型</h5>
+<p>Deep Crossing模型的介绍中提到，Embedding层的主要作用是将稀疏向量转换成稠密向量。事实上，如果从深度学习的视角看待矩阵分解模型，那么矩阵分解层的用户隐向量和物品隐向量完全可以看作一种Embedding方法。最终的“Scoring层”就是将用户隐向量和物品隐向量进行内积操作后得到“相似度”，这里的“相似度”就是对评分的预测。</p>
 <p>因此，利用深度学习网络图的方式来描述矩阵分解模型的架构，如图所示。</p>
 <p><img  
                      lazyload
@@ -602,7 +604,8 @@
                       alt="image-20240903155644618"
                 ></p>
 <p>在实际使用矩阵分解来训练和评估模型的过程中，往往会发现模型容易处于欠拟合的状态，究其原因是因为矩阵分解的模型结构相对比较简单，特别是“输出层”（也被称为“Scoring层”），无法对优化目标进行有效的拟合。</p>
-<h5 id="NeuralCF模型的结构"><a href="#NeuralCF模型的结构" class="headerlink" title="NeuralCF模型的结构"></a>NeuralCF模型的结构</h5><p>NeuralCF 用“多层神经网络+输出层”的结构替代了矩阵分解模型中简单的内积操作。这样做的收益是直观的，一是让用户向量和物品向量做更充分的交叉，得到更多有价值的特征组合信息；二是引入更多的非线性特征，让模型的表达能力更强。</p>
+<h5 id="NeuralCF模型的结构"><a class="header-anchor" href="#NeuralCF模型的结构">¶</a>NeuralCF模型的结构</h5>
+<p>NeuralCF 用“多层神经网络+输出层”的结构替代了矩阵分解模型中简单的内积操作。这样做的收益是直观的，一是让用户向量和物品向量做更充分的交叉，得到更多有价值的特征组合信息；二是引入更多的非线性特征，让模型的表达能力更强。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -619,7 +622,8 @@
                       alt="image-20240903160448122"
                 ></p>
 <p>可以看出，NeuralCF混合模型整合了上面提出的原始NeuralCF模型和以元素积为互操作的广义矩阵分解模型。这让模型具有了更强的特征组合和非线性能力。</p>
-<h5 id="NeuralCF模型的优势和局限性"><a href="#NeuralCF模型的优势和局限性" class="headerlink" title="NeuralCF模型的优势和局限性"></a>NeuralCF模型的优势和局限性</h5><p>NeuralCF模型实际上提出了一个模型框架，它基于用户向量和物品向量这两个Embedding层，利用不同的互操作层进行特征的交叉组合，并且可以灵活地进行不同互操作层的拼接。从这里可以看出深度学习构建推荐模型的优势——利用神经网络理论上能够拟合任意函数的能力，灵活地组合不同的特征，按需增加或减少模型的复杂度。</p>
+<h5 id="NeuralCF模型的优势和局限性"><a class="header-anchor" href="#NeuralCF模型的优势和局限性">¶</a>NeuralCF模型的优势和局限性</h5>
+<p>NeuralCF模型实际上提出了一个模型框架，它基于用户向量和物品向量这两个Embedding层，利用不同的互操作层进行特征的交叉组合，并且可以灵活地进行不同互操作层的拼接。从这里可以看出深度学习构建推荐模型的优势——利用神经网络理论上能够拟合任意函数的能力，灵活地组合不同的特征，按需增加或减少模型的复杂度。</p>
 <p>在实践中要注意，并不是模型结构越复杂、特征越多越好。一是要防止过拟合的风险，二是往往需要更多的数据和更长的训练时间才能使复杂的模型收敛，这需要算法工程师在模型的实用性、实时性和效果之间进行权衡。</p>
 <p>NeuralCF模型也存在局限性。由于是基于协同过滤的思想进行构造的，所以NeuralCF模型并没有引入更多其他类型的特征，这在实际应用中无疑浪费了其他有价值的信息。此外，对于模型中互操作的种类并没有做进一步的探究和说明。这都需要后来者进行更深入的探索。</p>
 

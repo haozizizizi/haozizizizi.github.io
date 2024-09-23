@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Wide＆Deep模型——记忆能力和泛化能力的综合谷歌于2016年提出Wide＆Deep模型, 主要思路正如其名，是由单层的Wide部分和多层的Deep部分组成的混合模型。 其中，Wide部分的主要作用是让模型具有较强的“记忆能力”(memorization)；Deep部分的主要作用是让模型具有“泛化能力”(generalization)，正是这样的结构特点，使模型兼具了逻辑回归和深度神经网络的优">
+        <meta name="description" content="¶Wide＆Deep模型——记忆能力和泛化能力的综合 谷歌于2016年提出Wide＆Deep模型, 主要思路正如其名，是由单层的Wide部分和多层的Deep部分组成的混合模型。 其中，Wide部分的主要作用是让模型具有较强的“记忆能力”(memorization)；Deep部分的主要作用是让模型具有“泛化能力”(generalization)，正是这样的结构特点，使模型兼具了逻辑回归和深度神经网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Wide＆Deep模型">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/05/Wide%EF%BC%86Deep%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="Wide＆Deep模型——记忆能力和泛化能力的综合谷歌于2016年提出Wide＆Deep模型, 主要思路正如其名，是由单层的Wide部分和多层的Deep部分组成的混合模型。 其中，Wide部分的主要作用是让模型具有较强的“记忆能力”(memorization)；Deep部分的主要作用是让模型具有“泛化能力”(generalization)，正是这样的结构特点，使模型兼具了逻辑回归和深度神经网络的优">
+<meta property="og:description" content="¶Wide＆Deep模型——记忆能力和泛化能力的综合 谷歌于2016年提出Wide＆Deep模型, 主要思路正如其名，是由单层的Wide部分和多层的Deep部分组成的混合模型。 其中，Wide部分的主要作用是让模型具有较强的“记忆能力”(memorization)；Deep部分的主要作用是让模型具有“泛化能力”(generalization)，正是这样的结构特点，使模型兼具了逻辑回归和深度神经网络">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240904164152536.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240904164630140.png">
@@ -595,17 +595,20 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="Wide＆Deep模型——记忆能力和泛化能力的综合"><a href="#Wide＆Deep模型——记忆能力和泛化能力的综合" class="headerlink" title="Wide＆Deep模型——记忆能力和泛化能力的综合"></a>Wide＆Deep模型——记忆能力和泛化能力的综合</h4><p>谷歌于2016年提出Wide＆Deep模型, 主要思路正如其名，是由单层的Wide部分和多层的Deep部分组成的混合模型。</p>
+            <h4 id="Wide＆Deep模型——记忆能力和泛化能力的综合"><a class="header-anchor" href="#Wide＆Deep模型——记忆能力和泛化能力的综合">¶</a>Wide＆Deep模型——记忆能力和泛化能力的综合</h4>
+<p>谷歌于2016年提出Wide＆Deep模型, 主要思路正如其名，是由单层的Wide部分和多层的Deep部分组成的混合模型。</p>
 <p>其中，Wide部分的主要作用是让模型具有较强的“记忆能力”(memorization)；Deep部分的主要作用是让模型具有“泛化能力”(generalization)，正是这样的结构特点，使模型兼具了逻辑回归和深度神经网络的优点——能够快速处理并记忆大量历史行为特征，并且具有强大的表达能力。</p>
-<h5 id="模型的记忆能力与泛化能力"><a href="#模型的记忆能力与泛化能力" class="headerlink" title="模型的记忆能力与泛化能力"></a>模型的记忆能力与泛化能力</h5><p>Wide＆Deep模型的设计初衷和其最大的价值在于同时具备较强的“记忆能力”和“泛化能力。</p>
-<p><strong>“记忆能力”可以被理解为模型直接学习并利用历史数据中物品或者特征的“共现频率”的能力。</strong>一般来说，协同过滤、逻辑回归等简单模型有较强的“记忆能力”。由于这类模型的结构简单，原始数据往往可以直接影响推荐结果，产生类似于“如果点击过A，就推荐B”这类规则式的推荐，这就相当于模型直接记住了历史数据的分布特点，并利用这些记忆进行推荐。</p>
+<h5 id="模型的记忆能力与泛化能力"><a class="header-anchor" href="#模型的记忆能力与泛化能力">¶</a>模型的记忆能力与泛化能力</h5>
+<p>Wide＆Deep模型的设计初衷和其最大的价值在于同时具备较强的“记忆能力”和“泛化能力。</p>
+<p>**“记忆能力”可以被理解为模型直接学习并利用历史数据中物品或者特征的“共现频率”的能力。**一般来说，协同过滤、逻辑回归等简单模型有较强的“记忆能力”。由于这类模型的结构简单，原始数据往往可以直接影响推荐结果，产生类似于“如果点击过A，就推荐B”这类规则式的推荐，这就相当于模型直接记住了历史数据的分布特点，并利用这些记忆进行推荐。</p>
 <p>因为Wide＆Deep是由谷歌应用商店(GooglePlay)推荐团队提出的，所以以App推荐的场景为例，解释什么是模型的“记忆能力”。</p>
-<p><strong>例子：</strong>假设在Google Play 推荐模型的训练过程中，设置如下组合特征AND(user_installed_app&#x3D;netflix，impression_app&#x3D;pandora)（简称netflix＆pandora），它代表用户已经安装了netflix这款应用，而且曾在应用商店中看到过pandora这款应用。                    </p>
+<p>**例子：**假设在Google Play 推荐模型的训练过程中，设置如下组合特征AND(user_installed_app=netflix，impression_app=pandora)（简称netflix＆pandora），它代表用户已经安装了netflix这款应用，而且曾在应用商店中看到过pandora这款应用。</p>
 <p>如果以“最终是否安装pandora”为数据标签(label)，则可以轻而易举地统计出netflix＆pandora这个特征和安装pandora这个标签之间的共现频率。假设二者的共现频率高达10%（全局的平均应用安装率为1%），这个特征如此之强，以至于在设计模型时，希望模型一发现有这个特征，就推荐pandora这款应用，这就是所谓的模型的“记忆能力”。</p>
 <p>像逻辑回归这类简单模型，如果发现这样的“强特征”，则其相应的权重就会在模型训练过程中被调整得非常大，这样就实现了对这个特征的直接记忆。相反，对于多层神经网络来说，特征会被多层处理，不断与其他特征进行交叉，因此模型对这个强特征的记忆反而没有简单模型深刻。</p>
-<p><strong>“泛化能力”可以被理解为模型传递特征的相关性，以及发掘稀疏甚至从未出现过的稀有特征与最终标签相关性的能力。</strong>矩阵分解比协同过滤的泛化能力强，因为矩阵分解引入了隐向量这样的结构，使得数据稀少的用户或者物品也能生成隐向量，从而获得有数据支撑的推荐得分，这就是非常典型的将全局数据传递到稀疏物品上，从而提高泛化能力的例子。</p>
+<p>**“泛化能力”可以被理解为模型传递特征的相关性，以及发掘稀疏甚至从未出现过的稀有特征与最终标签相关性的能力。**矩阵分解比协同过滤的泛化能力强，因为矩阵分解引入了隐向量这样的结构，使得数据稀少的用户或者物品也能生成隐向量，从而获得有数据支撑的推荐得分，这就是非常典型的将全局数据传递到稀疏物品上，从而提高泛化能力的例子。</p>
 <p>再比如，深度神经网络通过特征的多次自动组合，可以深度发掘数据中潜在的模式，即使是非常稀疏的特征向量输入，也能得到较稳定平滑的推荐概率，这就是简单模型所缺乏的“泛化能力”。</p>
-<h5 id="Wide＆Deep模型的结构"><a href="#Wide＆Deep模型的结构" class="headerlink" title="Wide＆Deep模型的结构"></a>Wide＆Deep模型的结构</h5><p>既然简单模型的“记忆能力”强，深度神经网络的“泛化能力”强，那么设计Wide＆Deep模型的直接动机就是将二者融合，具体的模型结构如图所示。</p>
+<h5 id="Wide＆Deep模型的结构"><a class="header-anchor" href="#Wide＆Deep模型的结构">¶</a>Wide＆Deep模型的结构</h5>
+<p>既然简单模型的“记忆能力”强，深度神经网络的“泛化能力”强，那么设计Wide＆Deep模型的直接动机就是将二者融合，具体的模型结构如图所示。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -630,9 +633,10 @@
                      data-src="/images/image-20240905165558013.png"
                       alt="image-20240905165558013"
                 ></p>
-<p>c<del>ki</del>是一个布尔变量，当第i个特征属于第k个组合特征时，c<del>ki</del>的值为1，否则为0；x<del>i</del>是第i 个特征的值。例如，对于“AND(user_installed_app&#x3D;netflix，impression_app&#x3D;pandora)”这个组合特征来说，只有当“user_installed_app&#x3D;netflix”和“impression_app&#x3D;pandora”这两个特征同时为1时，其对应的交叉积变换层的结果才为1，否则为0。</p>
+<p>c<sub>ki</sub>是一个布尔变量，当第i个特征属于第k个组合特征时，c<sub>ki</sub>的值为1，否则为0；x<sub>i</sub>是第i 个特征的值。例如，对于“AND(user_installed_app=netflix，impression_app=pandora)”这个组合特征来说，只有当“user_installed_app=netflix”和“impression_app=pandora”这两个特征同时为1时，其对应的交叉积变换层的结果才为1，否则为0。</p>
 <p>在通过交叉积变换层操作完成特征组合之后，Wide 部分将组合特征输入最终的LogLoss输出层，与Deep部分的输出一同参与最后的目标拟合，完成Wide与Deep部分的融合。</p>
-<h5 id="Wide＆Deep模型的进化——Deep＆Cross模型"><a href="#Wide＆Deep模型的进化——Deep＆Cross模型" class="headerlink" title="Wide＆Deep模型的进化——Deep＆Cross模型"></a>Wide＆Deep模型的进化——Deep＆Cross模型</h5><p>Wide＆Deep模型的提出不仅综合了“记忆能力”和“泛化能力”，而且开启了不同网络结构融合的新思路。在Wide＆Deep模型之后，有越来越多的工作集中于分别改进Wide＆Deep模型的Wide部分或是Deep部分。较典型的工作是2017年由斯坦福大学和谷歌的研究人员提出的Deep＆Cross模型（简称DCN）。</p>
+<h5 id="Wide＆Deep模型的进化——Deep＆Cross模型"><a class="header-anchor" href="#Wide＆Deep模型的进化——Deep＆Cross模型">¶</a>Wide＆Deep模型的进化——Deep＆Cross模型</h5>
+<p>Wide＆Deep模型的提出不仅综合了“记忆能力”和“泛化能力”，而且开启了不同网络结构融合的新思路。在Wide＆Deep模型之后，有越来越多的工作集中于分别改进Wide＆Deep模型的Wide部分或是Deep部分。较典型的工作是2017年由斯坦福大学和谷歌的研究人员提出的Deep＆Cross模型（简称DCN）。</p>
 <p>Deep＆Cross模型的结构图如图3-15所示，其主要思路是使用Cross网络替代原来的Wide部分。</p>
 <p><img  
                      lazyload
@@ -640,14 +644,14 @@
                      data-src="/images/image-20240905170206418.png"
                       alt="image-20240905170206418"
                 ></p>
-<p>设计Cross网络的目的是增加特征之间的交互力度，使用多层交叉层(Cross layer)对输入向量进行特征交叉。假设第l层交叉层的输出向量为x<del>l</del>，那么第l+1层的输出向量如（式3-9）所示。</p>
+<p>设计Cross网络的目的是增加特征之间的交互力度，使用多层交叉层(Cross layer)对输入向量进行特征交叉。假设第l层交叉层的输出向量为x<sub>l</sub>，那么第l+1层的输出向量如（式3-9）所示。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/image-20240905170325620.png"
                       alt="image-20240905170325620"
                 ></p>
-<p>可以看到，交叉层操作的二阶部分非常类似于PNN模型中提到的外积操作，在此基础上增加了外积操作的权重向量w<del>l</del>，以及原输入向量x<del>l</del>和偏置向量b<del>l</del>。交叉层的操作如图所示。</p>
+<p>可以看到，交叉层操作的二阶部分非常类似于PNN模型中提到的外积操作，在此基础上增加了外积操作的权重向量w<sub>l</sub>，以及原输入向量x<sub>l</sub>和偏置向量b<sub>l</sub>。交叉层的操作如图所示。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -656,7 +660,8 @@
                 ></p>
 <p>可以看出，交叉层在增加参数方面是比较“克制”的，每一层仅增加了一个n维的权重向量wl（n维输入向量维度），并且在每一层均保留了输入向量，因此输出与输入之间的变化不会特别明显。</p>
 <p>由多层交叉层组成的Cross网络在Wide＆Deep模型中Wide部分的基础上进行特征的自动化交叉，避免了更多基于业务理解的人工特征组合。同Wide＆Deep模型一样，Deep＆Cross模型的Deep部分相比Cross部分表达能力更强，使模型具备更强的非线性学习能力。</p>
-<h5 id="Wide＆Deep模型的影响力"><a href="#Wide＆Deep模型的影响力" class="headerlink" title="Wide＆Deep模型的影响力"></a>Wide＆Deep模型的影响力</h5><p>Wide＆Deep模型的影响力无疑是巨大的，不仅其本身成功应用于多家一线互联网公司，而且其后续的改进创新工作也延续至今。事实上，DeepFM、NFM等模型都可以看成Wide＆Deep模型的延伸。</p>
+<h5 id="Wide＆Deep模型的影响力"><a class="header-anchor" href="#Wide＆Deep模型的影响力">¶</a>Wide＆Deep模型的影响力</h5>
+<p>Wide＆Deep模型的影响力无疑是巨大的，不仅其本身成功应用于多家一线互联网公司，而且其后续的改进创新工作也延续至今。事实上，DeepFM、NFM等模型都可以看成Wide＆Deep模型的延伸。</p>
 <p>Wide＆Deep模型能够取得成功的关键在于：</p>
 <p>(1)抓住了业务问题的本质特点，能够融合传统模型记忆能力和深度学习模型泛化能力的优势。</p>
 <p>(2)模型的结构并不复杂，比较容易在工程上实现、训练和上线，这加速了其在业界的推广应用。</p>

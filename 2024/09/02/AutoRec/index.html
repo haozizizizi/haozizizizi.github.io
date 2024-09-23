@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="AutoRec——单隐层神经网络推荐模型2015年澳大利亚国立大学提出AutoRec ，它将自编码器(AutoEncoder)的思想和协同过滤结合，提出了一种单隐层神经网络推荐模型。 基础知识 – 自编码器无论是图像、音频，还是数据，都可以转换成向量的形式进行表达。假设其数据向量为r，自编码器的作用是将向量r作为输入，通过自编码器后，得到的输出向量尽量接近其本身。 假设自编码器的重建函数为h(r；">
+        <meta name="description" content="¶AutoRec——单隐层神经网络推荐模型 2015年澳大利亚国立大学提出AutoRec ，它将自编码器(AutoEncoder)的思想和协同过滤结合，提出了一种单隐层神经网络推荐模型。 ¶基础知识 – 自编码器 无论是图像、音频，还是数据，都可以转换成向量的形式进行表达。假设其数据向量为r，自编码器的作用是将向量r作为输入，通过自编码器后，得到的输出向量尽量接近其本身。 假设自编码器的重建函数为">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AutoRec">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/02/AutoRec/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="AutoRec——单隐层神经网络推荐模型2015年澳大利亚国立大学提出AutoRec ，它将自编码器(AutoEncoder)的思想和协同过滤结合，提出了一种单隐层神经网络推荐模型。 基础知识 – 自编码器无论是图像、音频，还是数据，都可以转换成向量的形式进行表达。假设其数据向量为r，自编码器的作用是将向量r作为输入，通过自编码器后，得到的输出向量尽量接近其本身。 假设自编码器的重建函数为h(r；">
+<meta property="og:description" content="¶AutoRec——单隐层神经网络推荐模型 2015年澳大利亚国立大学提出AutoRec ，它将自编码器(AutoEncoder)的思想和协同过滤结合，提出了一种单隐层神经网络推荐模型。 ¶基础知识 – 自编码器 无论是图像、音频，还是数据，都可以转换成向量的形式进行表达。假设其数据向量为r，自编码器的作用是将向量r作为输入，通过自编码器后，得到的输出向量尽量接近其本身。 假设自编码器的重建函数为">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240902170337140.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240902172740971.png">
@@ -594,8 +594,10 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="AutoRec——单隐层神经网络推荐模型"><a href="#AutoRec——单隐层神经网络推荐模型" class="headerlink" title="AutoRec——单隐层神经网络推荐模型"></a>AutoRec——单隐层神经网络推荐模型</h4><p>2015年澳大利亚国立大学提出AutoRec ，它将自编码器(AutoEncoder)的思想和协同过滤结合，提出了一种单隐层神经网络推荐模型。</p>
-<h5 id="基础知识-–-自编码器"><a href="#基础知识-–-自编码器" class="headerlink" title="基础知识 – 自编码器"></a>基础知识 – 自编码器</h5><p>无论是图像、音频，还是数据，都可以转换成向量的形式进行表达。假设其数据向量为r，自编码器的作用是将向量r作为输入，通过自编码器后，得到的输出向量尽量接近其本身。</p>
+            <h4 id="AutoRec——单隐层神经网络推荐模型"><a class="header-anchor" href="#AutoRec——单隐层神经网络推荐模型">¶</a>AutoRec——单隐层神经网络推荐模型</h4>
+<p>2015年澳大利亚国立大学提出AutoRec ，它将自编码器(AutoEncoder)的思想和协同过滤结合，提出了一种单隐层神经网络推荐模型。</p>
+<h5 id="基础知识-–-自编码器"><a class="header-anchor" href="#基础知识-–-自编码器">¶</a>基础知识 – 自编码器</h5>
+<p>无论是图像、音频，还是数据，都可以转换成向量的形式进行表达。假设其数据向量为r，自编码器的作用是将向量r作为输入，通过自编码器后，得到的输出向量尽量接近其本身。</p>
 <p>假设自编码器的重建函数为h(r；θ)，那么自编码器的目标函数如（式3-1）所示。</p>
 <p><img  
                      lazyload
@@ -606,12 +608,14 @@
 <p>其中，S是所有数据向量的集合。</p>
 <p>在完成自编码器的训练后，就相当于在重建函数h(r；θ)中存储了所有数据向量的“精华”。一般来说，重建函数的参数数量远小于输入向量的维度数量，因此自编码器相当于完成了数据压缩和降维的工作。</p>
 <p>经过自编码器生成的输出向量，由于经过了自编码器的“泛化”过程，不会完全等同于输入向量，也因此具备了一定的缺失维度的预测能力，这也是自编码器能用于推荐系统的原因。</p>
-<h5 id="AutoRec模型的基本原理"><a href="#AutoRec模型的基本原理" class="headerlink" title="AutoRec模型的基本原理"></a>AutoRec模型的基本原理</h5><p>AutoRec模型是一个标准的自编码器，它的基本原理是利用协同过滤中的共现矩阵，完成物品向量或者用户向量的自编码。再利用自编码的结果得到用户对物品的预估评分，进而进行推荐排序。</p>
+<h5 id="AutoRec模型的基本原理"><a class="header-anchor" href="#AutoRec模型的基本原理">¶</a>AutoRec模型的基本原理</h5>
+<p>AutoRec模型是一个标准的自编码器，它的基本原理是利用协同过滤中的共现矩阵，完成物品向量或者用户向量的自编码。再利用自编码的结果得到用户对物品的预估评分，进而进行推荐排序。</p>
 <p><strong>例子：</strong></p>
 <p>假设有m个用户，n个物品，用户会对n个物品中的一个或几个进行评分，未评分的物品分值可用默认值或平均分值表示，则所有m个用户对物品的评分可形成一个m×n维的评分矩阵，也就是协同过滤中的共现矩阵。</p>
-<p>对一个物品i 来说，所有m 个用户对它的评分可形成一个m 维的向量r^(i)^&#x3D;(R<del>1i</del>，…，R<del>mi</del>)，AutoRec 要解决的问题是构建一个重建函数h(r；θ)，使所有该重建函数生成的评分向量与原评分向量的平方残差和最小，如（式3-1）所示。</p>
+<p>对一个物品i 来说，所有m 个用户对它的评分可形成一个m 维的向量r<sup>(i)</sup>=(R<sub>1i</sub>，…，R<sub>mi</sub>)，AutoRec 要解决的问题是构建一个重建函数h(r；θ)，使所有该重建函数生成的评分向量与原评分向量的平方残差和最小，如（式3-1）所示。</p>
 <p>在得到AutoRec模型的重建函数后，还要经过评分预估和排序的过程才能得到最终的推荐列表。下面介绍AutoRec模型的两个重点内容——重建函数的模型结构和利用重建函数得到最终推荐列表的过程。</p>
-<h5 id="AutoRec模型的结构"><a href="#AutoRec模型的结构" class="headerlink" title="AutoRec模型的结构"></a>AutoRec模型的结构</h5><p>AutoRec使用单隐层神经网络的结构来解决构建重建函数的问题。从模型的结构图（如图3-2所示）中可以看出，网络的输入层是物品的评分向量r，输出层是一个多分类层。图中蓝色的神经元代表模型的k维单隐层，其中k＜＜m。</p>
+<h5 id="AutoRec模型的结构"><a class="header-anchor" href="#AutoRec模型的结构">¶</a>AutoRec模型的结构</h5>
+<p>AutoRec使用单隐层神经网络的结构来解决构建重建函数的问题。从模型的结构图（如图3-2所示）中可以看出，网络的输入层是物品的评分向量r，输出层是一个多分类层。图中蓝色的神经元代表模型的k维单隐层，其中k＜＜m。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -634,7 +638,8 @@
                       alt="image-20240902173253594"
                 ></p>
 <p>由于AutoRec模型是一个非常标准的三层神经网络，模型的训练利用梯度反向传播即可完成。</p>
-<h5 id="基于AutoRec模型的推荐过程"><a href="#基于AutoRec模型的推荐过程" class="headerlink" title="基于AutoRec模型的推荐过程"></a>基于AutoRec模型的推荐过程</h5><p>基于AutoRec模型的推荐过程并不复杂。当输入物品i的评分向量为r^(i)^时，模型的输出向量h（r^(i)^；θ）就是所有用户对物品i的评分预测。那么，其中的第u维就是用户u对物品i的预测，如（式3-5）所示。</p>
+<h5 id="基于AutoRec模型的推荐过程"><a class="header-anchor" href="#基于AutoRec模型的推荐过程">¶</a>基于AutoRec模型的推荐过程</h5>
+<p>基于AutoRec模型的推荐过程并不复杂。当输入物品i的评分向量为r<sup>(i)</sup>时，模型的输出向量h（r<sup>(i)</sup>；θ）就是所有用户对物品i的评分预测。那么，其中的第u维就是用户u对物品i的预测，如（式3-5）所示。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -644,7 +649,8 @@
 <p>通过遍历输入物品向量就可以得到用户u对所有物品的评分预测，进而根据评分预测排序得到推荐列表。</p>
 <p>AutoRec也分为基于物品的AutoRec和基于用户的AutoRec。以上介绍的AutoRec输入向量是物品的评分向量，因此可称为I-AutoRec(Item based AutoRec)，如果换做把用户的评分向量作为输入向量，则得到U-AutoRec (User basedAutoRec)。</p>
 <p>在进行推荐列表生成的过程中，U-AutoRec相比I-AutoRec的优势在于仅需输入一次目标用户的用户向量，就可以重建用户对所有物品的评分向量。也就是说，得到用户的推荐列表仅需一次模型推断过程；其劣势是用户向量的稀疏性可能会影响模型效果。</p>
-<h5 id="AutoRec模型的特点和局限性"><a href="#AutoRec模型的特点和局限性" class="headerlink" title="AutoRec模型的特点和局限性"></a>AutoRec模型的特点和局限性</h5><p>AutoRec模型从神经网络的角度出发，使用一个单隐层的AutoEncoder泛化用户或物品评分，使模型具有一的泛化和表达能力。</p>
+<h5 id="AutoRec模型的特点和局限性"><a class="header-anchor" href="#AutoRec模型的特点和局限性">¶</a>AutoRec模型的特点和局限性</h5>
+<p>AutoRec模型从神经网络的角度出发，使用一个单隐层的AutoEncoder泛化用户或物品评分，使模型具有一的泛化和表达能力。</p>
 <p>由于AutoRec模型的结构比较简单，使其存在一定的表达能力不足的问题。</p>
 <p>在模型结构上，AutoRec模型和后来的词向量模型(Word2vec)完全一致，但优化目标和训练方法有所不同。</p>
 

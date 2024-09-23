@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="位运算在现代计算机中，所有数据都以二进制形式存储，即 0 和 1 两种状态。计算机对二进制数据进行的运算（如加、减、乘、除）被称为位运算，即对二进制数的每一位进行操作的运算。与直接使用 +、-、*、&#x2F; 运算符相比，合理运用位运算可以显著提高代码在机器上的执行效率。    符号 描述 运算规则    &amp; 与 两个位都为1时，结果才为1   | 或 两个位都为0时，结果才为0   ^ 异或 两">
+        <meta name="description" content="¶位运算 在现代计算机中，所有数据都以二进制形式存储，即 0 和 1 两种状态。计算机对二进制数据进行的运算（如加、减、乘、除）被称为位运算，即对二进制数的每一位进行操作的运算。与直接使用 +、-、*、&#x2F; 运算符相比，合理运用位运算可以显著提高代码在机器上的执行效率。    符号 描述 运算规则     &amp; 与 两个位都为1时，结果才为1   | 或 两个位都为0时，结果才为0   ^ 异">
 <meta property="og:type" content="article">
 <meta property="og:title" content="位运算">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/21/%E4%BD%8D%E8%BF%90%E7%AE%97/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="位运算在现代计算机中，所有数据都以二进制形式存储，即 0 和 1 两种状态。计算机对二进制数据进行的运算（如加、减、乘、除）被称为位运算，即对二进制数的每一位进行操作的运算。与直接使用 +、-、*、&#x2F; 运算符相比，合理运用位运算可以显著提高代码在机器上的执行效率。    符号 描述 运算规则    &amp; 与 两个位都为1时，结果才为1   | 或 两个位都为0时，结果才为0   ^ 异或 两">
+<meta property="og:description" content="¶位运算 在现代计算机中，所有数据都以二进制形式存储，即 0 和 1 两种状态。计算机对二进制数据进行的运算（如加、减、乘、除）被称为位运算，即对二进制数的每一位进行操作的运算。与直接使用 +、-、*、&#x2F; 运算符相比，合理运用位运算可以显著提高代码在机器上的执行效率。    符号 描述 运算规则     &amp; 与 两个位都为1时，结果才为1   | 或 两个位都为0时，结果才为0   ^ 异">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-21T10:23:50.000Z">
 <meta property="article:modified_time" content="2024-09-22T07:30:25.705Z">
@@ -588,127 +588,133 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h4><p>在现代计算机中，所有数据都以二进制形式存储，即 0 和 1 两种状态。计算机对二进制数据进行的运算（如加、减、乘、除）被称为位运算，即对二进制数的每一位进行操作的运算。与直接使用 <code>+、-、*、/</code> 运算符相比，合理运用位运算可以显著提高代码在机器上的执行效率。</p>
+            <h4 id="位运算"><a class="header-anchor" href="#位运算">¶</a>位运算</h4>
+<p>在现代计算机中，所有数据都以二进制形式存储，即 0 和 1 两种状态。计算机对二进制数据进行的运算（如加、减、乘、除）被称为位运算，即对二进制数的每一位进行操作的运算。与直接使用 <code>+、-、*、/</code> 运算符相比，合理运用位运算可以显著提高代码在机器上的执行效率。</p>
 <table>
 <thead>
 <tr>
-<th align="left">符号</th>
-<th align="left">描述</th>
-<th align="left">运算规则</th>
+<th style="text-align:left">符号</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">运算规则</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">&amp;</td>
-<td align="left">与</td>
-<td align="left">两个位都为1时，结果才为1</td>
+<tbody>
+<tr>
+<td style="text-align:left">&amp;</td>
+<td style="text-align:left">与</td>
+<td style="text-align:left">两个位都为1时，结果才为1</td>
 </tr>
 <tr>
-<td align="left">|</td>
-<td align="left">或</td>
-<td align="left">两个位都为0时，结果才为0</td>
+<td style="text-align:left">|</td>
+<td style="text-align:left">或</td>
+<td style="text-align:left">两个位都为0时，结果才为0</td>
 </tr>
 <tr>
-<td align="left">^</td>
-<td align="left">异或</td>
-<td align="left">两个位相同为0，相异为1</td>
+<td style="text-align:left">^</td>
+<td style="text-align:left">异或</td>
+<td style="text-align:left">两个位相同为0，相异为1</td>
 </tr>
 <tr>
-<td align="left">~</td>
-<td align="left">取反</td>
-<td align="left">0变1，1变0</td>
+<td style="text-align:left">~</td>
+<td style="text-align:left">取反</td>
+<td style="text-align:left">0变1，1变0</td>
 </tr>
 <tr>
-<td align="left">&lt;&lt;</td>
-<td align="left">左移</td>
-<td align="left">各二进位全部左移若干位，高位丢弃，低位补0</td>
+<td style="text-align:left">&lt;&lt;</td>
+<td style="text-align:left">左移</td>
+<td style="text-align:left">各二进位全部左移若干位，高位丢弃，低位补0</td>
 </tr>
 <tr>
-<td align="left">&gt;&gt;</td>
-<td align="left">右移</td>
-<td align="left">各二进位全部右移若干位，高位补0或符号位补齐</td>
+<td style="text-align:left">&gt;&gt;</td>
+<td style="text-align:left">右移</td>
+<td style="text-align:left">各二进位全部右移若干位，高位补0或符号位补齐</td>
 </tr>
-</tbody></table>
-<h5 id="与运算符"><a href="#与运算符" class="headerlink" title="与运算符 &amp;"></a>与运算符 &amp;</h5><p>运算规则：</p>
+</tbody>
+</table>
+<h5 id="与运算符"><a class="header-anchor" href="#与运算符">¶</a>与运算符 &amp;</h5>
+<p>运算规则：</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 &amp; 0 = 0</span><br><span class="line">0 &amp; 1 = 0</span><br><span class="line">1 &amp; 0 = 0</span><br><span class="line">1 &amp; 1 = 1</span><br></pre></td></tr></table></figure></div>
-
 <p><strong>总结</strong>：只有两位同时为1时，结果才为1，否则结果为0。</p>
 <p>例如：<code>3 &amp; 5</code> 即 <code>0000 0011 &amp; 0000 0101 = 0000 0001</code>，因此 <code>3 &amp; 5</code> 的值为1。</p>
 <p><strong>注意</strong>：负数按补码形式参与按位与运算。</p>
-<h5 id="或运算符"><a href="#或运算符" class="headerlink" title="或运算符 |"></a>或运算符 |</h5><p>运算规则：</p>
+<h5 id="或运算符"><a class="header-anchor" href="#或运算符">¶</a>或运算符 |</h5>
+<p>运算规则：</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 | 0 = 0</span><br><span class="line">0 | 1 = 1</span><br><span class="line">1 | 0 = 1</span><br><span class="line">1 | 1 = 1</span><br></pre></td></tr></table></figure></div>
-
 <p><strong>总结</strong>：只要有一个为1，其值为1。</p>
 <p>例如：<code>3 | 5</code> 即 <code>0000 0011 | 0000 0101 = 0000 0111</code>，因此 <code>3 | 5</code> 的值为7。</p>
 <p><strong>注意</strong>：负数按补码形式参与按位或运算。</p>
-<h5 id="异或运算符"><a href="#异或运算符" class="headerlink" title="异或运算符 ^"></a>异或运算符 ^</h5><p>运算规则</p>
+<h5 id="异或运算符"><a class="header-anchor" href="#异或运算符">¶</a>异或运算符 ^</h5>
+<p>运算规则</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 ^ 0 = 0</span><br><span class="line">0 ^ 1 = 1</span><br><span class="line">1 ^ 0 = 1</span><br><span class="line">1 ^ 1 = 0</span><br></pre></td></tr></table></figure></div>
-
 <p><strong>总结</strong>：相应位相同为0，相异为1。</p>
 <p><strong>性质</strong>：</p>
 <ol>
 <li>交换律</li>
 <li>结合律： <code>(a ^ b) ^ c == a ^ (b ^ c)</code></li>
-<li>对于任何数 <code>x</code>，都有 <code>x ^ x = 0</code>，<code>x ^ 0 = x</code> </li>
+<li>对于任何数 <code>x</code>，都有 <code>x ^ x = 0</code>，<code>x ^ 0 = x</code></li>
 <li>自反性：<code>a ^ b ^ b = a ^ 0 = a</code></li>
 </ol>
-<h5 id="取反运算符"><a href="#取反运算符" class="headerlink" title="取反运算符 ~"></a>取反运算符 ~</h5><p>对参与运算的一个数据的二进制位进行”取反”运算。</p>
+<h5 id="取反运算符"><a class="header-anchor" href="#取反运算符">¶</a>取反运算符 ~</h5>
+<p>对参与运算的一个数据的二进制位进行&quot;取反&quot;运算。</p>
 <p>运算规则：</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~1 = 1111 1110</span><br><span class="line">~0 = 1111 1111</span><br></pre></td></tr></table></figure></div>
-
 <p>即：</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~1 = -2</span><br><span class="line">~0 = -1</span><br></pre></td></tr></table></figure></div>
-
 <p><strong>总结</strong>：将 0 变 1，1 变 0。</p>
-<h5 id="左移运算符"><a href="#左移运算符" class="headerlink" title="左移运算符 &lt;&lt;"></a>左移运算符 &lt;&lt;</h5><p><strong>定义</strong>：将一个运算对象的各二进制位全部左移若干位，高位丢弃，低位补0。</p>
+<h5 id="左移运算符"><a class="header-anchor" href="#左移运算符">¶</a>左移运算符 &lt;&lt;</h5>
+<p><strong>定义</strong>：将一个运算对象的各二进制位全部左移若干位，高位丢弃，低位补0。</p>
 <p>例如，设 <code>a = 1010 1110</code>，<code>a = a &lt;&lt; 2</code> 将 <code>a</code> 的二进制位左移2位、右补0，即得 <code>a = 1011 1000</code>。</p>
 <p>若左移时舍弃的高位不包含1，则每左移一位，相当于该数乘以2。</p>
-<h5 id="右移运算符"><a href="#右移运算符" class="headerlink" title="右移运算符 &gt;&gt;"></a>右移运算符 &gt;&gt;</h5><p><strong>定义</strong>：将一个数的各二进制位全部右移若干位，高位补0或补符号位，右边丢弃。</p>
+<h5 id="右移运算符"><a class="header-anchor" href="#右移运算符">¶</a>右移运算符 &gt;&gt;</h5>
+<p><strong>定义</strong>：将一个数的各二进制位全部右移若干位，高位补0或补符号位，右边丢弃。</p>
 <p>例如，<code>a = a &gt;&gt; 2</code> 将 <code>a</code> 的二进制位右移2位，左补0 或补符号位，具体取决于数的正负。</p>
 <p>操作数每右移一位，相当于该数除以2。</p>
-<h4 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h4><ol>
-<li><p>&amp; 清零：如果想将一个单元清零，只要与一个各位都为零的数值相与，结果为零。</p>
+<h4 id="用途"><a class="header-anchor" href="#用途">¶</a>用途</h4>
+<ol>
+<li>
+<p>&amp; 清零：如果想将一个单元清零，只要与一个各位都为零的数值相与，结果为零。</p>
 </li>
-<li><p>&amp; 取一个数指定位：取数 <code>X = 1010 1110</code> 的低4位，只需用 <code>Y = 0000 1111</code>，然后 <code>X &amp; Y = 0000 1110</code> 即可得到 <code>X</code> 的指定位。</p>
+<li>
+<p>&amp; 取一个数指定位：取数 <code>X = 1010 1110</code> 的低4位，只需用 <code>Y = 0000 1111</code>，然后 <code>X &amp; Y = 0000 1110</code> 即可得到 <code>X</code> 的指定位。</p>
 </li>
-<li><p>&amp; 判断奇偶：通过判断最未位是0还是1来决定奇偶，可以用 <code>if ((a &amp; 1) == 0)</code> 代替 <code>if (a % 2 == 0)</code> 来判断 <code>a</code> 是否为偶数。</p>
+<li>
+<p>&amp; 判断奇偶：通过判断最未位是0还是1来决定奇偶，可以用 <code>if ((a &amp; 1) == 0)</code> 代替 <code>if (a % 2 == 0)</code> 来判断 <code>a</code> 是否为偶数。</p>
 </li>
-<li><p>x &amp; (-x) 提取x中最低位的1: -x等价于x的按位取反加 1，进行按位与操作，结果会留下 <code>x</code> 中最低位的 1，其余位都为 0。</p>
+<li>
+<p>x &amp; (-x) 提取x中最低位的1: -x等价于x的按位取反加 1，进行按位与操作，结果会留下 <code>x</code> 中最低位的 1，其余位都为 0。</p>
 </li>
-<li><p>｜ 设置某些位为1：例如，将数 <code>X = 1010 1110</code> 的低4位设置为1，只需另找一个数 <code>Y = 0000 1111</code>，然后 <code>X | Y = 1010 1111</code> 即可得到。</p>
+<li>
+<p>｜ 设置某些位为1：例如，将数 <code>X = 1010 1110</code> 的低4位设置为1，只需另找一个数 <code>Y = 0000 1111</code>，然后 <code>X | Y = 1010 1111</code> 即可得到。</p>
 </li>
-<li><p>^ 翻转指定位：例如，将数 <code>X = 1010 1110</code> 的低4位翻转，只需另找一个数 <code>Y = 0000 1111</code>，然后 <code>X ^ Y = 1010 0001</code> 即可得到。</p>
+<li>
+<p>^ 翻转指定位：例如，将数 <code>X = 1010 1110</code> 的低4位翻转，只需另找一个数 <code>Y = 0000 1111</code>，然后 <code>X ^ Y = 1010 0001</code> 即可得到。</p>
 </li>
-<li><p>^ 交换两个数: </p>
+<li>
+<p>^ 交换两个数:</p>
 <div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Swap</span><span class="params">(<span class="type">int</span> &amp;a, <span class="type">int</span> &amp;b)</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (a != b) &#123;</span><br><span class="line">    a ^= b;</span><br><span class="line">    b ^= a;</span><br><span class="line">    a ^= b;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 </li>
-<li><p>~ 使一个数的最低位为零：例如，使 <code>a</code> 的最低位为0，可以表示为：<code>a &amp; ~1</code>。<code>~1</code> 的值为 <code>1111 1111 1111 1110</code>，再按”与”运算，最低位一定为0。</p>
+<li>
+<p>~ 使一个数的最低位为零：例如，使 <code>a</code> 的最低位为0，可以表示为：<code>a &amp; ~1</code>。<code>~1</code> 的值为 <code>1111 1111 1111 1110</code>，再按&quot;与&quot;运算，最低位一定为0。</p>
 </li>
 </ol>
-<h4 id="经典题目"><a href="#经典题目" class="headerlink" title="经典题目"></a><strong>经典题目</strong></h4><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/single-number/" >136. 只出现一次的数字 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="经典题目"><a class="header-anchor" href="#经典题目">¶</a><strong>经典题目</strong></h4>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/single-number/" >136. 只出现一次的数字 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>给你一个 <strong>非空</strong> 整数数组 <code>nums</code> ，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
 <p>你必须设计并实现线性时间复杂度的算法来解决此问题，且该算法只使用常量额外空间。</p>
 <p>思路：不可以使用额外空间因此考虑位运算，由于交换率和结合律</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4^1^2^1^2 = 4^1^1^2^2 = 4^0^0</span><br></pre></td></tr></table></figure></div>
-
-<p>由于任何数与零异或结果为本身 4 ^ 0 ^ 0 &#x3D; 4</p>
+<p>由于任何数与零异或结果为本身 4 ^ 0 ^ 0 = 4</p>
 <div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> temp = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            temp = nums[i] ^ temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
-
-
-
 <p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/single-number-ii/" >137. 只出现一次的数字 II <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>给你一个整数数组 <code>nums</code> ，除某个元素仅出现 <strong>一次</strong> 外，其余每个元素都恰出现 <strong>三次 。</strong>请你找出并返回那个只出现了一次的元素。</p>
+<p>给你一个整数数组 <code>nums</code> ，除某个元素仅出现 <strong>一次</strong> 外，其余每个元素都恰出现 **三次 。**请你找出并返回那个只出现了一次的元素。</p>
 <p>你必须设计并实现线性时间复杂度的算法且使用常数级空间来解决此问题。</p>
 <p>思路：考虑答案的第 i 个二进制位（i 从 0 开始编号），它可能为 0 或 1。对于数组中非答案的元素，每一个元素都出现了 3 次，对应着第 i 个二进制位的 3 个 0 或 3 个 1，无论是哪一种情况，它们的和都是 3 的倍数（即和为 0 或 3）。因此需要统计每个位出现的个数，出现三次就归0</p>
 <div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> one = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> two = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> three;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num : nums)&#123;</span><br><span class="line">            two = two | (one &amp; num); <span class="comment">// two中对应的位为1 表示出现了两次</span></span><br><span class="line">            one = one ^ num; <span class="comment">// one中对应的位为1 表示出现了一次</span></span><br><span class="line">            three = two &amp; one; <span class="comment">// three中对应的位为1 表示出现了三次</span></span><br><span class="line">            one = one &amp; ~three; <span class="comment">// 出现三次的位归为0</span></span><br><span class="line">            two = two &amp; ~three;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> one;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
-
-
-
 <p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/single-number-iii/" >260. 只出现一次的数字 III <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>给你一个整数数组 <code>nums</code>，其中恰好有两个元素只出现一次，其余所有元素均出现两次。 找出只出现一次的那两个元素。你可以按 <strong>任意顺序</strong> 返回答案。</p>
 <p>你必须设计并实现线性时间复杂度的算法且仅使用常量额外空间来解决此问题。</p>
 <p>思路：异或之后只剩下两个答案元素，比如3 ^ 5，考虑找到两者的区别，将原数组分为两组，分别与3 ^ 5进行异或得到答案。由于3 ^ 5的结果不为0，则其二进制中至少有一位为1，找到最小的为1的位，通过这一位是否为1将数组分为两部分，其中一部分包含3，一部分包含5，将两组分别进行异或得到3和5。</p>
 <div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res1 = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> res2 = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> temp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num : nums)&#123;</span><br><span class="line">            temp = temp ^ num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> l1 = temp == INT_MIN ? temp : temp &amp; (-temp);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num : nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1 &amp; num)&#123;</span><br><span class="line">                res1 = res1 ^ num;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                res2 = res2 ^ num;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;res1, res2&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
-
 
         </div>
 

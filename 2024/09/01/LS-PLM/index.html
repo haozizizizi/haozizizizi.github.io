@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="LS-PLM——阿里巴巴曾经的主流推荐模型LS-PLM：“大规模分段线性模型”（Large Scale Piece-wise Linear Model），早在2012年，它就是阿里巴巴主流的推荐模型，并在深度学习模型提出之前长时间应用于阿里巴巴的各类广告场景 LS-PLM的结构与三层神经网络极其相似，在深度学习来临的前夜，可以将它看作推荐系统领域连接两个时代的节点。 LS-PLM模型的主要结构LS">
+        <meta name="description" content="¶LS-PLM——阿里巴巴曾经的主流推荐模型 LS-PLM：“大规模分段线性模型”（Large Scale Piece-wise Linear Model），早在2012年，它就是阿里巴巴主流的推荐模型，并在深度学习模型提出之前长时间应用于阿里巴巴的各类广告场景 LS-PLM的结构与三层神经网络极其相似，在深度学习来临的前夜，可以将它看作推荐系统领域连接两个时代的节点。 ¶LS-PLM模型的主要结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LS-PLM">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/01/LS-PLM/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="LS-PLM——阿里巴巴曾经的主流推荐模型LS-PLM：“大规模分段线性模型”（Large Scale Piece-wise Linear Model），早在2012年，它就是阿里巴巴主流的推荐模型，并在深度学习模型提出之前长时间应用于阿里巴巴的各类广告场景 LS-PLM的结构与三层神经网络极其相似，在深度学习来临的前夜，可以将它看作推荐系统领域连接两个时代的节点。 LS-PLM模型的主要结构LS">
+<meta property="og:description" content="¶LS-PLM——阿里巴巴曾经的主流推荐模型 LS-PLM：“大规模分段线性模型”（Large Scale Piece-wise Linear Model），早在2012年，它就是阿里巴巴主流的推荐模型，并在深度学习模型提出之前长时间应用于阿里巴巴的各类广告场景 LS-PLM的结构与三层神经网络极其相似，在深度学习来临的前夜，可以将它看作推荐系统领域连接两个时代的节点。 ¶LS-PLM模型的主要结">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240901174919052.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240901175122814.png">
@@ -592,9 +592,11 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="LS-PLM——阿里巴巴曾经的主流推荐模型"><a href="#LS-PLM——阿里巴巴曾经的主流推荐模型" class="headerlink" title="LS-PLM——阿里巴巴曾经的主流推荐模型"></a>LS-PLM——阿里巴巴曾经的主流推荐模型</h4><p>LS-PLM：“大规模分段线性模型”（Large Scale Piece-wise Linear Model），早在2012年，它就是阿里巴巴主流的推荐模型，并在深度学习模型提出之前长时间应用于阿里巴巴的各类广告场景</p>
+            <h4 id="LS-PLM——阿里巴巴曾经的主流推荐模型"><a class="header-anchor" href="#LS-PLM——阿里巴巴曾经的主流推荐模型">¶</a>LS-PLM——阿里巴巴曾经的主流推荐模型</h4>
+<p>LS-PLM：“大规模分段线性模型”（Large Scale Piece-wise Linear Model），早在2012年，它就是阿里巴巴主流的推荐模型，并在深度学习模型提出之前长时间应用于阿里巴巴的各类广告场景</p>
 <p>LS-PLM的结构与三层神经网络极其相似，在深度学习来临的前夜，可以将它看作推荐系统领域连接两个时代的节点。</p>
-<h5 id="LS-PLM模型的主要结构"><a href="#LS-PLM模型的主要结构" class="headerlink" title="LS-PLM模型的主要结构"></a>LS-PLM模型的主要结构</h5><p>LS-PLM，又被称为MLR（Mixed Logistic Regression，混合逻辑回归）模型。本质上，LS-PLM可以看作对逻辑回归的自然推广，它在逻辑回归的基础上采用分而治之的思路，先对样本进行分片，再在样本分片中应用逻辑回归进行CTR预估。</p>
+<h5 id="LS-PLM模型的主要结构"><a class="header-anchor" href="#LS-PLM模型的主要结构">¶</a>LS-PLM模型的主要结构</h5>
+<p>LS-PLM，又被称为MLR（Mixed Logistic Regression，混合逻辑回归）模型。本质上，LS-PLM可以看作对逻辑回归的自然推广，它在逻辑回归的基础上采用分而治之的思路，先对样本进行分片，再在样本分片中应用逻辑回归进行CTR预估。</p>
 <p>在逻辑回归的基础上加入聚类的思想，其灵感来自对广告推荐领域样本特点的观察。举例来说，如果CTR模型要预估的是女性受众点击女装广告的CTR，那么显然，我们不希望把男性用户点击数码类产品的样本数据也考虑进来，因为这样的样本不仅与女性购买女装的广告场景毫无相关性，甚至会在模型训练过程中扰乱相关特征的权重。</p>
 <p>为了让CTR模型对不同用户群体、不同使用场景更有针对性，其采用的方法是先对全量样本进行聚类，再对每个分类施以逻辑回归模型进行CTR预估。LS-PLM的实现思路就是由该灵感产生的。</p>
 <p>LS-PLM的数学形式如（式2-23）所示，首先用聚类函数π对样本进行分类（这里的π采用了softmax 函数对样本进行多分类），再用LR模型计算样本在分片中具体的CTR，然后将二者相乘后求和。</p>
@@ -604,7 +606,7 @@
                      data-src="/images/image-20240901174919052.png"
                       alt="image-20240901174919052"
                 ></p>
-<p>其中的超参数“分片数”m可以较好地平衡模型的拟合与推广能力。当m&#x3D;1时，LS-PLM就退化为普通的逻辑回归。m越大，模型的拟合能力越强。与此同时，模型参数规模也随m的增大而线性增长，模型收敛所需的训练样本也随之增长。在实践中，阿里巴巴给出的m的经验值为12。</p>
+<p>其中的超参数“分片数”m可以较好地平衡模型的拟合与推广能力。当m=1时，LS-PLM就退化为普通的逻辑回归。m越大，模型的拟合能力越强。与此同时，模型参数规模也随m的增大而线性增长，模型收敛所需的训练样本也随之增长。在实践中，阿里巴巴给出的m的经验值为12。</p>
 <p>在图2-18中，分别用红色和蓝色表示两类训练数据，传统LR模型的拟合能力不足，无法找到非线性的分类面，而MLR模型用4个分片完美地拟合出了数据中的菱形分类面。</p>
 <p><img  
                      lazyload
@@ -612,13 +614,14 @@
                      data-src="/images/image-20240901175122814.png"
                       alt="image-20240901175122814"
                 ></p>
-<h5 id="LS-PLM模型的优点"><a href="#LS-PLM模型的优点" class="headerlink" title="LS-PLM模型的优点"></a>LS-PLM模型的优点</h5><ol>
+<h5 id="LS-PLM模型的优点"><a class="header-anchor" href="#LS-PLM模型的优点">¶</a>LS-PLM模型的优点</h5>
+<ol>
 <li>端到端的非线性学习能力：LS-PLM具有样本分片的能力，因此能够挖掘出数据中蕴藏的非线性模式，省去了大量的人工样本处理和特征工程的过程，使LS-PLM算法可以端到端地完成训练，便于用一个全局模型对不同应用领域、业务场景进行统一建模。</li>
 <li>模型的稀疏性强：LS-PLM在建模时引入了L1和L2，1范数，可以使最终训练出来的模型具有较高的稀疏度，使模型的部署更加轻量级。模型服务过程仅需使用权重非零特征，因此稀疏模型也使其在线推断的效率更高。</li>
 </ol>
 <p><strong>基础知识 – 为什么L1范数比L2范数更容易产生稀疏解</strong></p>
 <p>为什么在LS-PLM模型中加入L1范数能够增加模型的稀疏性呢？</p>
-<p>这里用一个二维的例子来解释为什么L1范数更容易产生稀疏性。L2范数|w1|^2^+|w2|^2^的曲线如图2-19(a)的红色圆形，L1 范数|w1|+|w2|的曲线如图2-19(b)红色菱形。用蓝色曲线表示不加正则化项的模型损失函数曲线。</p>
+<p>这里用一个二维的例子来解释为什么L1范数更容易产生稀疏性。L2范数|w1|<sup>2</sup>+|w2|<sup>2</sup>的曲线如图2-19(a)的红色圆形，L1 范数|w1|+|w2|的曲线如图2-19(b)红色菱形。用蓝色曲线表示不加正则化项的模型损失函数曲线。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -626,7 +629,8 @@
                       alt="image-20240901175654654"
                 ></p>
 <p>求解加入正则化项的损失函数最小值，就是求解红圈上某一点和蓝圈上某一点之和的最小值。这个值通常在红色曲线和蓝色曲线的相切处（如果不在相切处，那么至少有两点值相同，与极值的定义矛盾），而L1范数曲线更容易与蓝色曲线在顶点处相交，这就导致除了相切处的维度不为零，其他维度的权重均为0，从而容易产生模型的稀疏解。</p>
-<h5 id="从深度学习的角度重新审视LS-PLM模型"><a href="#从深度学习的角度重新审视LS-PLM模型" class="headerlink" title="从深度学习的角度重新审视LS-PLM模型"></a>从深度学习的角度重新审视LS-PLM模型</h5><p>在LS-PLM模型刚投入使用的2012年，距离深度学习在推荐系统领域成功应用还很遥远。但如果站在当今的时间节点上，从深度学习的角度重新审视LS-PLM模型，某种意义上讲，LS-PLM模型已经有了浓厚的深度学习的“味道”。</p>
+<h5 id="从深度学习的角度重新审视LS-PLM模型"><a class="header-anchor" href="#从深度学习的角度重新审视LS-PLM模型">¶</a>从深度学习的角度重新审视LS-PLM模型</h5>
+<p>在LS-PLM模型刚投入使用的2012年，距离深度学习在推荐系统领域成功应用还很遥远。但如果站在当今的时间节点上，从深度学习的角度重新审视LS-PLM模型，某种意义上讲，LS-PLM模型已经有了浓厚的深度学习的“味道”。</p>
 <p>LS-PLM可以看作一个加入了注意力(Attention)机制的三层神经网络模型，其中输入层是样本的特征向量，中间层是由m 个神经元组成的隐层，其中m 是分片的个数，对于一个CTR预估问题，LS-PLM的最后一层自然是由单一神经元组成的输出层。</p>
 <p>那么，注意力机制又是在哪里应用的呢？其实是在隐层和输出层之间，神经元之间的权重是由分片函数得出的注意力得分来确定的。也就是说，样本属于哪个分片的概率就是其注意力得分。</p>
 <p>上述从深度学习角度对LS-PLM模型的重新描述，更多是模型结构层面的理解，在具体细节上，必然同现在经典的深度学习模型有所区别。</p>

@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="PNN模型——加强特征交叉能力NeuralCF模型的主要思想是利用多层神经网络替代经典协同过滤的点积操作，加强模型的表达能力。广义上，任何向量之间的交互计算方式都可以用来替代协同过滤的内积操作，相应的模型可称为广义的矩阵分解模型。 但NeuralCF模型只提到了用户向量和物品向量两组特征向量，如果加入多组特征向量又该如何设计特征交互的方法呢？2016年，上海交通大学的研究人员提出的PNN模型，给出">
+        <meta name="description" content="¶PNN模型——加强特征交叉能力 NeuralCF模型的主要思想是利用多层神经网络替代经典协同过滤的点积操作，加强模型的表达能力。广义上，任何向量之间的交互计算方式都可以用来替代协同过滤的内积操作，相应的模型可称为广义的矩阵分解模型。 但NeuralCF模型只提到了用户向量和物品向量两组特征向量，如果加入多组特征向量又该如何设计特征交互的方法呢？2016年，上海交通大学的研究人员提出的PNN模型，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PNN模型">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/04/PNN%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="PNN模型——加强特征交叉能力NeuralCF模型的主要思想是利用多层神经网络替代经典协同过滤的点积操作，加强模型的表达能力。广义上，任何向量之间的交互计算方式都可以用来替代协同过滤的内积操作，相应的模型可称为广义的矩阵分解模型。 但NeuralCF模型只提到了用户向量和物品向量两组特征向量，如果加入多组特征向量又该如何设计特征交互的方法呢？2016年，上海交通大学的研究人员提出的PNN模型，给出">
+<meta property="og:description" content="¶PNN模型——加强特征交叉能力 NeuralCF模型的主要思想是利用多层神经网络替代经典协同过滤的点积操作，加强模型的表达能力。广义上，任何向量之间的交互计算方式都可以用来替代协同过滤的内积操作，相应的模型可称为广义的矩阵分解模型。 但NeuralCF模型只提到了用户向量和物品向量两组特征向量，如果加入多组特征向量又该如何设计特征交互的方法呢？2016年，上海交通大学的研究人员提出的PNN模型，">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240904160555599.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240904161340116.png">
@@ -593,9 +593,11 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="PNN模型——加强特征交叉能力"><a href="#PNN模型——加强特征交叉能力" class="headerlink" title="PNN模型——加强特征交叉能力"></a>PNN模型——加强特征交叉能力</h4><p>NeuralCF模型的主要思想是利用多层神经网络替代经典协同过滤的点积操作，加强模型的表达能力。广义上，任何向量之间的交互计算方式都可以用来替代协同过滤的内积操作，相应的模型可称为广义的矩阵分解模型。</p>
+            <h4 id="PNN模型——加强特征交叉能力"><a class="header-anchor" href="#PNN模型——加强特征交叉能力">¶</a>PNN模型——加强特征交叉能力</h4>
+<p>NeuralCF模型的主要思想是利用多层神经网络替代经典协同过滤的点积操作，加强模型的表达能力。广义上，任何向量之间的交互计算方式都可以用来替代协同过滤的内积操作，相应的模型可称为广义的矩阵分解模型。</p>
 <p>但NeuralCF模型只提到了用户向量和物品向量两组特征向量，如果加入多组特征向量又该如何设计特征交互的方法呢？2016年，上海交通大学的研究人员提出的PNN模型，给出了特征交互方式的几种设计思路。</p>
-<h5 id="PNN模型的网络架构"><a href="#PNN模型的网络架构" class="headerlink" title="PNN模型的网络架构"></a>PNN模型的网络架构</h5><p>如图所示为模型结构图，相比Deep Crossing模型，PNN模型在输入、Embedding层、多层神经网络，以及最终的输出层部分并没有结构上的不同，唯一的区别在于PNN模型用乘积层(Product Layer)代替了Deep Crossing模型中的Stacking层。也就是说，不同特征的Embedding向量不再是简单的拼接，而是用Product操作进行两两交互，更有针对性地获取特征之间的交叉信息。</p>
+<h5 id="PNN模型的网络架构"><a class="header-anchor" href="#PNN模型的网络架构">¶</a>PNN模型的网络架构</h5>
+<p>如图所示为模型结构图，相比Deep Crossing模型，PNN模型在输入、Embedding层、多层神经网络，以及最终的输出层部分并没有结构上的不同，唯一的区别在于PNN模型用乘积层(Product Layer)代替了Deep Crossing模型中的Stacking层。也就是说，不同特征的Embedding向量不再是简单的拼接，而是用Product操作进行两两交互，更有针对性地获取特征之间的交叉信息。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -603,22 +605,23 @@
                       alt="image-20240904160555599"
                 ></p>
 <p>另外，相比NeuralCF，PNN模型的输入不仅包括用户和物品信息，还可以有更多不同形式、不同来源的特征，通过Embedding层的编码生成同样长度的稠密特征Embedding 向量。针对特征的交叉方式，PNN模型也给出了更多具体的互操作方法。</p>
-<h5 id="Product层的多种特征交叉方式"><a href="#Product层的多种特征交叉方式" class="headerlink" title="Product层的多种特征交叉方式"></a>Product层的多种特征交叉方式</h5><p>PNN模型对于深度学习结构的创新主要在于乘积层的引入。具体地说，PNN模型的乘积层由内积操作部分（图中乘积层的z部分）和外积(outer product)操作部分（图中乘积层的p部分）组成。其中，无论是内积操作还是外积操作，都是对不同的特征Embedding向量进行两两组合。为保证内积操作和外积操作能够顺利进行，各Embedding向量的维度必须相同。</p>
-<p>内积操作就是经典的向量内积运算，假设输入特征向量分别为f<del>i</del> ，f<del>j</del>，特征的内积互操作g<del>inner</del>(f<del>i</del>，f<del>j</del>)的定义如（式3-5）所示。</p>
+<h5 id="Product层的多种特征交叉方式"><a class="header-anchor" href="#Product层的多种特征交叉方式">¶</a>Product层的多种特征交叉方式</h5>
+<p>PNN模型对于深度学习结构的创新主要在于乘积层的引入。具体地说，PNN模型的乘积层由内积操作部分（图中乘积层的z部分）和外积(outer product)操作部分（图中乘积层的p部分）组成。其中，无论是内积操作还是外积操作，都是对不同的特征Embedding向量进行两两组合。为保证内积操作和外积操作能够顺利进行，各Embedding向量的维度必须相同。</p>
+<p>内积操作就是经典的向量内积运算，假设输入特征向量分别为f<sub>i</sub> ，f<sub>j</sub>，特征的内积互操作g<sub>inner</sub>(f<sub>i</sub>，f<sub>j</sub>)的定义如（式3-5）所示。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/image-20240904161340116.png"
                       alt="image-20240904161340116"
                 ></p>
-<p>外积操作是对输入特征向量fi ，fj的各维度进行两两交叉，生成特征交叉矩阵，外积互操作g<del>outer</del>(fi，fj)的定义如（式3-6）所示。外积互操作生成的是特征向量f<del>i</del>，f<del>j</del>各维度两两交叉而成的一个M×M的方形矩阵（其中M是输入向量的维度）。</p>
+<p>外积操作是对输入特征向量fi ，fj的各维度进行两两交叉，生成特征交叉矩阵，外积互操作g<sub>outer</sub>(fi，fj)的定义如（式3-6）所示。外积互操作生成的是特征向量f<sub>i</sub>，f<sub>j</sub>各维度两两交叉而成的一个M×M的方形矩阵（其中M是输入向量的维度）。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/image-20240904161517036.png"
                       alt="image-20240904161517036"
                 ></p>
-<p>这样的外积操作无疑会直接将问题的复杂度从原来的M提升到M^2^，为了在一定程度上减小模型训练的负担，PNN模型的论文中介绍了一种降维的方法，就是把所有两两特征Embedding向量外积互操作的结果叠加(Superposition)，形成一个叠加外积互操作矩阵p，具体定义如（式3-7）所示。</p>
+<p>这样的外积操作无疑会直接将问题的复杂度从原来的M提升到M<sup>2</sup>，为了在一定程度上减小模型训练的负担，PNN模型的论文中介绍了一种降维的方法，就是把所有两两特征Embedding向量外积互操作的结果叠加(Superposition)，形成一个叠加外积互操作矩阵p，具体定义如（式3-7）所示。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -628,7 +631,8 @@
 <p>从（式3-7）的最终形式看，叠加矩阵p的最终形式类似于让所有特征Embedding向量通过一个平均池化层(Average Pooling)后，再进行外积互操作。</p>
 <p>在实际应用中，还应对平均池化的操作谨慎对待。因为把不同特征对应维度进行平均，实际上是假设不同特征的对应维度有类似的含义。但显然，如果一个特征是“年龄”，一个特征是“地域”，那么这两个特征在经过各自的Embedding层后，二者的Embedding向量不在一个向量空间中，显然不具备任何可比性。这时，把二者平均起来，会模糊很多有价值的信息。</p>
 <p>平均池化的操作经常发生在同类Embedding上，例如，将用户浏览过的多个物品的Embedding进行平均。因此，PNN模型的外积池化操作也需要谨慎，在训练效率和模型效果上进行权衡。</p>
-<h5 id="PNN模型的优势和局限性"><a href="#PNN模型的优势和局限性" class="headerlink" title="PNN模型的优势和局限性"></a>PNN模型的优势和局限性</h5><p>PNN的结构特点在于强调了特征Embedding 向量之间的交叉方式是多样化的，相比于简单的交由全连接层进行无差别化的处理，PNN模型定义的内积和外积操作显然更有针对性地强调了不同特征之间的交互，从而让模型更容易捕获特征的交叉信息。</p>
+<h5 id="PNN模型的优势和局限性"><a class="header-anchor" href="#PNN模型的优势和局限性">¶</a>PNN模型的优势和局限性</h5>
+<p>PNN的结构特点在于强调了特征Embedding 向量之间的交叉方式是多样化的，相比于简单的交由全连接层进行无差别化的处理，PNN模型定义的内积和外积操作显然更有针对性地强调了不同特征之间的交互，从而让模型更容易捕获特征的交叉信息。</p>
 <p>但PNN模型同样存在着一些局限性，例如在外积操作的实际应用中，为了优化训练效率进行了大量的简化操作。此外，对所有特征进行无差别的交叉，在一定程度上忽略了原始特征向量中包含的有价值信息。如何综合原始特征及交叉特征，让特征交叉的方式更加高效，后续的Wide＆Deep模型和基于FM的各类深度学习模型将给出它们的解决方案。</p>
 
         </div>

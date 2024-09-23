@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Deep Crossing模型——经典的深度学习架构相比AutoRec模型过于简单的网络结构带来的一些表达能力不强的问题，Deep Crossing模型完整地解决了从特征工程、稀疏向量稠密化、多层神经网络进行优化目标拟合等一系列深度学习在推荐系统中的应用问题，为后续的研究打下了良好的基础。 Deep Crossing模型的应用场景Deep Crossing模型的应用场景是微软搜索引擎Bing中的搜">
+        <meta name="description" content="¶Deep Crossing模型——经典的深度学习架构 相比AutoRec模型过于简单的网络结构带来的一些表达能力不强的问题，Deep Crossing模型完整地解决了从特征工程、稀疏向量稠密化、多层神经网络进行优化目标拟合等一系列深度学习在推荐系统中的应用问题，为后续的研究打下了良好的基础。 ¶Deep Crossing模型的应用场景 Deep Crossing模型的应用场景是微软搜索引擎Bin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Crossing">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/03/Crossing/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="Deep Crossing模型——经典的深度学习架构相比AutoRec模型过于简单的网络结构带来的一些表达能力不强的问题，Deep Crossing模型完整地解决了从特征工程、稀疏向量稠密化、多层神经网络进行优化目标拟合等一系列深度学习在推荐系统中的应用问题，为后续的研究打下了良好的基础。 Deep Crossing模型的应用场景Deep Crossing模型的应用场景是微软搜索引擎Bing中的搜">
+<meta property="og:description" content="¶Deep Crossing模型——经典的深度学习架构 相比AutoRec模型过于简单的网络结构带来的一些表达能力不强的问题，Deep Crossing模型完整地解决了从特征工程、稀疏向量稠密化、多层神经网络进行优化目标拟合等一系列深度学习在推荐系统中的应用问题，为后续的研究打下了良好的基础。 ¶Deep Crossing模型的应用场景 Deep Crossing模型的应用场景是微软搜索引擎Bin">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240903152911812.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240903153928794.png">
@@ -592,8 +592,10 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="Deep-Crossing模型——经典的深度学习架构"><a href="#Deep-Crossing模型——经典的深度学习架构" class="headerlink" title="Deep Crossing模型——经典的深度学习架构"></a>Deep Crossing模型——经典的深度学习架构</h4><p>相比AutoRec模型过于简单的网络结构带来的一些表达能力不强的问题，Deep Crossing模型完整地解决了从特征工程、稀疏向量稠密化、多层神经网络进行优化目标拟合等一系列深度学习在推荐系统中的应用问题，为后续的研究打下了良好的基础。</p>
-<h5 id="Deep-Crossing模型的应用场景"><a href="#Deep-Crossing模型的应用场景" class="headerlink" title="Deep Crossing模型的应用场景"></a>Deep Crossing模型的应用场景</h5><p>Deep Crossing模型的应用场景是微软搜索引擎Bing中的搜索广告推荐场景。</p>
+            <h4 id="Deep-Crossing模型——经典的深度学习架构"><a class="header-anchor" href="#Deep-Crossing模型——经典的深度学习架构">¶</a>Deep Crossing模型——经典的深度学习架构</h4>
+<p>相比AutoRec模型过于简单的网络结构带来的一些表达能力不强的问题，Deep Crossing模型完整地解决了从特征工程、稀疏向量稠密化、多层神经网络进行优化目标拟合等一系列深度学习在推荐系统中的应用问题，为后续的研究打下了良好的基础。</p>
+<h5 id="Deep-Crossing模型的应用场景"><a class="header-anchor" href="#Deep-Crossing模型的应用场景">¶</a>Deep Crossing模型的应用场景</h5>
+<p>Deep Crossing模型的应用场景是微软搜索引擎Bing中的搜索广告推荐场景。</p>
 <p>用户在搜索引擎中输入搜索词之后，搜索引擎除了会返回相关结果，还会返回与搜索词相关的广告，这也是大多数搜索引擎的主要赢利模式。</p>
 <p>尽可能地增加搜索广告的点击率，准确地预测广告点击率，并以此作为广告排序的指标之一，是非常重要的工作，也是Deep Crossing模型的优化目标。</p>
 <p>针对该使用场景，微软使用的特征如表3-1所示</p>
@@ -612,7 +614,8 @@
 <p>严格来说，这些都不是独立的特征，而是一个特征的组别，需要进一步处理。</p>
 <p>类别型特征可以通过one-hot或multi-hot编码生成特征向量，数值型特征则可以直接拼接进特征向量中，在生成所有输入特征的向量表达后，Deep Crossing模型利用该特征向量进行CTR 预估。</p>
 <p>深度学习网络的特点是可以根据需求灵活地对网络结构进行调整，从而达成从原始特征向量到最终的优化目标的端到端的训练目的。</p>
-<h5 id="Deep-Crossing模型的网络结构"><a href="#Deep-Crossing模型的网络结构" class="headerlink" title="Deep Crossing模型的网络结构"></a>Deep Crossing模型的网络结构</h5><p>为完成端到端的训练，Deep Crossing模型要在其内部网络中解决如下问题。</p>
+<h5 id="Deep-Crossing模型的网络结构"><a class="header-anchor" href="#Deep-Crossing模型的网络结构">¶</a>Deep Crossing模型的网络结构</h5>
+<p>为完成端到端的训练，Deep Crossing模型要在其内部网络中解决如下问题。</p>
 <ol>
 <li>离散类特征编码后过于稀疏，不利于直接输入神经网络进行训练，如何解决稀疏特征向量稠密化的问题。</li>
 <li>如何解决特征自动交叉组合的问题。</li>
@@ -625,11 +628,11 @@
                      data-src="/images/image-20240903153928794.png"
                       alt="image-20240903153928794"
                 ></p>
-<p><strong>Embedding 层：</strong>Embedding 层的作用是将稀疏的<strong>类别型特征</strong>转换成稠密的Embedding向量。</p>
+<p><strong>Embedding 层：<strong>Embedding 层的作用是将稀疏的</strong>类别型特征</strong>转换成稠密的Embedding向量。</p>
 <p>从图3-6中可以看到，每一个类别特征（如Feature＃1，这里指的是经one-hot 编码后的稀疏特征向量）经过Embedding 层后，会转换成对应的Embedding向量（如Embedding＃1）。一般来说，Embedding向量的维度应远小于原始的稀疏特征向量，几十到上百维一般就能满足需求。</p>
 <p>Embedding层的结构以经典的全连接层(FullyConnected Layer)结构为主，但Embedding 技术本身作为深度学习中研究非常广泛的话题，已经衍生出了Word2vec、Graph Embedding等多种不同的Embedding方法。</p>
-<p><strong>Stacking层：</strong>Stacking层（堆叠层）的作用比较简单，是把不同的Embedding特征和数值型特征拼接在一起，形成新的包含全部特征的特征向量，该层通常也被称为连接(concatenate)层。</p>
-<p><strong>Multiple Residual Units层：</strong>该层的主要结构是多层感知机，相比标准的以感知机为基本单元的神经网络，Deep Crossing模型采用了多层残差网络(Multi-Layer Residual Network)作为MLP的具体实现。最著名的残差网络是在ImageNet大赛中由何恺明提出的152层残差网络。在推荐模型中的应用，也是残差网络首次在图像识别领域之外的成功推广。</p>
+<p>**Stacking层：**Stacking层（堆叠层）的作用比较简单，是把不同的Embedding特征和数值型特征拼接在一起，形成新的包含全部特征的特征向量，该层通常也被称为连接(concatenate)层。</p>
+<p>**Multiple Residual Units层：**该层的主要结构是多层感知机，相比标准的以感知机为基本单元的神经网络，Deep Crossing模型采用了多层残差网络(Multi-Layer Residual Network)作为MLP的具体实现。最著名的残差网络是在ImageNet大赛中由何恺明提出的152层残差网络。在推荐模型中的应用，也是残差网络首次在图像识别领域之外的成功推广。</p>
 <p>通过多层残差网络对特征向量各个维度进行充分的交叉组合，使模型能够抓取到更多的非线性特征和组合特征的信息，进而使深度学习模型在表达能力上较传统机器学习模型大为增强。</p>
 <p><strong>基础知识——残差神经网络</strong></p>
 <p>残差神经网络就是由残差单元(Residual Unit)组成的神经网络。残差单元的具体结构如图所示。</p>
@@ -640,16 +643,17 @@
                       alt="image-20240903154733995"
                 ></p>
 <p>与传统的感知机不同，残差单元的特点主要有两个：</p>
-<p> (1)输入经过两层以ReLU为激活函数的全连接层后，生成输出向量。</p>
-<p> (2)输入可以通过一个短路(shortcut)通路直接与输出向量进行元素加(element-wise plus)操作，生成最终的输出向量。</p>
-<p>在这样的结构下，残差单元中的两层ReLU网络其实拟合的是输出和输入之间的“残差”(x<del>o</del>-x<del>i</del>)，这就是残差神经网络名称的由来。</p>
+<p>(1)输入经过两层以ReLU为激活函数的全连接层后，生成输出向量。</p>
+<p>(2)输入可以通过一个短路(shortcut)通路直接与输出向量进行元素加(element-wise plus)操作，生成最终的输出向量。</p>
+<p>在这样的结构下，残差单元中的两层ReLU网络其实拟合的是输出和输入之间的“残差”(x<sub>o</sub>-x<sub>i</sub>)，这就是残差神经网络名称的由来。</p>
 <p>残差神经网络的诞生主要是为了解决两个问题：</p>
 <ol>
 <li>神经网络是不是越深越好？对于传统的基于感知机的神经网络，当网络加深之后，往往存在过拟合现象，即网络越深，在测试集上的表现越差。而在残差神经网络中，由于有输入向量短路的存在，很多时候可以越过两层ReLU网络，减少过拟合现象的发生。</li>
 <li>当神经网络足够深时，往往存在严重的梯度消失现象。梯度消失现象是指在梯度反向传播过程中，越靠近输入端，梯度的幅度越小，参数收敛的速度越慢。为了解决这个问题，残差单元使用了ReLU 激活函数取代原来的sigmoid 激活函数。此外，输入向量短路相当于直接把梯度毫无变化地传递到下一层，这也使残差网络的收敛速度更快。</li>
 </ol>
-<p><strong>Scoring层：</strong>Scoring层作为输出层，就是为了拟合优化目标而存在的。对于CTR 预估这类二分类问题，Scoring 层往往使用的是逻辑回归模型，而对于图像分类等多分类问题，Scoring层往往采用softmax模型。</p>
-<h5 id="Deep-Crossing模型对特征交叉方法的革命"><a href="#Deep-Crossing模型对特征交叉方法的革命" class="headerlink" title="Deep Crossing模型对特征交叉方法的革命"></a>Deep Crossing模型对特征交叉方法的革命</h5><p>从历史的尺度看，Deep Crossing模型的出现是有革命意义的。Deep Crossing模型中没有任何人工特征工程的参与，原始特征经Embedding后输入神经网络层，将全部特征交叉的任务交给模型。相比之前介绍的FM、FFM模型只具备二阶特征交叉的能力，DeepCrossing模型可以通过调整神经网络的深度进行特征之间的“深度交叉”，这也是Deep Crossing名称的由来。</p>
+<p>**Scoring层：**Scoring层作为输出层，就是为了拟合优化目标而存在的。对于CTR 预估这类二分类问题，Scoring 层往往使用的是逻辑回归模型，而对于图像分类等多分类问题，Scoring层往往采用softmax模型。</p>
+<h5 id="Deep-Crossing模型对特征交叉方法的革命"><a class="header-anchor" href="#Deep-Crossing模型对特征交叉方法的革命">¶</a>Deep Crossing模型对特征交叉方法的革命</h5>
+<p>从历史的尺度看，Deep Crossing模型的出现是有革命意义的。Deep Crossing模型中没有任何人工特征工程的参与，原始特征经Embedding后输入神经网络层，将全部特征交叉的任务交给模型。相比之前介绍的FM、FFM模型只具备二阶特征交叉的能力，DeepCrossing模型可以通过调整神经网络的深度进行特征之间的“深度交叉”，这也是Deep Crossing名称的由来。</p>
 
         </div>
 

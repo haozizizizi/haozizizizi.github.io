@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="推荐系统基本架构、术语和意义搜广推：搜索广告推荐 三种场景使用的技术路线大致相似 共同点：解决信息过载的问题 从海量信息中找出用户的目标信息 推荐系统一定要有一个内容池corpus 推荐系统核心指标电商：购买率 抖音：用户数（DAU 日活）*平均时长 短视频平台4方博弈：用户 内容生产者（个人&#x2F;机构）平台方 广告方 不同时期，不同目标，通过推荐系统，完成流量分配 新架构和技术指标 用户上">
+        <meta name="description" content="¶推荐系统 ¶基本架构、术语和意义 搜广推：搜索广告推荐 三种场景使用的技术路线大致相似 共同点：解决信息过载的问题 从海量信息中找出用户的目标信息 推荐系统一定要有一个内容池corpus ¶推荐系统核心指标 电商：购买率 抖音：用户数（DAU 日活）*平均时长 短视频平台4方博弈：用户 内容生产者（个人&#x2F;机构）平台方 广告方 不同时期，不同目标，通过推荐系统，完成流量分配 ¶新架构和技术指标">
 <meta property="og:type" content="article">
 <meta property="og:title" content="推荐系统基础知识">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/01/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="推荐系统基本架构、术语和意义搜广推：搜索广告推荐 三种场景使用的技术路线大致相似 共同点：解决信息过载的问题 从海量信息中找出用户的目标信息 推荐系统一定要有一个内容池corpus 推荐系统核心指标电商：购买率 抖音：用户数（DAU 日活）*平均时长 短视频平台4方博弈：用户 内容生产者（个人&#x2F;机构）平台方 广告方 不同时期，不同目标，通过推荐系统，完成流量分配 新架构和技术指标 用户上">
+<meta property="og:description" content="¶推荐系统 ¶基本架构、术语和意义 搜广推：搜索广告推荐 三种场景使用的技术路线大致相似 共同点：解决信息过载的问题 从海量信息中找出用户的目标信息 推荐系统一定要有一个内容池corpus ¶推荐系统核心指标 电商：购买率 抖音：用户数（DAU 日活）*平均时长 短视频平台4方博弈：用户 内容生产者（个人&#x2F;机构）平台方 广告方 不同时期，不同目标，通过推荐系统，完成流量分配 ¶新架构和技术指标">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/12fc104912e211ecb45cc8b78515cf7a_0.jpg">
 <meta property="article:published_time" content="2024-09-01T08:21:21.000Z">
@@ -590,21 +590,26 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="推荐系统"><a href="#推荐系统" class="headerlink" title="推荐系统"></a>推荐系统</h4><h4 id="基本架构、术语和意义"><a href="#基本架构、术语和意义" class="headerlink" title="基本架构、术语和意义"></a>基本架构、术语和意义</h4><p>搜广推：搜索广告推荐</p>
+            <h4 id="推荐系统"><a class="header-anchor" href="#推荐系统">¶</a>推荐系统</h4>
+<h4 id="基本架构、术语和意义"><a class="header-anchor" href="#基本架构、术语和意义">¶</a>基本架构、术语和意义</h4>
+<p>搜广推：搜索广告推荐</p>
 <p>三种场景使用的技术路线大致相似</p>
 <p>共同点：解决信息过载的问题 从海量信息中找出用户的目标信息</p>
 <p>推荐系统一定要有一个内容池corpus</p>
-<h4 id="推荐系统核心指标"><a href="#推荐系统核心指标" class="headerlink" title="推荐系统核心指标"></a>推荐系统核心指标</h4><p>电商：购买率</p>
+<h4 id="推荐系统核心指标"><a class="header-anchor" href="#推荐系统核心指标">¶</a>推荐系统核心指标</h4>
+<p>电商：购买率</p>
 <p>抖音：用户数（DAU 日活）*平均时长</p>
-<p>短视频平台4方博弈：用户 内容生产者（个人&#x2F;机构）平台方 广告方</p>
+<p>短视频平台4方博弈：用户 内容生产者（个人/机构）平台方 广告方</p>
 <p>不同时期，不同目标，通过推荐系统，完成流量分配</p>
-<h4 id="新架构和技术指标"><a href="#新架构和技术指标" class="headerlink" title="新架构和技术指标"></a>新架构和技术指标</h4><ol>
+<h4 id="新架构和技术指标"><a class="header-anchor" href="#新架构和技术指标">¶</a>新架构和技术指标</h4>
+<ol>
 <li>用户上传</li>
 <li>内容审核：人工审核+机器审核</li>
 </ol>
 <p>​                           重视<strong>召回率</strong>高而不是准确率 宁可错杀不可放过</p>
 <ol start="3">
-<li>内容理解（打标）<ul>
+<li>内容理解（打标）
+<ul>
 <li>内容分类</li>
 <li>标签抽取：提取关键词</li>
 <li>内容向量化</li>
@@ -612,14 +617,16 @@
 <li>初始流量预测</li>
 </ul>
 </li>
-<li>召回：<strong>快速全面</strong>从上千万数据中找到几百个 </li>
+<li>召回：<strong>快速全面</strong>从上千万数据中找到几百个</li>
 <li>排序：<strong>准确</strong>从几百个里找到最合适的20个</li>
-<li>shuffle打散<ul>
+<li>shuffle打散
+<ul>
 <li>增强多样性</li>
 <li>插入合适广告</li>
 </ul>
 </li>
-<li>埋点：记录用户行为<ul>
+<li>埋点：记录用户行为
+<ul>
 <li>给用户曝光的item</li>
 <li>用户点击的item：点赞评论留言</li>
 </ul>
@@ -627,47 +634,47 @@
 </ol>
 <p>评价指标：</p>
 <ul>
-<li><p>点击率：点击&#x2F;曝光（不同用户的点击率平均）</p>
+<li>
+<p>点击率：点击/曝光（不同用户的点击率平均）</p>
 </li>
-<li><p>完播率：观看时长&#x2F;视频时长（整体统计时长分布，根据长度分组）</p>
+<li>
+<p>完播率：观看时长/视频时长（整体统计时长分布，根据长度分组）</p>
 </li>
-<li><p>日活：新用户点击率和时长  老用户点击率和时长</p>
+<li>
+<p>日活：新用户点击率和时长  老用户点击率和时长</p>
 </li>
 </ul>
 <p>指标总在变化：周末&gt;平时 晚上&gt;白天</p>
 <p>推荐策略也应该发生变化（召回和排序）</p>
 <p>比如白天多推新闻 晚上多推人生哲理</p>
-<h4 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h4><p>feed_info.csv</p>
+<h4 id="数据预处理"><a class="header-anchor" href="#数据预处理">¶</a>数据预处理</h4>
+<p>feed_info.csv</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">video_id, user_id, video_seconds, description, ocr, asr, keyword_list.....</span><br></pre></td></tr></table></figure></div>
-
 <p>discription:描述中的每一个字对应一个id（映射）</p>
 <p>feed_embeddings.csv：将视频转为向量化表示，可以进行不同视频相似度计算</p>
 <p>train.csv</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user_id, feed_id, date, device, read_comment, comment, like, play, stay, click_avatar, forward, follow...</span><br></pre></td></tr></table></figure></div>
-
 <p>记录方式：从打开app后有很多埋点，会记录一切行为</p>
 <p>数据预处理目的：生成每个用户对视频的喜好程度</p>
 <p>userid -&gt; video_score（根据csv中数据计算而来）</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">  feature=[<span class="built_in">float</span>(read_comment), <span class="built_in">float</span>(comment),   <span class="built_in">float</span>(like), play, stay, <span class="built_in">float</span>(click_avatar), <span class="built_in">float</span>(forward), <span class="built_in">float</span>(follow), <span class="built_in">float</span>(favorite)]</span><br><span class="line">  features.append(feature)</span><br><span class="line"></span><br><span class="line">features = np.array(features)</span><br><span class="line">scores = [<span class="built_in">sum</span>(s) <span class="keyword">for</span> s <span class="keyword">in</span> features] </span><br><span class="line"><span class="comment">#只是一种分数计算方式，可以使用更复杂的计算方式</span></span><br></pre></td></tr></table></figure></div>
-
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#均值和方差归一化，消除不同人互动偏好不一样造成的得分差异</span></span><br><span class="line"><span class="keyword">for</span> userid, likes <span class="keyword">in</span> results.items():</span><br><span class="line">  scores = np.array([s[<span class="number">1</span>] <span class="keyword">for</span> s <span class="keyword">in</span> likes])</span><br><span class="line">  scores = preprocessing.scale[scores].tolist()</span><br><span class="line">  scores = [<span class="built_in">round</span>(s, <span class="number">2</span>) <span class="keyword">for</span> s <span class="keyword">in</span> scores]</span><br><span class="line">  items = [s[<span class="number">0</span>] <span class="keyword">for</span> s <span class="keyword">in</span> likes]</span><br><span class="line">  likes = [s <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">zip</span>(items, scores)]</span><br><span class="line">  likes = <span class="built_in">sorted</span>(likes, key = lamda s:s[<span class="number">1</span>], reverse = true)</span><br><span class="line"><span class="comment">#得分从高到低排序</span></span><br></pre></td></tr></table></figure></div>
-
-<h4 id="协同过滤-–-经典的推荐算法"><a href="#协同过滤-–-经典的推荐算法" class="headerlink" title="协同过滤 – 经典的推荐算法"></a>协同过滤 – 经典的推荐算法</h4><p>是一种召回算法</p>
+<h4 id="协同过滤-–-经典的推荐算法"><a class="header-anchor" href="#协同过滤-–-经典的推荐算法">¶</a>协同过滤 – 经典的推荐算法</h4>
+<p>是一种召回算法</p>
 <p>协同：用很多用户的行为一起进行推荐</p>
 <p>过滤：从海量视频-&gt;有限个视频</p>
 <p>协同过滤：协同大家的反馈、评价和意见一起对海量的信息进行过滤，从中筛选出目标用户可能感兴趣的信息的推荐过程</p>
-<h5 id="itemCF"><a href="#itemCF" class="headerlink" title="itemCF"></a>itemCF</h5><p>从item的角度进行过滤筛选：很多人都看了item1和item2 则其存在着某种程度的相似 比如同时看女生跳舞和俄乌局势（宅男视角）</p>
+<h5 id="itemCF"><a class="header-anchor" href="#itemCF">¶</a>itemCF</h5>
+<p>从item的角度进行过滤筛选：很多人都看了item1和item2 则其存在着某种程度的相似 比如同时看女生跳舞和俄乌局势（宅男视角）</p>
 <p>当大量用户同时观看item1和item2时，可以将item2推荐给观看了item1的用户，即使内容上可能毫无关联，但在受众群体上可能有高相似度</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">item_similar[i1][i2]=item_similar[i1].get(i2,<span class="number">0.0</span>)+<span class="number">1.0</span></span><br><span class="line"><span class="comment">#统计两个视频出现在同一个用户的次数</span></span><br></pre></td></tr></table></figure></div>
-
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#开始进行召回</span></span><br><span class="line"><span class="comment">#一个用户对应一些推荐视频（用户没有看过的）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#获取用户喜欢的视频</span></span><br><span class="line">items = <span class="built_in">set</span>([s[<span class="number">0</span>]] <span class="keyword">for</span> s <span class="keyword">in</span> items <span class="keyword">if</span> s[<span class="number">1</span>]&gt;<span class="number">0</span>)</span><br><span class="line"><span class="comment">#获取item相似视频</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">  similar_list = [s <span class="keyword">for</span> s <span class="keyword">in</span> item_similar.get(item,[]) <span class="keyword">if</span> s <span class="keyword">not</span> <span class="keyword">in</span> items]</span><br><span class="line">  <span class="keyword">for</span> s <span class="keyword">in</span> similar_list:</span><br><span class="line">    <span class="comment">#新视频对用户的推荐次数</span></span><br><span class="line">    recall_items[s] = recall_items.get(s, <span class="number">0</span>)+<span class="number">1</span></span><br><span class="line">  <span class="comment">#根据推荐次数排序，选出推荐给用户的视频</span></span><br><span class="line">  recall_items = <span class="built_in">sorted</span>(recall_items.items(), key = lamda s:s[<span class="number">1</span>], reverse = true)[<span class="number">0</span>:recall_num]</span><br></pre></td></tr></table></figure></div>
-
-<h5 id="userCF"><a href="#userCF" class="headerlink" title="userCF"></a>userCF</h5><p>两个用户的观看视频中存在大量相似，则其中一个用户看了一个新视频的情况下，可以将其推荐给另一个用户</p>
+<h5 id="userCF"><a class="header-anchor" href="#userCF">¶</a>userCF</h5>
+<p>两个用户的观看视频中存在大量相似，则其中一个用户看了一个新视频的情况下，可以将其推荐给另一个用户</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#user_list里的用户看过同一个视频</span></span><br><span class="line"><span class="keyword">for</span> user_list <span class="keyword">in</span> item_users.values():</span><br><span class="line">  <span class="keyword">for</span> u1 <span class="keyword">in</span> user_list:</span><br><span class="line">    <span class="keyword">for</span> u2 <span class="keyword">in</span> user_list:</span><br><span class="line">      <span class="keyword">if</span> u1 == u2:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">      <span class="keyword">if</span> u1 <span class="keyword">not</span> <span class="keyword">in</span> user_similar:</span><br><span class="line">        user_similar[u1] = &#123;&#125;</span><br><span class="line">      <span class="comment">#u1和u2看过同一个视频的次数</span></span><br><span class="line">      user_similar[u1][u2] = user_similar[u1].get(u2, <span class="number">0</span>)+<span class="number">1</span></span><br></pre></td></tr></table></figure></div>
-
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#计算和user最接近的top K个用户</span></span><br><span class="line"><span class="keyword">for</span> user,similar_list <span class="keyword">in</span> user_similar.items():</span><br><span class="line">	similar_list = <span class="built_in">sorted</span>(similar_list.items(), key=<span class="keyword">lambda</span> s:s[<span class="number">1</span>], reverse=<span class="literal">True</span>)[<span class="number">0</span>:topK]</span><br><span class="line"></span><br><span class="line"><span class="comment">#找到和user相似的用户</span></span><br><span class="line"><span class="keyword">for</span> u2 <span class="keyword">in</span> user_similar.get(user,[]):</span><br><span class="line">  <span class="keyword">for</span> s <span class="keyword">in</span> user_items.get(u2,[]):</span><br><span class="line">    <span class="keyword">if</span> s <span class="keyword">in</span> items:</span><br><span class="line">      <span class="keyword">continue</span></span><br><span class="line">    <span class="comment">#如果u2没有看过进入推荐列表 根据排序选出推荐给用户的视频</span></span><br><span class="line">    recall_items[s] = recall_items.get(s, <span class="number">0</span>)+<span class="number">1</span></span><br><span class="line">recall_items = <span class="built_in">sorted</span>(recall_items.items(), key = lamda s:s[<span class="number">1</span>], reverse = true)[<span class="number">0</span>:recall_num]</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="协同过滤的问题和解决方法"><a href="#协同过滤的问题和解决方法" class="headerlink" title="协同过滤的问题和解决方法"></a>协同过滤的问题和解决方法</h4><ul>
+<h4 id="协同过滤的问题和解决方法"><a class="header-anchor" href="#协同过滤的问题和解决方法">¶</a>协同过滤的问题和解决方法</h4>
+<ul>
 <li>相似的不对称</li>
 </ul>
 <p>item1的相似视频有item2 但item2的相似视频没有item1</p>
@@ -689,7 +696,8 @@
 <li>快手：同地域社交推荐</li>
 </ul>
 <p>推荐系统不独立存在，和上下游息息相关</p>
-<h4 id="随机游走算法"><a href="#随机游走算法" class="headerlink" title="随机游走算法"></a>随机游走算法</h4><p>也是召回算法</p>
+<h4 id="随机游走算法"><a class="header-anchor" href="#随机游走算法">¶</a>随机游走算法</h4>
+<p>也是召回算法</p>
 <p>前面和itemCF一样，获取商品之间的相似度</p>
 <p>商品之间互相关联，形成了一个网（item为点 关联为线）</p>
 <p>网中item互相到达有很多种序列</p>
@@ -701,48 +709,50 @@
 </ul>
 <p>随机游走 vs itemCF：</p>
 <p>随机游走泛化能力更强，任何两个向量都可以计算相似度，可以推荐的范围更广。比如：item1和item2有相似度，item2和item3有相似度，通过itemCF无法通过item1推荐item3，但随机游走可以实现这种间接推荐。有利有弊，范围更广但是可能会推荐错。</p>
-<h4 id="DSSM召回模型（双塔模型）"><a href="#DSSM召回模型（双塔模型）" class="headerlink" title="DSSM召回模型（双塔模型）"></a>DSSM召回模型（双塔模型）</h4><p>item1通过model1生成向量1</p>
+<h4 id="DSSM召回模型（双塔模型）"><a class="header-anchor" href="#DSSM召回模型（双塔模型）">¶</a>DSSM召回模型（双塔模型）</h4>
+<p>item1通过model1生成向量1</p>
 <p>Item2通过model2生成向量2</p>
 <p>向量可以离线生成</p>
 <p>model1和model2是否一样取决于item是否同质，同质化内容可以用同一模型，但不同内容比如图像和文字就要分别用不同模型</p>
 <p>向量1和向量2仅仅是用来独立计算相似度的</p>
 <p>DSSM如何训练：</p>
 <p>每个item采若干个正样本（比如点击过的）和若干个负样本</p>
-<p>S0 &#x3D; &lt;v,v0&gt; S1 &#x3D; &lt;v, v1&gt;…..（s表示分数）</p>
+<p>S0 = &lt;v,v0&gt; S1 = &lt;v, v1&gt;…（s表示分数）</p>
 <p>训练目标 正样本s越高越好，负样本s越低越好</p>
 <p>可以进行softmax处理，当成多分类问题</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> user, items <span class="keyword">in</span> lines:</span><br><span class="line">	<span class="comment"># 正样本</span></span><br><span class="line">	pos_item = [s[<span class="number">0</span>] <span class="keyword">for</span> s <span class="keyword">in</span> itmes <span class="keyword">if</span> s[<span class="number">1</span>]&gt;<span class="number">0</span>]</span><br><span class="line">  <span class="comment"># 负样本</span></span><br><span class="line">	neg_item = [s[<span class="number">0</span>] <span class="keyword">for</span> s <span class="keyword">in</span> itmes <span class="keyword">if</span> s[<span class="number">1</span>]&lt;<span class="number">0</span>]</span><br><span class="line"><span class="comment"># 得到的数据[用户id，用户喜欢的，用户不喜欢的]</span></span><br><span class="line"><span class="comment"># model1用于处理用户，model2用于处理item</span></span><br></pre></td></tr></table></figure></div>
-
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">user_embedding = Embedding(user_num, dim, input_length)</span><br><span class="line">item_embedding = Embedding(item_num, dim, input_length)</span><br><span class="line"></span><br><span class="line">out1 = user_embedding(user_input)</span><br><span class="line">out2 = Flatten()(item_embedding(pos_input))</span><br><span class="line">out3 = Flatten()(item_embedding(neg_input))</span><br><span class="line"><span class="comment"># 这里的model比较简单 只使用了一层embedding </span></span><br></pre></td></tr></table></figure></div>
-
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">similar_pos = [Dot(normalize=<span class="literal">True</span>,axes=-<span class="number">1</span>)([outl,out2])] </span><br><span class="line"><span class="comment"># 正样本相似度</span></span><br><span class="line">similar_neg = [Dot(normalize=<span class="literal">True</span>,axes=-<span class="number">1</span>)([outl,out3])] </span><br><span class="line"><span class="comment"># 负样本相似度</span></span><br><span class="line">similar_out = Concatenate()(similar_pos+similar_neg)</span><br><span class="line">out=Lambda(<span class="keyword">lambda</span> x:x/t)(similar_out)</span><br><span class="line"><span class="comment"># out是s0 s1 s2...</span></span><br><span class="line">out=Activation(activation=softmax‚names=<span class="string">&quot;out&quot;</span>)(out)</span><br><span class="line"><span class="comment"># softmax激活</span></span><br><span class="line"></span><br><span class="line">model = Model(inputs=[user_input.pos_input]+neg_inputs, outputs=out)</span><br><span class="line"><span class="comment"># 训练模型</span></span><br></pre></td></tr></table></figure></div>
-
 <p>本质：通过计算user和item的相似度，对user进行高相似item的推荐</p>
-<h4 id="多路召回的merge策略"><a href="#多路召回的merge策略" class="headerlink" title="多路召回的merge策略"></a>多路召回的merge策略</h4><p>使用不同的召回策略得到的结果可能不同</p>
+<h4 id="多路召回的merge策略"><a class="header-anchor" href="#多路召回的merge策略">¶</a>多路召回的merge策略</h4>
+<p>使用不同的召回策略得到的结果可能不同</p>
 <p>比如，对于user1来说，item1被5种策略召回，即5路召回，item2被3种策略召回，即3路召回。</p>
-<h4 id="推荐系统的AB测试"><a href="#推荐系统的AB测试" class="headerlink" title="推荐系统的AB测试"></a>推荐系统的AB测试</h4><p>AB测试用于测试新策略是否优秀</p>
+<h4 id="推荐系统的AB测试"><a class="header-anchor" href="#推荐系统的AB测试">¶</a>推荐系统的AB测试</h4>
+<p>AB测试用于测试新策略是否优秀</p>
 <p>baseline：有部分原有召回策略</p>
 <p>s：新召回策略</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/12fc104912e211ecb45cc8b78515cf7a_0.jpg"
-                     
+                      alt=""
                 ></p>
 <p>加入s1的效果明显优于A，则将s1加入baseline</p>
 <p>AB测试的时间一般在3-5天</p>
 <p>问题：新策略中大量增多低俗视频，可能会在短期产生好效果，但长期不利于平台</p>
 <p>反向AB测试：baseline中策略太多，需要下线一些策略</p>
 <p>同理测试去除策略与baseline效果进行比较</p>
-<p>分组的个数： N总量   n组   N&#x2F;n个用户 </p>
+<p>分组的个数： N总量   n组   N/n个用户</p>
 <p>n太大，每个组用户少，统计结果随机性大</p>
 <p>n太小，一次能够进行实验的策略少，开发效率低</p>
-<h4 id="分层AB测试"><a href="#分层AB测试" class="headerlink" title="分层AB测试"></a>分层AB测试</h4><p>总人数不够多的情况下 如何分组能保证效果</p>
+<h4 id="分层AB测试"><a class="header-anchor" href="#分层AB测试">¶</a>分层AB测试</h4>
+<p>总人数不够多的情况下 如何分组能保证效果</p>
 <p>随机方法1将10w用户打散为5组 得到层1</p>
 <p>随机方法2将每组中的2w用户打散为5组 重新混合为5组2w 得到层2</p>
 <p>因此得到了更多组，可以分别进行实验</p>
 <p>但不可以隔层进行对比</p>
-<h4 id="召回和倒排索引"><a href="#召回和倒排索引" class="headerlink" title="召回和倒排索引"></a>召回和倒排索引</h4><p>召回：</p>
+<h4 id="召回和倒排索引"><a class="header-anchor" href="#召回和倒排索引">¶</a>召回和倒排索引</h4>
+<p>召回：</p>
 <ol>
 <li>快速从海量数据中提取相关的item</li>
 <li>倒排索引形式</li>
@@ -761,19 +771,24 @@
 <p>B Doc1 0.8 Doc2 0.7</p>
 <p>C Doc1 Doc2</p>
 <p>D Doc2</p>
-<h4 id="召回和排序的分工和区别"><a href="#召回和排序的分工和区别" class="headerlink" title="召回和排序的分工和区别"></a>召回和排序的分工和区别</h4><p>召回：</p>
+<h4 id="召回和排序的分工和区别"><a class="header-anchor" href="#召回和排序的分工和区别">¶</a>召回和排序的分工和区别</h4>
+<p>召回：</p>
 <ol>
-<li><p>快速从海量数据中提取相关item</p>
+<li>
+<p>快速从海量数据中提取相关item</p>
 </li>
-<li><p>倒排索引形式 item1 -&gt; item2, item5, item6 （可以提前离线处理）</p>
+<li>
+<p>倒排索引形式 item1 -&gt; item2, item5, item6 （可以提前离线处理）</p>
 </li>
-<li><p>倒排索引的产生 </p>
-<p>a 行为类 协同过滤 随机游走 </p>
-<p>   优点：不需要了解内容 只通过用户行为 </p>
-<p>   缺点：易推荐热门 形成信息茧房 </p>
+<li>
+<p>倒排索引的产生</p>
+<p>a 行为类 协同过滤 随机游走</p>
+<p>优点：不需要了解内容 只通过用户行为</p>
+<p>缺点：易推荐热门 形成信息茧房</p>
 <p>b 内容类 通过内容信息进行推荐：同关键词 同作者 相似文章向量</p>
 </li>
-<li><p>召回模式</p>
+<li>
+<p>召回模式</p>
 <p>统计类：协同过滤 更保守，至少共同出现过一次才推荐</p>
 <p>向量类：行为和内容都可以 更激进，任意两个item都有可能被推荐</p>
 </li>

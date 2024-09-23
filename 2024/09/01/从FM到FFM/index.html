@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="从FM到FFM——自动特征交叉的解决方案逻辑回归仅利用单一特征而不是交叉特征，造成模型表达能力不强，造成有效信息的损失。 辛普森悖论在对样本集合进行分组研究时，在分组比较中都占优势的一方，在总评中有时反而是失势的一方，这种有悖常理的现象，被称为“辛普森悖论”。 在“辛普森悖论”的例子中，分组实验相当于使用“性别”+“视频id”的组合特征计算点击率，而汇总实验则使用“视频id”这一单一特征计算点击率">
+        <meta name="description" content="¶从FM到FFM——自动特征交叉的解决方案 逻辑回归仅利用单一特征而不是交叉特征，造成模型表达能力不强，造成有效信息的损失。 ¶辛普森悖论 在对样本集合进行分组研究时，在分组比较中都占优势的一方，在总评中有时反而是失势的一方，这种有悖常理的现象，被称为“辛普森悖论”。 在“辛普森悖论”的例子中，分组实验相当于使用“性别”+“视频id”的组合特征计算点击率，而汇总实验则使用“视频id”这一单一特征计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从FM到FFM">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/01/%E4%BB%8EFM%E5%88%B0FFM/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="从FM到FFM——自动特征交叉的解决方案逻辑回归仅利用单一特征而不是交叉特征，造成模型表达能力不强，造成有效信息的损失。 辛普森悖论在对样本集合进行分组研究时，在分组比较中都占优势的一方，在总评中有时反而是失势的一方，这种有悖常理的现象，被称为“辛普森悖论”。 在“辛普森悖论”的例子中，分组实验相当于使用“性别”+“视频id”的组合特征计算点击率，而汇总实验则使用“视频id”这一单一特征计算点击率">
+<meta property="og:description" content="¶从FM到FFM——自动特征交叉的解决方案 逻辑回归仅利用单一特征而不是交叉特征，造成模型表达能力不强，造成有效信息的损失。 ¶辛普森悖论 在对样本集合进行分组研究时，在分组比较中都占优势的一方，在总评中有时反而是失势的一方，这种有悖常理的现象，被称为“辛普森悖论”。 在“辛普森悖论”的例子中，分组实验相当于使用“性别”+“视频id”的组合特征计算点击率，而汇总实验则使用“视频id”这一单一特征计">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240830135901186.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240830140406167.png">
@@ -597,11 +597,14 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="从FM到FFM——自动特征交叉的解决方案"><a href="#从FM到FFM——自动特征交叉的解决方案" class="headerlink" title="从FM到FFM——自动特征交叉的解决方案"></a>从FM到FFM——自动特征交叉的解决方案</h4><p>逻辑回归仅利用单一特征而不是交叉特征，造成模型表达能力不强，造成有效信息的损失。</p>
-<h5 id="辛普森悖论"><a href="#辛普森悖论" class="headerlink" title="辛普森悖论"></a>辛普森悖论</h5><p>在对样本集合进行分组研究时，在分组比较中都占优势的一方，在总评中有时反而是失势的一方，这种有悖常理的现象，被称为“辛普森悖论”。</p>
+            <h4 id="从FM到FFM——自动特征交叉的解决方案"><a class="header-anchor" href="#从FM到FFM——自动特征交叉的解决方案">¶</a>从FM到FFM——自动特征交叉的解决方案</h4>
+<p>逻辑回归仅利用单一特征而不是交叉特征，造成模型表达能力不强，造成有效信息的损失。</p>
+<h5 id="辛普森悖论"><a class="header-anchor" href="#辛普森悖论">¶</a>辛普森悖论</h5>
+<p>在对样本集合进行分组研究时，在分组比较中都占优势的一方，在总评中有时反而是失势的一方，这种有悖常理的现象，被称为“辛普森悖论”。</p>
 <p>在“辛普森悖论”的例子中，分组实验相当于使用“性别”+“视频id”的组合特征计算点击率，而汇总实验则使用“视频id”这一单一特征计算点击率。汇总实验对高维特征进行了合并，损失了大量的有效信息，因此无法正确刻画数据模式。</p>
 <p>逻辑回归只对单一特征做简单加权，不具备进行特征交叉生成高维组合特征的能力，因此表达能力很弱，甚至可能得出像“辛普森悖论”那样的错误结论。因此，通过改造逻辑回归模型，使其具备特征交叉的能力是必要和迫切的。</p>
-<h5 id="POLY2模型-–-特征交叉的开始"><a href="#POLY2模型-–-特征交叉的开始" class="headerlink" title="POLY2模型 – 特征交叉的开始"></a>POLY2模型 – 特征交叉的开始</h5><p>采用PLOY2模型进行特征的“暴力”组合成了可行的选择。</p>
+<h5 id="POLY2模型-–-特征交叉的开始"><a class="header-anchor" href="#POLY2模型-–-特征交叉的开始">¶</a>POLY2模型 – 特征交叉的开始</h5>
+<p>采用PLOY2模型进行特征的“暴力”组合成了可行的选择。</p>
 <p>POLY2模型的数学形式如（式2-20）所示。</p>
 <p><img  
                      lazyload
@@ -613,7 +616,7 @@
 <p>缺陷：</p>
 <ol>
 <li>在处理互联网数据时，经常采用one-hot编码的方法处理类别型数据，致使特征向量极度稀疏，POLY2进行无选择的特征交叉——原本就非常稀疏的特征向量更加稀疏，导致大部分交叉特征的权重缺乏有效的数据进行训练，无法收敛。</li>
-<li>权重参数的数量由n直接上升到n^2^，极大地增加了训练复杂度。</li>
+<li>权重参数的数量由n直接上升到n<sup>2</sup>，极大地增加了训练复杂度。</li>
 </ol>
 <p><strong>one-hot编码</strong>：one-hot 编码方式可以将类别型特征转变成数值型特征向量，但是会不可避免地造成特征向量中存在大量数值为0的特征维度。这在互联网这种海量用户场景下尤为明显。假设某应用有1亿用户，那么将用户id进行one-hot编码后，将造成1亿维特征向量中仅有1维是非零的。这是造成互联网模型的输入特征向量稀疏的主要原因。</p>
 <p><img  
@@ -622,7 +625,8 @@
                      data-src="/images/image-20240830140406167.png"
                       alt="image-20240830140406167"
                 ></p>
-<h5 id="FM模型-–-隐向量特征交叉"><a href="#FM模型-–-隐向量特征交叉" class="headerlink" title="FM模型 – 隐向量特征交叉"></a>FM模型 – 隐向量特征交叉</h5><p>与POLY2相比，其主要区别是用两个向量的内积取代了单一的权重系数</p>
+<h5 id="FM模型-–-隐向量特征交叉"><a class="header-anchor" href="#FM模型-–-隐向量特征交叉">¶</a>FM模型 – 隐向量特征交叉</h5>
+<p>与POLY2相比，其主要区别是用两个向量的内积取代了单一的权重系数</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -633,11 +637,12 @@
 <p>本质上，FM 引入隐向量的做法，与矩阵分解用隐向量代表用户和物品的做法异曲同工。可以说，FM 是将矩阵分解隐向量的思想进行了进一步扩展，从单纯的用户、物品隐向量扩展到了所有特征上。</p>
 <p>优势：</p>
 <ol>
-<li>FM 通过引入特征隐向量的方式，直接把POLY2模型n^2^级别的权重参数数量减少到了nk（k为隐向量维度，n＞＞k）。在使用梯度下降法进行FM 训练的过程中，FM的训练复杂度同样可被降低到nk级别，极大地降低了训练开销。</li>
+<li>FM 通过引入特征隐向量的方式，直接把POLY2模型n<sup>2</sup>级别的权重参数数量减少到了nk（k为隐向量维度，n＞＞k）。在使用梯度下降法进行FM 训练的过程中，FM的训练复杂度同样可被降低到nk级别，极大地降低了训练开销。</li>
 <li>隐向量的引入使FM能更好地解决数据稀疏性的问题。举例来说，在某商品推荐的场景下，样本有两个特征，分别是频道(channel)和品牌(brand)，某训练样本的特征组合是(ESPN，Adidas)。在POLY2中，只有当ESPN和Adidas同时出现在一个训练样本中时，模型才能学到这个组合特征对应的权重；而在FM中，ESPN的隐向量也可以通过(ESPN，Gucci)样本进行更新，Adidas的隐向量也可以通过(NBC，Adidas)样本进行更新，这大幅降低了模型对数据稀疏性的要求。提高了泛化能力。</li>
 <li>在工程方面，FM 同样可以用梯度下降法进行学习，使其不失实时性和灵活性。FM 较容易实现的模型结构使其线上推断的过程相对简单，也更容易进行线上部署和服务。</li>
 </ol>
-<h5 id="FFM模型-–-引入特征域的概念"><a href="#FFM模型-–-引入特征域的概念" class="headerlink" title="FFM模型 – 引入特征域的概念"></a>FFM模型 – 引入特征域的概念</h5><p>相比于FM模型，FFM模型引入了特征域感知(field-aware)这一概念，使模型的表达能力更强。</p>
+<h5 id="FFM模型-–-引入特征域的概念"><a class="header-anchor" href="#FFM模型-–-引入特征域的概念">¶</a>FFM模型 – 引入特征域的概念</h5>
+<p>相比于FM模型，FFM模型引入了特征域感知(field-aware)这一概念，使模型的表达能力更强。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -654,11 +659,12 @@
                       alt="image-20240830143429031"
                 ></p>
 <p>Publisher、Advertiser、Gender 是三个特征域，ESPN、NIKE、Male分别是这三个特征域的特征值（还需要转换成one-hot特征）。</p>
-<p><strong>FM</strong>：特征ESPN、NIKE 和Male 都有对应的隐向量w<del>ESPN</del>，w<del>NIKE</del>，w<del>Male</del> ,那么ESPN特征与NIKE特征、ESPN特征与Male特征做交叉的权重应该是w<del>ESPN</del> ·w<del>NIKE</del>和w<del>ESPN</del> · w<del>Male</del>。其中，ESPN对应的隐向量在两次特征交叉过程中是不变的。</p>
-<p><strong>FFM</strong>：ESPN 与NIKE、ESPN 与Male 交叉特殊的权重分别是w<del>ESPN，A</del> · w<del>NIKE，P</del>和w<del>ESPN，G</del> · w<del>Male，P</del>。ESPN在与NIKE和Male交叉时分别使用了不同的隐向量w<del>ESPN，A</del>和w<del>ESPN，G</del>，这是由于NIKE 和Male 分别在不同的特征域Advertiser(A)和Gender(G)导致的。</p>
-<p>在FFM模型的训练过程中，需要学习n个特征在f个域上的k维隐向量，参数数量共n · k · f个。在训练方面，FFM的二次项并不能像FM那样简化，因此其复杂度为kn^2^。</p>
-<p>相比FM，FFM引入了特征域的概念，为模型引入了更多有价值的信息，使模型的表达能力更强，但与此同时，FFM的计算复杂度上升到kn^2^，远大于FM的kn。在实际工程应用中，需要在模型效果和工程投入之间进行权衡。</p>
-<h5 id="从POLY2到FFM的模型演化过程"><a href="#从POLY2到FFM的模型演化过程" class="headerlink" title="从POLY2到FFM的模型演化过程"></a>从POLY2到FFM的模型演化过程</h5><p>POLY2模型直接学习每个交叉特征的权重，若特征数量为n，则权重数量为n^2^量级，具体为n(n-1)&#x2F;2 个。如图2-12所示，每个彩色原点代表一个特征交叉项。</p>
+<p><strong>FM</strong>：特征ESPN、NIKE 和Male 都有对应的隐向量w<sub>ESPN</sub>，w<sub>NIKE</sub>，w<sub>Male</sub> ,那么ESPN特征与NIKE特征、ESPN特征与Male特征做交叉的权重应该是w<sub>ESPN</sub> ·w<sub>NIKE</sub>和w<sub>ESPN</sub> · w<sub>Male</sub>。其中，ESPN对应的隐向量在两次特征交叉过程中是不变的。</p>
+<p><strong>FFM</strong>：ESPN 与NIKE、ESPN 与Male 交叉特殊的权重分别是w<sub>ESPN，A</sub> · w<sub>NIKE，P</sub>和w<sub>ESPN，G</sub> · w<sub>Male，P</sub>。ESPN在与NIKE和Male交叉时分别使用了不同的隐向量w<sub>ESPN，A</sub>和w<sub>ESPN，G</sub>，这是由于NIKE 和Male 分别在不同的特征域Advertiser(A)和Gender(G)导致的。</p>
+<p>在FFM模型的训练过程中，需要学习n个特征在f个域上的k维隐向量，参数数量共n · k · f个。在训练方面，FFM的二次项并不能像FM那样简化，因此其复杂度为kn<sup>2</sup>。</p>
+<p>相比FM，FFM引入了特征域的概念，为模型引入了更多有价值的信息，使模型的表达能力更强，但与此同时，FFM的计算复杂度上升到kn<sup>2</sup>，远大于FM的kn。在实际工程应用中，需要在模型效果和工程投入之间进行权衡。</p>
+<h5 id="从POLY2到FFM的模型演化过程"><a class="header-anchor" href="#从POLY2到FFM的模型演化过程">¶</a>从POLY2到FFM的模型演化过程</h5>
+<p>POLY2模型直接学习每个交叉特征的权重，若特征数量为n，则权重数量为n<sup>2</sup>量级，具体为n(n-1)/2 个。如图2-12所示，每个彩色原点代表一个特征交叉项。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"

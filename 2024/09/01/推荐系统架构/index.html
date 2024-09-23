@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="推荐系统架构推荐系统要处理的问题可以较形式化地定义为：对于用户U(user)，在特定场景C(context)下，针对海量的“物品”信息，构建一个函数f(U，I，C)，预测用户对特定候选物品I (item)的喜好程度，再根据喜好程度对所有候选物品进行排序，生成推荐列表的问题。 推荐系统逻辑框架：  推荐系统的技术架构：  数据部分见上图中浅黄色部分 数据收集与处理的三种平台：实时性由强到弱 海量数据">
+        <meta name="description" content="¶推荐系统架构 推荐系统要处理的问题可以较形式化地定义为：对于用户U(user)，在特定场景C(context)下，针对海量的“物品”信息，构建一个函数f(U，I，C)，预测用户对特定候选物品I (item)的喜好程度，再根据喜好程度对所有候选物品进行排序，生成推荐列表的问题。 推荐系统逻辑框架：  推荐系统的技术架构：  ¶数据部分 见上图中浅黄色部分 数据收集与处理的三种平台：实时性由强到弱">
 <meta property="og:type" content="article">
 <meta property="og:title" content="推荐系统架构">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/01/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="推荐系统架构推荐系统要处理的问题可以较形式化地定义为：对于用户U(user)，在特定场景C(context)下，针对海量的“物品”信息，构建一个函数f(U，I，C)，预测用户对特定候选物品I (item)的喜好程度，再根据喜好程度对所有候选物品进行排序，生成推荐列表的问题。 推荐系统逻辑框架：  推荐系统的技术架构：  数据部分见上图中浅黄色部分 数据收集与处理的三种平台：实时性由强到弱 海量数据">
+<meta property="og:description" content="¶推荐系统架构 推荐系统要处理的问题可以较形式化地定义为：对于用户U(user)，在特定场景C(context)下，针对海量的“物品”信息，构建一个函数f(U，I，C)，预测用户对特定候选物品I (item)的喜好程度，再根据喜好程度对所有候选物品进行排序，生成推荐列表的问题。 推荐系统逻辑框架：  推荐系统的技术架构：  ¶数据部分 见上图中浅黄色部分 数据收集与处理的三种平台：实时性由强到弱">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240822170328401.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20240822170544320.png">
@@ -592,7 +592,8 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="推荐系统架构"><a href="#推荐系统架构" class="headerlink" title="推荐系统架构"></a>推荐系统架构</h4><p>推荐系统要处理的问题可以较形式化地定义为：对于用户U(user)，在特定场景C(context)下，针对海量的“物品”信息，构建一个函数f(U，I，C)，预测用户对特定候选物品I (item)的喜好程度，再根据喜好程度对所有候选物品进行排序，生成推荐列表的问题。</p>
+            <h4 id="推荐系统架构"><a class="header-anchor" href="#推荐系统架构">¶</a>推荐系统架构</h4>
+<p>推荐系统要处理的问题可以较形式化地定义为：对于用户U(user)，在特定场景C(context)下，针对海量的“物品”信息，构建一个函数f(U，I，C)，预测用户对特定候选物品I (item)的喜好程度，再根据喜好程度对所有候选物品进行排序，生成推荐列表的问题。</p>
 <p>推荐系统逻辑框架：</p>
 <p><img  
                      lazyload
@@ -607,7 +608,8 @@
                      data-src="/images/image-20240822170544320.png"
                       alt="image-20240822170544320"
                 ></p>
-<h5 id="数据部分"><a href="#数据部分" class="headerlink" title="数据部分"></a>数据部分</h5><p>见上图中浅黄色部分</p>
+<h5 id="数据部分"><a class="header-anchor" href="#数据部分">¶</a>数据部分</h5>
+<p>见上图中浅黄色部分</p>
 <p>数据收集与处理的三种平台：实时性由强到弱 海量数据处理能力由弱到强</p>
 <p>加工后的数据出口主要有三个：</p>
 <ol>
@@ -615,18 +617,22 @@
 <li>生成推荐模型服务(model serving)所需的“特征”，用于推荐系统的线上推断。</li>
 <li>生成系统监控、商业智能(Business Intelligence，BI)系统所需的统计型数据。</li>
 </ol>
-<h5 id="模型部分"><a href="#模型部分" class="headerlink" title="模型部分"></a>模型部分</h5><p>见上图中浅蓝色部分</p>
-<p><strong>“召回层”</strong>一般利用高效的召回规则、算法或简单的模型，快速从海量的候选集中召回用户可能感兴趣的物品。</p>
-<p><strong>“排序层”</strong>利用排序模型对初筛的候选集进行精排序。</p>
+<h5 id="模型部分"><a class="header-anchor" href="#模型部分">¶</a>模型部分</h5>
+<p>见上图中浅蓝色部分</p>
+<p>**“召回层”**一般利用高效的召回规则、算法或简单的模型，快速从海量的候选集中召回用户可能感兴趣的物品。</p>
+<p>**“排序层”**利用排序模型对初筛的候选集进行精排序。</p>
 <p><strong>“补充策略与算法层”</strong>，也被称为“再排序层”，可以在将推荐列表返回用户之前，为兼顾结果的“多样性”“流行度”“新鲜度”等指标，结合一些补充的策略和算法对推荐列表进行一定的调整，最终形成用户可见的推荐列表。</p>
 <p>模型训练方法：离线训练 在线更新</p>
 <ul>
-<li><p>离线训练：利用全量样本和特征，使模型逼近全局最优点</p>
+<li>
+<p>离线训练：利用全量样本和特征，使模型逼近全局最优点</p>
 </li>
-<li><p>在线更新：准实时消化新的数据样本，满足实时性需求</p>
+<li>
+<p>在线更新：准实时消化新的数据样本，满足实时性需求</p>
 </li>
 </ul>
-<h4 id="传统推荐模型的演化关系图"><a href="#传统推荐模型的演化关系图" class="headerlink" title="传统推荐模型的演化关系图"></a>传统推荐模型的演化关系图</h4><p><img  
+<h4 id="传统推荐模型的演化关系图"><a class="header-anchor" href="#传统推荐模型的演化关系图">¶</a>传统推荐模型的演化关系图</h4>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/image-20240823160900836.png"

@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Transformer在引入transformer之前，首先简述一下attention注意力机制 注意力机制（attention）在机器翻译，智能问答等场景中，源语言和目标语言的句子通常没有相同的长度，由此引出了RNN（ N vs N 的循环神经网络）的变种：N vs M。这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型，该模型可以用于机器翻译等应用场景。 eg :">
+        <meta name="description" content="¶Transformer 在引入transformer之前，首先简述一下attention注意力机制 ¶注意力机制（attention） 在机器翻译，智能问答等场景中，源语言和目标语言的句子通常没有相同的长度，由此引出了RNN（ N vs N 的循环神经网络）的变种：N vs M。这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型，该模型可以用于机器翻译等应用场景。 e">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Transformer">
 <meta property="og:url" content="https://haozizizizi.github.io/2024/09/01/Transformer/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="Transformer在引入transformer之前，首先简述一下attention注意力机制 注意力机制（attention）在机器翻译，智能问答等场景中，源语言和目标语言的句子通常没有相同的长度，由此引出了RNN（ N vs N 的循环神经网络）的变种：N vs M。这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型，该模型可以用于机器翻译等应用场景。 eg :">
+<meta property="og:description" content="¶Transformer 在引入transformer之前，首先简述一下attention注意力机制 ¶注意力机制（attention） 在机器翻译，智能问答等场景中，源语言和目标语言的句子通常没有相同的长度，由此引出了RNN（ N vs N 的循环神经网络）的变种：N vs M。这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型，该模型可以用于机器翻译等应用场景。 e">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20231020093737373.png">
 <meta property="og:image" content="https://haozizizizi.github.io/images/image-20231020093803797.png">
@@ -614,8 +614,10 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p>在引入transformer之前，首先简述一下attention注意力机制</p>
-<h4 id="注意力机制（attention）"><a href="#注意力机制（attention）" class="headerlink" title="注意力机制（attention）"></a>注意力机制（attention）</h4><p>在机器翻译，智能问答等场景中，源语言和目标语言的句子通常没有相同的长度，由此引出了RNN（ <strong>N vs N</strong> 的循环神经网络）的变种：<strong>N vs M</strong>。这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型，该模型可以用于机器翻译等应用场景。</p>
+            <h3 id="Transformer"><a class="header-anchor" href="#Transformer">¶</a>Transformer</h3>
+<p>在引入transformer之前，首先简述一下attention注意力机制</p>
+<h4 id="注意力机制（attention）"><a class="header-anchor" href="#注意力机制（attention）">¶</a>注意力机制（attention）</h4>
+<p>在机器翻译，智能问答等场景中，源语言和目标语言的句子通常没有相同的长度，由此引出了RNN（ <strong>N vs N</strong> 的循环神经网络）的变种：<strong>N vs M</strong>。这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型，该模型可以用于机器翻译等应用场景。</p>
 <p>eg : 机器学习翻译成 machine learning</p>
 <p><img  
                      lazyload
@@ -623,8 +625,8 @@
                      data-src="/images/image-20231020093737373.png"
                       alt="image-20231020093737373"
                 ></p>
-<p><strong>问题：</strong>在生成目标句子的单词时，不论生成哪个单词，它们使用的输入句子的语义编码都是C，没有任何区别。而语义编码C是由原句子中的每个单词编码生成，意味着<strong>原句子中的任意单词对生成的目标单词影响力是相同的</strong>。</p>
-<p>在上边那个例子中在生成“machine”时，”机”,”器”,”学”,””习”的贡献是相同的。很显然，”机”,”器”，对于翻译成”machine”更为重要，所以该方法存在一定不合理性。我们希望在模型翻译”machine”的时候，”机”，”器”两个字的贡献(权重)更大，当在翻译成”learning”时，”学”，”习”两个字贡献(权重)更大。</p>
+<p><strong>问题：<strong>在生成目标句子的单词时，不论生成哪个单词，它们使用的输入句子的语义编码都是C，没有任何区别。而语义编码C是由原句子中的每个单词编码生成，意味着</strong>原句子中的任意单词对生成的目标单词影响力是相同的</strong>。</p>
+<p>在上边那个例子中在生成“machine”时，“机”,“器”,“学”,&quot;&quot;习&quot;的贡献是相同的。很显然，“机”,“器”，对于翻译成&quot;machine&quot;更为重要，所以该方法存在一定不合理性。我们希望在模型翻译&quot;machine&quot;的时候，“机”，&quot;器&quot;两个字的贡献(权重)更大，当在翻译成&quot;learning&quot;时，“学”，&quot;习&quot;两个字贡献(权重)更大。</p>
 <p>由此而提出的注意力机制，目的是通过计算权重，使模型关注对于其影响更大的部分。</p>
 <p><img  
                      lazyload
@@ -632,7 +634,8 @@
                      data-src="/images/image-20231020093803797.png"
                       alt="image-20231020093803797"
                 ></p>
-<h4 id="自注意力机制（Self-Attention）"><a href="#自注意力机制（Self-Attention）" class="headerlink" title="自注意力机制（Self-Attention）"></a>自注意力机制（Self-Attention）</h4><p>Self-Attention是一个过程，在其中一个向量序列x被编码成另一个向量序列z。每一个原始向量只是一个代表一个单词的数字块。<strong>它对应的z向量既表示原始单词，也表示它与周围其他单词的关系。</strong>如下图所示，其表示单词”it”的注意力集中在了哪些词上，也是对于单词”it”进行Self-Attention后得到的结果。</p>
+<h4 id="自注意力机制（Self-Attention）"><a class="header-anchor" href="#自注意力机制（Self-Attention）">¶</a>自注意力机制（Self-Attention）</h4>
+<p>Self-Attention是一个过程，在其中一个向量序列x被编码成另一个向量序列z。每一个原始向量只是一个代表一个单词的数字块。**它对应的z向量既表示原始单词，也表示它与周围其他单词的关系。**如下图所示，其表示单词&quot;it&quot;的注意力集中在了哪些词上，也是对于单词&quot;it&quot;进行Self-Attention后得到的结果。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -649,16 +652,19 @@
 <p>首先需要理解的就是三个矩阵Q K V，也就是self-attention的输入。这三个向量都是对词向量线性运算得到的，其实就是一个矩阵乘法。先用通俗的语言理解这三个向量。Query，Key，Value的概念取自于信息检索系统，举个简单的搜索的例子来说。当你在某电商平台搜索某件商品（年轻女士冬季穿的红色薄款羽绒服）时，你在搜索引擎上输入的内容便是Query，然后搜索引擎根据Query为你匹配Key（例如商品的种类，颜色，描述等），然后根据Query和Key的相似度得到匹配的内容（Value)。</p>
 <p>具体计算步骤如下:</p>
 <ol>
-<li><p>首先，我们将每个单词与Q K V 对应起来。这些对由学习到的矩阵和该单词的嵌入向量相乘得到。</p>
+<li>
+<p>首先，我们将每个单词与Q K V 对应起来。这些对由学习到的矩阵和该单词的嵌入向量相乘得到。</p>
 </li>
-<li><p>Q 可以看作是对单词的一个问题，例如，对地点单词”Africa”的问题可能是”那里发生了什么？”。表示两个向量之间的关系可以用<strong>内积</strong>的方式，两个向量内积的结果一定是一个值。如果他们正交的话，那就是完全没有关系，内积就为0，如果重合那就关系非常大，算出来的内积的结果的值也会很大。<strong>因此这里计算Q和每个K的内积，来确定其他单词对查询问题的回答的质量。</strong><img  
+<li>
+<p>Q 可以看作是对单词的一个问题，例如，对地点单词&quot;Africa&quot;的问题可能是&quot;那里发生了什么？&quot;。表示两个向量之间的关系可以用<strong>内积</strong>的方式，两个向量内积的结果一定是一个值。如果他们正交的话，那就是完全没有关系，内积就为0，如果重合那就关系非常大，算出来的内积的结果的值也会很大。<strong>因此这里计算Q和每个K的内积，来确定其他单词对查询问题的回答的质量。</strong><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/image-20240901182647448.png"
                       alt="image-20240901182647448"
                 ></p>
 </li>
-<li><p>算出的结果除以根号d<del>k</del>（K向量的维度的平方根，通常K向量的维度是64)：向量的维度越大，内积的结果越大，将softmax函数推入具有极小梯度的区域，除以根号d<del>k</del>后梯度会更加稳定</p>
+<li>
+<p>算出的结果除以根号d<sub>k</sub>（K向量的维度的平方根，通常K向量的维度是64)：向量的维度越大，内积的结果越大，将softmax函数推入具有极小梯度的区域，除以根号d<sub>k</sub>后梯度会更加稳定</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -666,21 +672,24 @@
                       alt="image-20240901182718458"
                 ></p>
 </li>
-<li><p>我们对所有内积结果进行softmax运算，这样可以获得每个单词的注意力值。<img  
+<li>
+<p>我们对所有内积结果进行softmax运算，这样可以获得每个单词的注意力值。<img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/image-20240901182848527.png"
                       alt="image-20240901182848527"
                 ></p>
 </li>
-<li><p>最后，我们将得到的softmax值与相应单词的值向量V相乘，这个思想主要是为了保持我们想要关注的单词的值不变，而掩盖掉那些不相关的单词（例如将他们乘上很小的数字）<img  
+<li>
+<p>最后，我们将得到的softmax值与相应单词的值向量V相乘，这个思想主要是为了保持我们想要关注的单词的值不变，而掩盖掉那些不相关的单词（例如将他们乘上很小的数字）<img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/image-20240901182941197.png"
                       alt="image-20240901182941197"
                 ></p>
 </li>
-<li><p>将带权重的各个V向量加起来，至此，产生在这个位置上单词的self-attention层的输出，其余位置的self-attention输出也是同样的计算方式。<img  
+<li>
+<p>将带权重的各个V向量加起来，至此，产生在这个位置上单词的self-attention层的输出，其余位置的self-attention输出也是同样的计算方式。<img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/image-20240901183033986.png"
@@ -695,8 +704,9 @@
                      data-src="/images/image-20240901183115568.png"
                       alt="image-20240901183115568"
                 ></p>
-<p>每一个词的v向量维度为1 * d<del>v</del>,注意力矩阵的维度为n*n，注意力矩阵与n个V向量进行矩阵乘法操作，得到Z向量，维度为n * d<del>v</del></p>
-<h4 id="多头注意力机制（Multi-Head-attention）"><a href="#多头注意力机制（Multi-Head-attention）" class="headerlink" title="多头注意力机制（Multi-Head attention）"></a>多头注意力机制（Multi-Head attention）</h4><p>Multi-Head Attention 机制对自注意力机制进行拓展，允许模型联合学习序列的不同表示子空间。</p>
+<p>每一个词的v向量维度为1 * d<sub>v</sub>,注意力矩阵的维度为n*n，注意力矩阵与n个V向量进行矩阵乘法操作，得到Z向量，维度为n * d<sub>v</sub></p>
+<h4 id="多头注意力机制（Multi-Head-attention）"><a class="header-anchor" href="#多头注意力机制（Multi-Head-attention）">¶</a>多头注意力机制（Multi-Head attention）</h4>
+<p>Multi-Head Attention 机制对自注意力机制进行拓展，允许模型联合学习序列的不同表示子空间。</p>
 <p>多头注意力将输入序列重复进行自注意力计算n次，每次使用不同的权重矩阵,得到n个注意力向量序列。然后将这n个序列拼接并线性转换，得到最终的序列表示,即:</p>
 <p><img  
                      lazyload
@@ -718,7 +728,7 @@
                      data-src="/images/image-20240901183253350.png"
                       alt="image-20240901183253350"
                 ></p>
-<p>在实际计算中，由于不同”头”的计算不共享权重矩阵，互不影响，因此可以同时计算所有的”头”，即并行计算，以提高计算效率。</p>
+<p>在实际计算中，由于不同&quot;头&quot;的计算不共享权重矩阵，互不影响，因此可以同时计算所有的&quot;头&quot;，即并行计算，以提高计算效率。</p>
 <p>多头注意力参考CNN的多通道模式，从多个角度提取特征，如果将这个机制进行可视化，可以表示为：</p>
 <p><img  
                      lazyload
@@ -728,20 +738,21 @@
                 ></p>
 <p>“多头注意力机制”从两个方面提高了自注意力层的性能。</p>
 <p>1.它扩展了模型专注于不同位置的能力。在上面的例子中，虽然每个编码都在z1中有或多或少的体现，但是它可能被实际的单词本身所支配。如果我们翻译一个句子，比如“The animal didn’t cross the street because it was too tired”，我们会想知道“it”指的是哪个词，这时模型的“多头”注意机制会起到作用。</p>
-<p>2.它给出了注意力层的多个“表示子空间”（representation subspaces）。接下来我们将看到，对于“多头”注意机制，我们有多个查询&#x2F;键&#x2F;值权重矩阵集(Transformer使用八个注意力头，因此我们对于每个编码器&#x2F;解码器有八个矩阵集合)。这些集合中的每一个都是随机初始化的，在训练之后，每个集合都被用来将输入词嵌入(或来自较低编码器&#x2F;解码器的向量)投影到不同的表示子空间中。</p>
-<p>总的来说，多头注意力机制可以为每个单词学习到更丰富、更好的表示，每个”头”都能从不同的角度去理解序列中的每个单词。</p>
-<h4 id="模型架构"><a href="#模型架构" class="headerlink" title="模型架构"></a>模型架构</h4><p><img  
+<p>2.它给出了注意力层的多个“表示子空间”（representation subspaces）。接下来我们将看到，对于“多头”注意机制，我们有多个查询/键/值权重矩阵集(Transformer使用八个注意力头，因此我们对于每个编码器/解码器有八个矩阵集合)。这些集合中的每一个都是随机初始化的，在训练之后，每个集合都被用来将输入词嵌入(或来自较低编码器/解码器的向量)投影到不同的表示子空间中。</p>
+<p>总的来说，多头注意力机制可以为每个单词学习到更丰富、更好的表示，每个&quot;头&quot;都能从不同的角度去理解序列中的每个单词。</p>
+<h4 id="模型架构"><a class="header-anchor" href="#模型架构">¶</a>模型架构</h4>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/image-20231016114010938.png"
                       alt="image-20231020093737373"
                 ></p>
-<h5 id="编码器输入"><a href="#编码器输入" class="headerlink" title="编码器输入"></a>编码器输入</h5><p>在了解tranformer的核心架构（编码器 解码器）之前，首先学习其对input的处理。</p>
+<h5 id="编码器输入"><a class="header-anchor" href="#编码器输入">¶</a>编码器输入</h5>
+<p>在了解tranformer的核心架构（编码器 解码器）之前，首先学习其对input的处理。</p>
 <p>输入部分是Transformer模型的第一部分，它的主要任务是将原始的输入序列转化为模型可以处理的向量表示。输入部分包括两个主要组件：<strong>文本嵌入层（Embedding Layer）和位置编码器（Positional Encoding）</strong></p>
 <p>1.<strong>文本嵌入层</strong>负责将输入序列中的每个词元（单词或字符）映射为一个固定长度的向量表示。这个向量被称为嵌入向量，它包含了该词元在语义空间中的含义和上下文信息。这种嵌入向量是通过预训练的语言模型（例如Word2Vec或BERT）学习得到的。通过这种嵌入层，原始的文本数据被转化为统一的向量表示，这使得模型可以更加方便地处理和分析这些数据。</p>
 <p>每个词的词向量 Word Embedding 是一个 n 维的向量，例如：</p>
 <div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">king = [ 0.50451 , 0.68607 ,........., -0.51042 ]</span><br></pre></td></tr></table></figure></div>
-
 <p>2.<strong>位置编码器</strong>负责给输入序列中的每个词元分配一个唯一的向量表示，这个向量包含了该词元在序列中的位置信息。</p>
 <p><strong>Transformer需要位置编码的原因</strong>：在RNN模型中，位置信息是通过神经网络严格的顺序计算来保证的。由于Transformer模型是纯粹的注意力模型，它不能自然地处理输入序列中次元之间的相对位置关系，因此需要使用位置编码器来显式地编码这种位置信息。</p>
 <p>位置编码器一般采用正弦和余弦函数组合的方式生成位置向量，这样每个位置都可以被表示为一个唯一的向量，并且这个向量包含了该位置在序列中的相对距离和方向信息。在transformer中，采用余弦位置编码来提供位置信息，计算公式如下：</p>
@@ -765,12 +776,12 @@
 <p>B : 表示模型输入的batch size；</p>
 <p>S : 表示模型输入句子的最大长度；</p>
 <p>D : 表示词向量的维度；</p>
-<p>对于一个Shape &#x3D; [B, S] 的‘文本矩阵’：</p>
+<p>对于一个Shape = [B, S] 的‘文本矩阵’：</p>
 <ol>
-<li>获取词向量，得到Shape &#x3D; [B, S, D] 的张量（T1）;</li>
-<li>获取位置向量，得到Shape &#x3D; [B, S, D]的张量（T2）;</li>
+<li>获取词向量，得到Shape = [B, S, D] 的张量（T1）;</li>
+<li>获取位置向量，得到Shape = [B, S, D]的张量（T2）;</li>
 </ol>
-<p>将两个张量相加得到模型输入 X &#x3D; T1 + T2  Shape &#x3D; [B, S, D]</p>
+<p>将两个张量相加得到模型输入 X = T1 + T2  Shape = [B, S, D]</p>
 <p>transformer模型主要由两部分组成，Encoder（左）和Decoder（右）。当输入一个文本的时候，该文本数据会先经过encoders（N个encoder 原文中N为6）模块，对该文本进行编码，然后将编码后的数据再传入decoders（N个decoder 原文中N为6）模块进行解码，解码后就得到了翻译后的文本，对应的我们称Encoder为编码器，Decoder为解码器。</p>
 <p>可以通过下方简图对编码解码过程进行大致的了解。在编码部分，每一个的小编码器的输入是前一个小编码器的输出，而每一个小解码器的输入不光是它的前一个解码器的输出，还包括了整个编码部分的输出。</p>
 <p><img  
@@ -779,7 +790,8 @@
                      data-src="/images/image-20231020093841896.png"
                       alt="image-20231020093737373"
                 ></p>
-<h5 id="编码器-encoder"><a href="#编码器-encoder" class="headerlink" title="编码器 encoder"></a>编码器 encoder</h5><p>接下来，对encoder的内部进行学习。通过观察模型架构的左半部分，可以发现编码器的内部结构是一个多头自注意力机制加上一个前馈神经网络。<strong>此处需要注意的是，所有编码器结构相同但并不共享参数。</strong></p>
+<h5 id="编码器-encoder"><a class="header-anchor" href="#编码器-encoder">¶</a>编码器 encoder</h5>
+<p>接下来，对encoder的内部进行学习。通过观察模型架构的左半部分，可以发现编码器的内部结构是一个多头自注意力机制加上一个前馈神经网络。<strong>此处需要注意的是，所有编码器结构相同但并不共享参数。</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -789,18 +801,20 @@
 <p>输入数据通过Multi-Head Attention层处理后，会经过一个Add &amp; Norm处理。其中，Add为residule block（残差模块），数据在这里进行residule connection（残差连接）。而Norm即为Normalization（标准化）模块。Transformer中采用的是Layer Normalization（层标准化）方式。</p>
 <p><strong>ADD （Residule残差）</strong></p>
 <p>Residual的做法就是将输入加到输出上，作为最后的输出。</p>
-<p>原因：在self-attention中，输入是这个词的特征，输出也是这个词的特征。它就是将这个词融入了一下上下文的语境，相当于重构了一下，维度与特征个数都没有变，特征值变了。通过self- attention的堆叠特征一定会变得更好吗？这里引入了2015年残差神经网络的思想，加入残差连接机制避免堆叠特征反而变差的问题。就是这个y &#x3D; f(x)+x策略，y的结果一定不会比f(x)的结果差。</p>
+<p>原因：在self-attention中，输入是这个词的特征，输出也是这个词的特征。它就是将这个词融入了一下上下文的语境，相当于重构了一下，维度与特征个数都没有变，特征值变了。通过self- attention的堆叠特征一定会变得更好吗？这里引入了2015年残差神经网络的思想，加入残差连接机制避免堆叠特征反而变差的问题。就是这个y = f(x)+x策略，y的结果一定不会比f(x)的结果差。</p>
 <p>好处：</p>
 <ol>
-<li><p>随着网络层数的增加，越深的网络层，其保留的原始信息越少，通过在网络中跨越多个层级直接传递信息，可以使得后续的网络可以提取有效的高层次信息，避免信息的丢失。</p>
+<li>
+<p>随着网络层数的增加，越深的网络层，其保留的原始信息越少，通过在网络中跨越多个层级直接传递信息，可以使得后续的网络可以提取有效的高层次信息，避免信息的丢失。</p>
 </li>
-<li><p>解决了深度神经网络的退化问题，同等层数的前提下残差网络也收敛得更快（这里可以理解为通过计算残差，下一层中只需继续优化未匹配的地方，所以收敛快）</p>
+<li>
+<p>解决了深度神经网络的退化问题，同等层数的前提下残差网络也收敛得更快（这里可以理解为通过计算残差，下一层中只需继续优化未匹配的地方，所以收敛快）</p>
 </li>
 </ol>
 <p><strong>Layer normalization</strong></p>
 <p>Layer normalization是数据归一化的一种方式，计算均值和方差。</p>
 <p>作用：将每一层网络转成均值方差都一样的分布，加快模型收敛。</p>
-<p>在图像问题中，LN是指对一整张图片进行标准化处理，即在一张图片所有channel的pixel范围内计算均值和方差。而在NLP的问题中，LN是指在一个句子的一个token的范围内进行标准化。 BN（batch normalization）是在特征间进行标准化操作（<strong>横向操作</strong>），而LN是在整条数据间进行标准化操作（<strong>纵向操作</strong>）。 </p>
+<p>在图像问题中，LN是指对一整张图片进行标准化处理，即在一张图片所有channel的pixel范围内计算均值和方差。而在NLP的问题中，LN是指在一个句子的一个token的范围内进行标准化。 BN（batch normalization）是在特征间进行标准化操作（<strong>横向操作</strong>），而LN是在整条数据间进行标准化操作（<strong>纵向操作</strong>）。</p>
 <p>Add&amp;Norm在transform中是一个通用的网络结构，Add&amp;Norm不会改变张量的shape，计算公式如下：</p>
 <p><img  
                      lazyload
@@ -826,11 +840,13 @@
 <p>作用：前面每一步都在做线性变换，线性变化的学习能力不如非线形变化强（线性变化就是空间中平移和扩大缩小），通过 Feed Forward中的 Relu 做一次非线性变换，提升了每个单词的表达能力。</p>
 <p>由上面的描述可知，一个Encode block是由Multi-Head Attention, Add &amp; Norm, Feed Forward, Add &amp; Norm组成一个 Encoder block。通过多个Encoder block可以组成一个Encoder。具体过程如下：</p>
 <p>第一个 Encoder block 的输入为句子单词的表示向量矩阵，后续 Encoder block 的输入是前一个 Encoder block 的输出，最后一个 Encoder block 输出的矩阵就是<strong>编码信息矩阵</strong> ，这一矩阵后续会用到 Decoder 中。</p>
-<h5 id="解码器输入"><a href="#解码器输入" class="headerlink" title="解码器输入"></a>解码器输入</h5><p>根据模型架构图可以看到编码器与解码器输入的区别是，解码器多了一个Shifted right。</p>
+<h5 id="解码器输入"><a class="header-anchor" href="#解码器输入">¶</a>解码器输入</h5>
+<p>根据模型架构图可以看到编码器与解码器输入的区别是，解码器多了一个Shifted right。</p>
 <p>原因：编码器一次性可以看到整个句子。解码器只能一个一个生成（自回归auto-regressive，根据前面已经预测过的词预测后面待预测的词）。Shifted right 指的是 decoder 在之前时刻的一些输出，作为此时的输入。一个一个往右移。</p>
 <p>在对话的过程中单词是顺序生成的，即生成完第 i 个单词，才可以生成第 i+1 个单词。输出嵌入矩阵Output Embeddings就是依次的输出结果转换为对应的Embedding。</p>
 <p>比如：在开始时我们将初始的输出设为<start>， 将<start>生成其Embedding 作为输入送到Decoder矩阵中，输出预测的输出“You”。然后”You”转换为对应的Embedding矩阵，和<start>的矩阵在一起送入Decoder中，预测出下一个输出为”Win“，如此往复直到最后一个单词。</p>
-<h5 id="解码器-decoder"><a href="#解码器-decoder" class="headerlink" title="解码器 decoder"></a>解码器 decoder</h5><p>先来整体看下decoder，可以看出它与encoder存在很多共通之处：</p>
+<h5 id="解码器-decoder"><a class="header-anchor" href="#解码器-decoder">¶</a>解码器 decoder</h5>
+<p>先来整体看下decoder，可以看出它与encoder存在很多共通之处：</p>
 <ul>
 <li>包含两个 Multi-Head Attention 层。第一个 Multi-Head Attention 层采用了 Masked 操作，后面进行详细解释。第二个 Multi-Head Attention 层的 <strong>K，V</strong>矩阵使用 Encoder 输出的<strong>编码信息矩阵</strong>进行计算，而Q使用Decoder block自身的上一层的输出计算。</li>
 <li>包含多个Add &amp; Norm层，一个Feed Forward</li>
@@ -866,7 +882,8 @@
                       alt="image-20240901183544220"
                 ></p>
 <p>如上图所示，词汇表中单词”You“的概率最大，那么它将会成为这次的输出。</p>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p>Vaswani A , Shazeer N , Parmar N ,et al.Attention Is All You Need[J].arXiv, 2017.DOI:10.48550&#x2F;arXiv.1706.03762.</p>
+<h4 id="参考"><a class="header-anchor" href="#参考">¶</a>参考</h4>
+<p>Vaswani A , Shazeer N , Parmar N ,et al.Attention Is All You Need[J].arXiv, 2017.DOI:10.48550/arXiv.1706.03762.</p>
 <p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/645250967" >https://zhuanlan.zhihu.com/p/645250967 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/609618838" >https://zhuanlan.zhihu.com/p/609618838 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_50592077/article/details/131474803" >https://blog.csdn.net/weixin_50592077/article/details/131474803 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
