@@ -13,30 +13,31 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://haozizizizi.github.io/2024/09/05/wide＆deep模型/"/>
+    <link rel="canonical" href="https://haozizizizi.github.io/2024/09/25/激活函数/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="¶Wide＆Deep模型——记忆能力和泛化能力的综合 谷歌于2016年提出Wide＆Deep模型, 主要思路正如其名，是由单层的Wide部分和多层的Deep部分组成的混合模型。 其中，Wide部分的主要作用是让模型具有较强的“记忆能力”(memorization)；Deep部分的主要作用是让模型具有“泛化能力”(generalization)，正是这样的结构特点，使模型兼具了逻辑回归和深度神经网络">
+        <meta name="description" content="¶激活函数 激活函数（Activation Function）是一种添加到神经网络中的函数，旨在帮助神经网络学习数据中的复杂模式。类似于人类大脑中基于神经元的模型，激活函数最终决定了要发射给下一个神经元的内容，将非线性特性引入到了神经网络总。 **使用激活函数的原因：**如果不使用激活函数，每一层输出只是承接了上一层输入函数的线性变换，无论神经网络有多少层，输出都是输入的线性组合。激活函数给神经元">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Wide＆Deep模型">
-<meta property="og:url" content="https://haozizizizi.github.io/2024/09/05/Wide%EF%BC%86Deep%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:title" content="激活函数">
+<meta property="og:url" content="https://haozizizizi.github.io/2024/09/25/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="¶Wide＆Deep模型——记忆能力和泛化能力的综合 谷歌于2016年提出Wide＆Deep模型, 主要思路正如其名，是由单层的Wide部分和多层的Deep部分组成的混合模型。 其中，Wide部分的主要作用是让模型具有较强的“记忆能力”(memorization)；Deep部分的主要作用是让模型具有“泛化能力”(generalization)，正是这样的结构特点，使模型兼具了逻辑回归和深度神经网络">
+<meta property="og:description" content="¶激活函数 激活函数（Activation Function）是一种添加到神经网络中的函数，旨在帮助神经网络学习数据中的复杂模式。类似于人类大脑中基于神经元的模型，激活函数最终决定了要发射给下一个神经元的内容，将非线性特性引入到了神经网络总。 **使用激活函数的原因：**如果不使用激活函数，每一层输出只是承接了上一层输入函数的线性变换，无论神经网络有多少层，输出都是输入的线性组合。激活函数给神经元">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240904164152536.png">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240904164630140.png">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240905165558013.png">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240905170206418.png">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240905170325620.png">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240905170824182.png">
-<meta property="article:published_time" content="2024-09-05T09:25:06.000Z">
-<meta property="article:modified_time" content="2024-09-05T09:26:36.588Z">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240925162020216.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240925163235360.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240925163543698.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240925164245221.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240925164313307.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240925164910661.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240925170326574.png">
+<meta property="article:published_time" content="2024-09-25T09:08:37.000Z">
+<meta property="article:modified_time" content="2024-09-25T09:11:40.305Z">
 <meta property="article:author" content="haozizizi">
-<meta property="article:tag" content="深度学习推荐系统 王喆">
+<meta property="article:tag" content="原创">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://haozizizizi.github.io/images/image-20240904164152536.png">
+<meta name="twitter:image" content="https://haozizizizi.github.io/images/image-20240925162020216.png">
     
     
     <!--- Icon Part-->
@@ -48,7 +49,7 @@
     
     <title>
         
-            Wide＆Deep模型 -
+            激活函数 -
         
         haozizizi
     </title>
@@ -512,7 +513,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Wide＆Deep模型</h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">激活函数</h1>
                 </div>
             
             </div>
@@ -533,15 +534,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-09-05 17:25:06</span>
-        <span class="mobile">2024-09-05 17:25:06</span>
+        <span class="desktop">2024-09-25 17:08:37</span>
+        <span class="mobile">2024-09-25 17:08:37</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-05 17:26:36</span>
-            <span class="mobile">2024-09-05 17:26:36</span>
+            <span class="desktop">2024-09-25 17:11:40</span>
+            <span class="mobile">2024-09-25 17:11:40</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -555,7 +556,7 @@
                     
                         
                         <li>
-                            <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/">推荐系统</a>&nbsp;
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
                         </li>
                     
                     
@@ -569,7 +570,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-%E7%8E%8B%E5%96%86/">深度学习推荐系统 王喆</a>&nbsp;
+                        <a href="/tags/%E5%8E%9F%E5%88%9B/">原创</a>&nbsp;
                     </li>
                 
             </ul>
@@ -595,77 +596,119 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="Wide＆Deep模型——记忆能力和泛化能力的综合"><a class="header-anchor" href="#Wide＆Deep模型——记忆能力和泛化能力的综合">¶</a>Wide＆Deep模型——记忆能力和泛化能力的综合</h4>
-<p>谷歌于2016年提出Wide＆Deep模型, 主要思路正如其名，是由单层的Wide部分和多层的Deep部分组成的混合模型。</p>
-<p>其中，Wide部分的主要作用是让模型具有较强的“记忆能力”(memorization)；Deep部分的主要作用是让模型具有“泛化能力”(generalization)，正是这样的结构特点，使模型兼具了逻辑回归和深度神经网络的优点——能够快速处理并记忆大量历史行为特征，并且具有强大的表达能力。</p>
-<h5 id="模型的记忆能力与泛化能力"><a class="header-anchor" href="#模型的记忆能力与泛化能力">¶</a>模型的记忆能力与泛化能力</h5>
-<p>Wide＆Deep模型的设计初衷和其最大的价值在于同时具备较强的“记忆能力”和“泛化能力。</p>
-<p>**“记忆能力”可以被理解为模型直接学习并利用历史数据中物品或者特征的“共现频率”的能力。**一般来说，协同过滤、逻辑回归等简单模型有较强的“记忆能力”。由于这类模型的结构简单，原始数据往往可以直接影响推荐结果，产生类似于“如果点击过A，就推荐B”这类规则式的推荐，这就相当于模型直接记住了历史数据的分布特点，并利用这些记忆进行推荐。</p>
-<p>因为Wide＆Deep是由谷歌应用商店(GooglePlay)推荐团队提出的，所以以App推荐的场景为例，解释什么是模型的“记忆能力”。</p>
-<p>**例子：**假设在Google Play 推荐模型的训练过程中，设置如下组合特征AND(user_installed_app=netflix，impression_app=pandora)（简称netflix＆pandora），它代表用户已经安装了netflix这款应用，而且曾在应用商店中看到过pandora这款应用。</p>
-<p>如果以“最终是否安装pandora”为数据标签(label)，则可以轻而易举地统计出netflix＆pandora这个特征和安装pandora这个标签之间的共现频率。假设二者的共现频率高达10%（全局的平均应用安装率为1%），这个特征如此之强，以至于在设计模型时，希望模型一发现有这个特征，就推荐pandora这款应用，这就是所谓的模型的“记忆能力”。</p>
-<p>像逻辑回归这类简单模型，如果发现这样的“强特征”，则其相应的权重就会在模型训练过程中被调整得非常大，这样就实现了对这个特征的直接记忆。相反，对于多层神经网络来说，特征会被多层处理，不断与其他特征进行交叉，因此模型对这个强特征的记忆反而没有简单模型深刻。</p>
-<p>**“泛化能力”可以被理解为模型传递特征的相关性，以及发掘稀疏甚至从未出现过的稀有特征与最终标签相关性的能力。**矩阵分解比协同过滤的泛化能力强，因为矩阵分解引入了隐向量这样的结构，使得数据稀少的用户或者物品也能生成隐向量，从而获得有数据支撑的推荐得分，这就是非常典型的将全局数据传递到稀疏物品上，从而提高泛化能力的例子。</p>
-<p>再比如，深度神经网络通过特征的多次自动组合，可以深度发掘数据中潜在的模式，即使是非常稀疏的特征向量输入，也能得到较稳定平滑的推荐概率，这就是简单模型所缺乏的“泛化能力”。</p>
-<h5 id="Wide＆Deep模型的结构"><a class="header-anchor" href="#Wide＆Deep模型的结构">¶</a>Wide＆Deep模型的结构</h5>
-<p>既然简单模型的“记忆能力”强，深度神经网络的“泛化能力”强，那么设计Wide＆Deep模型的直接动机就是将二者融合，具体的模型结构如图所示。</p>
+            <h4 id="激活函数"><a class="header-anchor" href="#激活函数">¶</a>激活函数</h4>
+<p>激活函数（Activation Function）是一种添加到神经网络中的函数，旨在帮助神经网络学习数据中的复杂模式。类似于人类大脑中基于神经元的模型，激活函数最终决定了要发射给下一个神经元的内容，将非线性特性引入到了神经网络总。</p>
+<p>**使用激活函数的原因：**如果不使用激活函数，每一层输出只是承接了上一层输入函数的线性变换，无论神经网络有多少层，输出都是输入的线性组合。激活函数给神经元引入了非线性的因素，提高神经网络的复杂度，使其可以逼近任何非线性函数。</p>
+<h5 id="sigmoid"><a class="header-anchor" href="#sigmoid">¶</a>sigmoid</h5>
+<p>该函数是将取值为 (−∞,+∞)的数映射到 (0,1) 之间</p>
+<p>sigmoid函数的公式：f(x) = 1/(1+e<sup>-x</sup>)</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240904164152536.png"
-                      alt="image-20240904164152536"
+                     data-src="/images/image-20240925162020216.png"
+                      alt="image-20240925162020216"
                 ></p>
-<p>Wide＆Deep模型把单输入层的Wide部分与由Embedding层和多隐层组成的Deep部分连接起来，一起输入最终的输出层。</p>
-<p>单层的Wide部分善于处理大量稀疏的id类特征；Deep部分利用神经网络表达能力强的特点，进行深层的特征交叉，挖掘藏在特征背后的数据模式。最终，利用逻辑回归模型，输出层将Wide部分和Deep部分组合起来，形成统一的模型。</p>
-<p>从图中可以详细地了解到Wide＆Deep模型到底将哪些特征作为Deep部分的输入，将哪些特征作为Wide部分的输入。</p>
+<ul>
+<li>Sigmoid 函数的输出范围是 0 到 1。由于输出值限定在 0 到 1，因此它对每个神经元的输出进行了归一化；</li>
+<li>用于将预测概率作为输出的模型。由于概率的取值范围是 0 到 1，因此 Sigmoid 函数非常合适；</li>
+<li>梯度平滑，避免「跳跃」的输出值；</li>
+<li>函数是可微的。这意味着可以找到任意两个点的 sigmoid 曲线的斜率；</li>
+<li>总结：除了输出层是二分类任务基本不会使用sigmoid</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>当 x 值非常大或者非常小时，通过上图我们可以看到，sigmoid函数的导数 f′(x)将接近 0 。这会导致权重 W 的梯度将接近 0 ，使得梯度更新十分缓慢，即<strong>梯度消失</strong></li>
+<li>函数输出不是以0为中心，降低权重更新的效率</li>
+<li>执行指数运算，计算机运行较慢</li>
+</ul>
+<h5 id="tanh"><a class="header-anchor" href="#tanh">¶</a>tanh</h5>
+<p>该函数是将取值为 (−∞,+∞) 的数映射到(−1,1) 之间</p>
+<p>tanh的公式为：f(x) = tanh(x) = (e<sup>x</sup> - e<sup>-x</sup>) /  (e<sup>x</sup> + e<sup>-x</sup>) = 2/(1+e<sup>-2x</sup>) - 1</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240904164630140.png"
-                      alt="image-20240904164630140"
+                     data-src="/images/image-20240925163235360.png"
+                      alt="image-20240925163235360"
                 ></p>
-<p>Deep 部分的输入是全量的特征向量，包括用户年龄(Age)、已安装应用数量(＃App Installs)、设备类型(Device Class)、已安装应用(User Installed App)、曝光应用(Impression App)等特征。已安装应用、曝光应用等类别型特征，需要经过Embedding层输入连接层(Concatenated Embedding)，拼接成1200维的Embedding向量，再依次经过3层ReLU全连接层，最终输入LogLoss输出层。</p>
-<p>Wide 部分的输入仅仅是已安装应用和曝光应用两类特征，其中已安装应用代表用户的历史行为，而曝光应用代表当前的待推荐应用。选择这两类特征的原因是充分发挥Wide部分“记忆能力”强的优势。</p>
-<p>Wide 部分组合“已安装应用”和“曝光应用”两个特征的函数被称为交叉积变换(Cross Product Transformation)函数，其形式化定义如（式3-8）所示。</p>
+<p>tanh 是一个双曲正切函数。tanh 函数和 sigmoid 函数的曲线相对相似。但是它比 sigmoid 函数更有一些优势。二者的区别在于输出间隔，tanh 的输出间隔为更大，并且整个函数以 0 为中心，比 sigmoid 函数更好；</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240905165558013.png"
-                      alt="image-20240905165558013"
+                     data-src="/images/image-20240925163543698.png"
+                      alt="image-20240925163543698"
                 ></p>
-<p>c<sub>ki</sub>是一个布尔变量，当第i个特征属于第k个组合特征时，c<sub>ki</sub>的值为1，否则为0；x<sub>i</sub>是第i 个特征的值。例如，对于“AND(user_installed_app=netflix，impression_app=pandora)”这个组合特征来说，只有当“user_installed_app=netflix”和“impression_app=pandora”这两个特征同时为1时，其对应的交叉积变换层的结果才为1，否则为0。</p>
-<p>在通过交叉积变换层操作完成特征组合之后，Wide 部分将组合特征输入最终的LogLoss输出层，与Deep部分的输出一同参与最后的目标拟合，完成Wide与Deep部分的融合。</p>
-<h5 id="Wide＆Deep模型的进化——Deep＆Cross模型"><a class="header-anchor" href="#Wide＆Deep模型的进化——Deep＆Cross模型">¶</a>Wide＆Deep模型的进化——Deep＆Cross模型</h5>
-<p>Wide＆Deep模型的提出不仅综合了“记忆能力”和“泛化能力”，而且开启了不同网络结构融合的新思路。在Wide＆Deep模型之后，有越来越多的工作集中于分别改进Wide＆Deep模型的Wide部分或是Deep部分。较典型的工作是2017年由斯坦福大学和谷歌的研究人员提出的Deep＆Cross模型（简称DCN）。</p>
-<p>Deep＆Cross模型的结构图如图3-15所示，其主要思路是使用Cross网络替代原来的Wide部分。</p>
+<ul>
+<li>在 tanh 图中，负输入将被强映射为负，而零输入被映射为零</li>
+<li>在一般的二元分类问题中，tanh 函数用于隐藏层，而 sigmoid 函数用于输出层，但这并不是固定的，需要根据特定问题进行调整</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>同sigmoid函数的第一个缺点一样，当 x很大或很小时，f′(x)接近于 0 ，会导致梯度很小，权重更新非常缓慢，即梯度消失问题</li>
+</ul>
+<h5 id="RuLU"><a class="header-anchor" href="#RuLU">¶</a>RuLU</h5>
+<p>ReLU 激活函数图像如图所示</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240905170206418.png"
-                      alt="image-20240905170206418"
+                     data-src="/images/image-20240925164245221.png"
+                      alt="image-20240925164245221"
                 ></p>
-<p>设计Cross网络的目的是增加特征之间的交互力度，使用多层交叉层(Cross layer)对输入向量进行特征交叉。假设第l层交叉层的输出向量为x<sub>l</sub>，那么第l+1层的输出向量如（式3-9）所示。</p>
+<p>其函数表达式：</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240905170325620.png"
-                      alt="image-20240905170325620"
+                     data-src="/images/image-20240925164313307.png"
+                      alt="image-20240925164313307"
                 ></p>
-<p>可以看到，交叉层操作的二阶部分非常类似于PNN模型中提到的外积操作，在此基础上增加了外积操作的权重向量w<sub>l</sub>，以及原输入向量x<sub>l</sub>和偏置向量b<sub>l</sub>。交叉层的操作如图所示。</p>
+<p>只要x是正值的情况下，导数恒等于 1，当x是负值的时候，导数恒等于 0。x等于0的时候没有导数。</p>
+<ul>
+<li>当输入为正时，不存在梯度消失问题</li>
+<li>计算速度快得多。ReLU 函数中只存在线性关系，因此它的计算速度比 sigmoid 和 tanh 更快</li>
+<li>如果输出是0和1的二分类问题，则输出层选择 sigmoid 函数，其他层选择 Relu 函数</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>当输入为负时，ReLU 完全失效，在正向传播过程中，这不是问题。有些区域很敏感，有些则不敏感。但是在反向传播过程中，如果输入负数，则梯度将完全为零，sigmoid 函数和 tanh 函数也具有相同的问题</li>
+<li>ReLU 函数不是以 0 为中心</li>
+</ul>
+<h5 id="Leaky-ReLU"><a class="header-anchor" href="#Leaky-ReLU">¶</a>Leaky ReLU</h5>
+<p>这是一种对ReLU函数改进的函数。图像如图所示</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240905170824182.png"
-                      alt="image-20240905170824182"
+                     data-src="/images/image-20240925164910661.png"
+                      alt="image-20240925164910661"
                 ></p>
-<p>可以看出，交叉层在增加参数方面是比较“克制”的，每一层仅增加了一个n维的权重向量wl（n维输入向量维度），并且在每一层均保留了输入向量，因此输出与输入之间的变化不会特别明显。</p>
-<p>由多层交叉层组成的Cross网络在Wide＆Deep模型中Wide部分的基础上进行特征的自动化交叉，避免了更多基于业务理解的人工特征组合。同Wide＆Deep模型一样，Deep＆Cross模型的Deep部分相比Cross部分表达能力更强，使模型具备更强的非线性学习能力。</p>
-<h5 id="Wide＆Deep模型的影响力"><a class="header-anchor" href="#Wide＆Deep模型的影响力">¶</a>Wide＆Deep模型的影响力</h5>
-<p>Wide＆Deep模型的影响力无疑是巨大的，不仅其本身成功应用于多家一线互联网公司，而且其后续的改进创新工作也延续至今。事实上，DeepFM、NFM等模型都可以看成Wide＆Deep模型的延伸。</p>
-<p>Wide＆Deep模型能够取得成功的关键在于：</p>
-<p>(1)抓住了业务问题的本质特点，能够融合传统模型记忆能力和深度学习模型泛化能力的优势。</p>
-<p>(2)模型的结构并不复杂，比较容易在工程上实现、训练和上线，这加速了其在业界的推广应用。</p>
-<p>也正是从Wide＆Deep模型之后，越来越多的模型结构被加入推荐模型中，深度学习模型的结构开始朝着多样化、复杂化的方向发展。</p>
+<p>其函数表达式：f(x) = αx, (x&lt;0)  f(x) = x, (x&gt;=0)</p>
+<p>为什么 Leaky ReLU 比 ReLU 更好？</p>
+<ul>
+<li>Leaky ReLU 通过把 x 的非常小的线性分量给予负输入来调整负值的零梯度（zero gradients）问题</li>
+<li>leak 有助于扩大 ReLU 函数的范围，通常 a 的值为 0.01 左右</li>
+<li>Leaky ReLU 的函数范围是负无穷到正无穷</li>
+<li>从理论上讲，Leaky ReLU 具有 ReLU 的所有优点，而且 Dead ReLU 不会有任何问题，但在实际操作中，尚未完全证明 Leaky ReLU 总是比 ReLU 更好</li>
+</ul>
+<h5 id="softmax"><a class="header-anchor" href="#softmax">¶</a>softmax</h5>
+<p>该函数是将取值为 (−∞,+∞) 的数映射到(0,1) 之间，且和为1</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20240925170326574.png"
+                      alt="image-20240925170326574"
+                ></p>
+<ul>
+<li>Softmax 确保较小的值具有较小的概率，并且不会直接丢弃。</li>
+<li>Softmax 是用于多类分类问题的激活函数</li>
+<li>对于长度为 K 的任意实向量，Softmax 可以将其压缩为长度为 K，值在（0，1）范围内，并且向量中元素的总和为 1 的实向量。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>在零点不可微</li>
+<li>如果某些类别的得分显著高于其他类别，那么这些类别的概率会接近 1，而其他类别的概率接近 0。由于这些概率变化很小，容易导致梯度在反向传播过程中接近 0，导致梯度消失问题。</li>
+</ul>
+<p><strong>参考</strong></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.jiqizhixin.com/articles/2021-02-24-7" >https://www.jiqizhixin.com/articles/2021-02-24-7 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://brickexperts.github.io/2019/09/03/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/" >https://brickexperts.github.io/2019/09/03/激活函数/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/cyh_24/article/details/50593400" >https://blog.csdn.net/cyh_24/article/details/50593400 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 
         </div>
 
@@ -673,18 +716,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> Wide＆Deep模型</li>
+        <li><strong>标题:</strong> 激活函数</li>
         <li><strong>作者:</strong> haozizizi</li>
         <li><strong>创建于
-                :</strong> 2024-09-05 17:25:06</li>
+                :</strong> 2024-09-25 17:08:37</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-09-05 17:26:36
+                    :</strong> 2024-09-25 17:11:40
             </li>
         
         <li>
-            <strong>链接:</strong> https://haozizizizi.github.io/2024/09/05/Wide＆Deep模型/
+            <strong>链接:</strong> https://haozizizizi.github.io/2024/09/25/激活函数/
         </li>
         <li>
             <strong>
@@ -706,7 +749,7 @@
             <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
                 
                     <li class="tag-item mx-0.5">
-                        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-%E7%8E%8B%E5%96%86/">#深度学习推荐系统 王喆</a>&nbsp;
+                        <a href="/tags/%E5%8E%9F%E5%88%9B/">#原创</a>&nbsp;
                     </li>
                 
             </ul>
@@ -717,29 +760,14 @@
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/09/06/FM%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%BB%93%E5%90%88/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">FM与深度学习模型的结合</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/09/04/PNN%E6%A8%A1%E5%9E%8B/"
+                        href="/2024/09/24/DIEN%E2%80%94%E2%80%94%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E5%90%88/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">PNN模型</span>
+                                <span class="post-nav-title-item">DIEN——序列模型与推荐系统的结合</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -803,7 +831,7 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">Wide＆Deep模型</div>
+        <div class="page-title">激活函数</div>
         
 
     </div>
