@@ -13,28 +13,26 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://haozizizizi.github.io/2024/09/01/逻辑回归/"/>
+    <link rel="canonical" href="https://haozizizizi.github.io/2024/09/27/item2vec/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="¶逻辑回归 – 融合多种特征的推荐模型 相比协同过滤模型仅利用用户与物品的相互行为信息进行推荐，逻辑回归模型能够综合利用用户、物品、上下文等多种不同的特征，生成较为“全面”的推荐结果。 逻辑回归模型将推荐问题转换成了一个点击率(Click Through Rate，CTR)预估问题。 ¶基于逻辑回归模型的推荐流程  将用户年龄、性别、物品属性、物品描述、当前时间、当前地点等特征转换成数值型特征向量">
+        <meta name="description" content="¶Item2vec——Word2vec在推荐系统领域的推广 既然Word2vec 可以对词“序列”中的词进行Embedding，那么对于用户购买“序列”中的一个商品，用户观看“序列”中的一个电影，也应该存在相应的Embedding方法，这就是Item2vec方法的基本思想。 ¶Item2vec的基本原理 如果从Embedding的角度看待矩阵分解模型，则用户隐向量和物品隐向量就是一种用户Embed">
 <meta property="og:type" content="article">
-<meta property="og:title" content="逻辑回归">
-<meta property="og:url" content="https://haozizizizi.github.io/2024/09/01/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/index.html">
+<meta property="og:title" content="Item2vec">
+<meta property="og:url" content="https://haozizizizi.github.io/2024/09/27/Item2vec/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="¶逻辑回归 – 融合多种特征的推荐模型 相比协同过滤模型仅利用用户与物品的相互行为信息进行推荐，逻辑回归模型能够综合利用用户、物品、上下文等多种不同的特征，生成较为“全面”的推荐结果。 逻辑回归模型将推荐问题转换成了一个点击率(Click Through Rate，CTR)预估问题。 ¶基于逻辑回归模型的推荐流程  将用户年龄、性别、物品属性、物品描述、当前时间、当前地点等特征转换成数值型特征向量">
+<meta property="og:description" content="¶Item2vec——Word2vec在推荐系统领域的推广 既然Word2vec 可以对词“序列”中的词进行Embedding，那么对于用户购买“序列”中的一个商品，用户观看“序列”中的一个电影，也应该存在相应的Embedding方法，这就是Item2vec方法的基本思想。 ¶Item2vec的基本原理 如果从Embedding的角度看待矩阵分解模型，则用户隐向量和物品隐向量就是一种用户Embed">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240828201951326.png">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240828202110467.png">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240828202221141.png">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240828202432092.png">
-<meta property="article:published_time" content="2024-09-01T08:52:57.000Z">
-<meta property="article:modified_time" content="2024-09-01T08:53:56.200Z">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240927194840744.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240927195218918.png">
+<meta property="article:published_time" content="2024-09-27T11:55:13.000Z">
+<meta property="article:modified_time" content="2024-09-27T11:57:42.449Z">
 <meta property="article:author" content="haozizizi">
 <meta property="article:tag" content="深度学习推荐系统 王喆">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://haozizizizi.github.io/images/image-20240828201951326.png">
+<meta name="twitter:image" content="https://haozizizizi.github.io/images/image-20240927194840744.png">
     
     
     <!--- Icon Part-->
@@ -46,7 +44,7 @@
     
     <title>
         
-            逻辑回归 -
+            Item2vec -
         
         haozizizi
     </title>
@@ -510,7 +508,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">逻辑回归</h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Item2vec</h1>
                 </div>
             
             </div>
@@ -531,15 +529,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-09-01 16:52:57</span>
-        <span class="mobile">2024-09-01 16:52:57</span>
+        <span class="desktop">2024-09-27 19:55:13</span>
+        <span class="mobile">2024-09-27 19:55:13</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-01 16:53:56</span>
-            <span class="mobile">2024-09-01 16:53:56</span>
+            <span class="desktop">2024-09-27 19:57:42</span>
+            <span class="mobile">2024-09-27 19:57:42</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -593,57 +591,37 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="逻辑回归-–-融合多种特征的推荐模型"><a class="header-anchor" href="#逻辑回归-–-融合多种特征的推荐模型">¶</a>逻辑回归 – 融合多种特征的推荐模型</h4>
-<p>相比协同过滤模型仅利用用户与物品的相互行为信息进行推荐，逻辑回归模型能够综合利用用户、物品、上下文等多种不同的特征，生成较为“全面”的推荐结果。</p>
-<p>逻辑回归模型将推荐问题转换成了一个点击率(Click Through Rate，CTR)预估问题。</p>
-<h5 id="基于逻辑回归模型的推荐流程"><a class="header-anchor" href="#基于逻辑回归模型的推荐流程">¶</a>基于逻辑回归模型的推荐流程</h5>
-<ol>
-<li>将用户年龄、性别、物品属性、物品描述、当前时间、当前地点等特征转换成数值型特征向量。</li>
-<li>确定逻辑回归模型的优化目标（以优化“点击率”为例），利用已有样本数据对逻辑回归模型进行训练，确定逻辑回归模型的内部参数。</li>
-<li>在模型服务阶段，将特征向量输入逻辑回归模型，经过逻辑回归模型的推断，得到用户“点击”（这里用点击作为推荐系统正反馈行为的例子）物品的概率。</li>
-<li>利用“点击”概率对所有候选物品进行排序，得到推荐列表。</li>
-</ol>
-<h5 id="逻辑回归模型的数学形式"><a class="header-anchor" href="#逻辑回归模型的数学形式">¶</a>逻辑回归模型的数学形式</h5>
+            <h4 id="Item2vec——Word2vec在推荐系统领域的推广"><a class="header-anchor" href="#Item2vec——Word2vec在推荐系统领域的推广">¶</a>Item2vec——Word2vec在推荐系统领域的推广</h4>
+<p>既然Word2vec 可以对词“序列”中的词进行Embedding，那么对于用户购买“序列”中的一个商品，用户观看“序列”中的一个电影，也应该存在相应的Embedding方法，这就是Item2vec方法的基本思想。</p>
+<h5 id="Item2vec的基本原理"><a class="header-anchor" href="#Item2vec的基本原理">¶</a>Item2vec的基本原理</h5>
+<p>如果从Embedding的角度看待矩阵分解模型，则用户隐向量和物品隐向量就是一种用户Embedding向量和物品Embedding向量。</p>
+<p>由于Word2vec的流行，越来越多的Embedding方法可以被直接用于物品Embedding向量的生成，而用户Embedding 向量则更多通过行为历史中的物品Embedding 平均或者聚类得到。</p>
+<p>利用用户向量和物品向量的相似性，可以直接在推荐系统的召回层快速得到候选集合，或在排序层直接用于最终推荐列表的排序。正是基于这样的技术背景，微软于2016年提出了计算物品Embedding向量的方法Item2vec。</p>
+<p>相比Word2vec 利用“词序列”生成词Embedding。Item2vec利用的“物品序列”是由特定用户的浏览、购买等行为产生的历史行为记录序列。</p>
+<p>假设Item2vec中一个长度为K的用户历史记录为ω1，ω2，…，ωK，类比Word2vec，Item2vec的优化目标如（式4-4）所示。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240828201951326.png"
-                      alt="image-20240828201951326"
+                     data-src="/images/image-20240927194840744.png"
+                      alt="image-20240927194840744"
                 ></p>
-<p>其中，sigmoid函数的具体形式如（式2-12）所示。</p>
+<p>Item2vec与Word2vec唯一的不同在于，Item2vec摒弃了时间窗口的概念，认为序列中任意两个物品都相关，因此在Item2vec的目标函数中可以看到，其是两两物品的对数概率的和，而不仅是时间窗口内物品的对数概率之和。</p>
+<p>在优化目标定义好之后，Item2vec剩余的训练过程和最终物品Embedding的产生过程都与Word2vec完全一致，最终物品向量的查找表就是Word2vec中词向量的查找表。</p>
+<h5 id="“广义”的Item2vec"><a class="header-anchor" href="#“广义”的Item2vec">¶</a>“广义”的Item2vec</h5>
+<p>事实上，Embedding对物品进行向量化的方法远不止Item2vec。广义上讲，任何能够生成物品向量的方法都可以称为Item2vec。典型的例子是曾在百度、Facebook等公司成功应用的双塔模型。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240828202110467.png"
-                      alt="image-20240828202110467"
+                     data-src="/images/image-20240927195218918.png"
+                      alt="image-20240927195218918"
                 ></p>
-<p>其函数曲线如图2-8所示。可以直观地看到sigmoid的值域在0～1之间，符合“点击率”的物理意义。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/image-20240828202221141.png"
-                      alt="image-20240828202221141"
-                ></p>
-<p>综上，逻辑回归模型整个推断过程的数学形式如（式2-13）所示。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/image-20240828202432092.png"
-                      alt="image-20240828202432092"
-                ></p>
-<h5 id="逻辑回归模型的训练方法"><a class="header-anchor" href="#逻辑回归模型的训练方法">¶</a>逻辑回归模型的训练方法</h5>
-<p>使用梯度下降法训练逻辑回归模型</p>
-<p>梯度下降法是一个一阶最优化算法，也称为最速下降法。应用梯度下降法的目的是找到一个函数的局部极小值。</p>
-<p>这就利用了“梯度”的性质：如果实值函数F(x)在点x<sub>0</sub>处可微且有定义，那么函数F(x)在点x<sub>0</sub>处沿着梯度相反的方向-∇F(x)下降最快。</p>
-<p>因此，在优化某模型的目标函数时，只需对目标函数进行求导，得到梯度的方向，沿梯度的反方向下降，并迭代此过程直至寻找到局部最小点。</p>
-<h5 id="逻辑回归模型的优势"><a class="header-anchor" href="#逻辑回归模型的优势">¶</a>逻辑回归模型的优势</h5>
-<ol>
-<li>数学含义上的支撑：逻辑回归作为广义线性模型的一种，它的假设是因变量y服从伯努利分布。</li>
-<li>可解释性强：算法工程师可以轻易地根据权重的不同解释哪些特征比较重要，在CTR模型的预测有偏差时定位是哪些因素影响了最后的结果。</li>
-<li>工程化的需要：易于并行化、模型简单、训练开销小。</li>
-</ol>
-<h5 id="逻辑回归模型的局限性"><a class="header-anchor" href="#逻辑回归模型的局限性">¶</a>逻辑回归模型的局限性</h5>
-<p>表达能力不强，无法进行特征交叉、特征筛选等一系列较为“高级”的操作，因此不可避免地造成信息的损失。</p>
+<p>在广告场景下的双塔模型中，广告侧的模型结构实现的其实就是对物品进行Embedding的过程。</p>
+<p>该模型被称为“双塔模型”，因此以下将广告侧的模型结构称为“物品塔”。那么，“物品塔”起到的作用本质上是接收物品相关的特征向量。经过物品塔内的多层神经网络结构，最终生成一个多维的稠密向量。</p>
+<p>从Embedding的角度看，这个稠密向量其实就是物品的Embedding 向量，只不过Embedding模型从Word2vec 变成了更为复杂灵活的“物品塔”模型，输入特征由用户行为序列生成的one-hot特征向量，变成了可包含更多信息的、全面的物品特征向量。</p>
+<p>二者的最终目的都是把物品的原始特征转变为稠密的物品Embedding向量表达，因此不管其中的模型结构如何，都可以把这类模型称为“广义”上的Item2vec类模型。</p>
+<h5 id="Item2vec方法的特点和局限性"><a class="header-anchor" href="#Item2vec方法的特点和局限性">¶</a>Item2vec方法的特点和局限性</h5>
+<p>Item2vec 作为Word2vec模型的推广，理论上可以利用任何序列型数据生成物品的Embedding向量，这大大拓展了Word2vec的应用场景。广义上的Item2vec模型其实是物品向量化方法的统称，它可以利用不同的深度学习网络结构对物品特征进行Embedding化。</p>
+<p>Item2vec方法也有其局限性，因为只能利用序列型数据，所以Item2vec在处理互联网场景下大量的网络化数据时往往显得捉襟见肘，这就是Graph Embedding技术出现的动因。</p>
 
         </div>
 
@@ -651,18 +629,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 逻辑回归</li>
+        <li><strong>标题:</strong> Item2vec</li>
         <li><strong>作者:</strong> haozizizi</li>
         <li><strong>创建于
-                :</strong> 2024-09-01 16:52:57</li>
+                :</strong> 2024-09-27 19:55:13</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-09-01 16:53:56
+                    :</strong> 2024-09-27 19:57:42
             </li>
         
         <li>
-            <strong>链接:</strong> https://haozizizizi.github.io/2024/09/01/逻辑回归/
+            <strong>链接:</strong> https://haozizizizi.github.io/2024/09/27/Item2vec/
         </li>
         <li>
             <strong>
@@ -695,29 +673,14 @@
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/09/01/%E4%BB%8EFM%E5%88%B0FFM/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">从FM到FFM</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/09/01/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3%E7%AE%97%E6%B3%95/"
+                        href="/2024/09/27/Embedding/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">矩阵分解算法</span>
+                                <span class="post-nav-title-item">Embedding</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -781,7 +744,7 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">逻辑回归</div>
+        <div class="page-title">Item2vec</div>
         
 
     </div>

@@ -13,28 +13,31 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://haozizizizi.github.io/2024/09/01/逻辑回归/"/>
+    <link rel="canonical" href="https://haozizizizi.github.io/2024/09/27/embedding/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="¶逻辑回归 – 融合多种特征的推荐模型 相比协同过滤模型仅利用用户与物品的相互行为信息进行推荐，逻辑回归模型能够综合利用用户、物品、上下文等多种不同的特征，生成较为“全面”的推荐结果。 逻辑回归模型将推荐问题转换成了一个点击率(Click Through Rate，CTR)预估问题。 ¶基于逻辑回归模型的推荐流程  将用户年龄、性别、物品属性、物品描述、当前时间、当前地点等特征转换成数值型特征向量">
+        <meta name="description" content="¶什么是Embedding Embedding就是用一个低维稠密的向量“表示”一个对象(object)，这里所说的对象可以是一个词、一个商品，也可以是一部电影等等。 Embedding向量能够表达相应对象的某些特征，同时向量之间的距离反映了对象之间的相似性。 ¶词向量的例子 图示为使用Word2vec 方法编码的几个单词（带有性别特征）的Embedding 向量在Embedding 空间内的位置，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="逻辑回归">
-<meta property="og:url" content="https://haozizizizi.github.io/2024/09/01/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/index.html">
+<meta property="og:title" content="Embedding">
+<meta property="og:url" content="https://haozizizizi.github.io/2024/09/27/Embedding/index.html">
 <meta property="og:site_name" content="haozizizi的个人主页">
-<meta property="og:description" content="¶逻辑回归 – 融合多种特征的推荐模型 相比协同过滤模型仅利用用户与物品的相互行为信息进行推荐，逻辑回归模型能够综合利用用户、物品、上下文等多种不同的特征，生成较为“全面”的推荐结果。 逻辑回归模型将推荐问题转换成了一个点击率(Click Through Rate，CTR)预估问题。 ¶基于逻辑回归模型的推荐流程  将用户年龄、性别、物品属性、物品描述、当前时间、当前地点等特征转换成数值型特征向量">
+<meta property="og:description" content="¶什么是Embedding Embedding就是用一个低维稠密的向量“表示”一个对象(object)，这里所说的对象可以是一个词、一个商品，也可以是一部电影等等。 Embedding向量能够表达相应对象的某些特征，同时向量之间的距离反映了对象之间的相似性。 ¶词向量的例子 图示为使用Word2vec 方法编码的几个单词（带有性别特征）的Embedding 向量在Embedding 空间内的位置，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240828201951326.png">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240828202110467.png">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240828202221141.png">
-<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240828202432092.png">
-<meta property="article:published_time" content="2024-09-01T08:52:57.000Z">
-<meta property="article:modified_time" content="2024-09-01T08:53:56.200Z">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240927190920466.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240927191618277.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240927191908083.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240927192208536.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240927192446481.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240927192942323.png">
+<meta property="og:image" content="https://haozizizizi.github.io/images/image-20240927194117101.png">
+<meta property="article:published_time" content="2024-09-27T11:54:45.000Z">
+<meta property="article:modified_time" content="2024-09-27T11:57:04.611Z">
 <meta property="article:author" content="haozizizi">
 <meta property="article:tag" content="深度学习推荐系统 王喆">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://haozizizizi.github.io/images/image-20240828201951326.png">
+<meta name="twitter:image" content="https://haozizizizi.github.io/images/image-20240927190920466.png">
     
     
     <!--- Icon Part-->
@@ -46,7 +49,7 @@
     
     <title>
         
-            逻辑回归 -
+            Embedding -
         
         haozizizi
     </title>
@@ -510,7 +513,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">逻辑回归</h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Embedding</h1>
                 </div>
             
             </div>
@@ -531,15 +534,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-09-01 16:52:57</span>
-        <span class="mobile">2024-09-01 16:52:57</span>
+        <span class="desktop">2024-09-27 19:54:45</span>
+        <span class="mobile">2024-09-27 19:54:45</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-01 16:53:56</span>
-            <span class="mobile">2024-09-01 16:53:56</span>
+            <span class="desktop">2024-09-27 19:57:04</span>
+            <span class="mobile">2024-09-27 19:57:04</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -593,57 +596,85 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h4 id="逻辑回归-–-融合多种特征的推荐模型"><a class="header-anchor" href="#逻辑回归-–-融合多种特征的推荐模型">¶</a>逻辑回归 – 融合多种特征的推荐模型</h4>
-<p>相比协同过滤模型仅利用用户与物品的相互行为信息进行推荐，逻辑回归模型能够综合利用用户、物品、上下文等多种不同的特征，生成较为“全面”的推荐结果。</p>
-<p>逻辑回归模型将推荐问题转换成了一个点击率(Click Through Rate，CTR)预估问题。</p>
-<h5 id="基于逻辑回归模型的推荐流程"><a class="header-anchor" href="#基于逻辑回归模型的推荐流程">¶</a>基于逻辑回归模型的推荐流程</h5>
-<ol>
-<li>将用户年龄、性别、物品属性、物品描述、当前时间、当前地点等特征转换成数值型特征向量。</li>
-<li>确定逻辑回归模型的优化目标（以优化“点击率”为例），利用已有样本数据对逻辑回归模型进行训练，确定逻辑回归模型的内部参数。</li>
-<li>在模型服务阶段，将特征向量输入逻辑回归模型，经过逻辑回归模型的推断，得到用户“点击”（这里用点击作为推荐系统正反馈行为的例子）物品的概率。</li>
-<li>利用“点击”概率对所有候选物品进行排序，得到推荐列表。</li>
-</ol>
-<h5 id="逻辑回归模型的数学形式"><a class="header-anchor" href="#逻辑回归模型的数学形式">¶</a>逻辑回归模型的数学形式</h5>
+            <h4 id="什么是Embedding"><a class="header-anchor" href="#什么是Embedding">¶</a>什么是Embedding</h4>
+<p>Embedding就是用一个低维稠密的向量“表示”一个对象(object)，这里所说的对象可以是一个词、一个商品，也可以是一部电影等等。</p>
+<p>Embedding向量能够表达相应对象的某些特征，同时向量之间的距离反映了对象之间的相似性。</p>
+<h5 id="词向量的例子"><a class="header-anchor" href="#词向量的例子">¶</a>词向量的例子</h5>
+<p>图示为使用Word2vec 方法编码的几个单词（带有性别特征）的Embedding 向量在Embedding 空间内的位置，可以看出从Embedding(king)到Embedding(queen)，从Embedding(man)到Embedding(woman)的距离向量几乎一致，这表明词Embedding向量之间的运算甚至能够包含词之间的语义关系信息。</p>
+<p>同样，Embedding (walking)到Embedding(walked)和Embedding(swimming)到Embedding(swam)的距离向量一致，这表明walking-walked和swimming-swam的词性关系是一致的。</p>
+<p>在有大量语料输入的前提下，Embedding 技术甚至可以挖掘出一些通用知识，Embedding(Madrid)-Embedding(Spain)≈Embedding(Beijing)-Embedding(China)，这表明Embedding之间的运算操作可以挖掘出“首都-国家”这类通用的关系知识。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240828201951326.png"
-                      alt="image-20240828201951326"
+                     data-src="/images/image-20240927190920466.png"
+                      alt="image-20240927190920466"
                 ></p>
-<p>其中，sigmoid函数的具体形式如（式2-12）所示。</p>
+<p>在词向量空间内，甚至在完全不知道一个词的向量的情况下，仅靠语义关系加词向量运算就可以推断出这个词的词向量。Embedding就是这样从另外一个空间表达物品，同时揭示物品之间的潜在关系的。</p>
+<h5 id="Embedding技术在其他领域的扩展"><a class="header-anchor" href="#Embedding技术在其他领域的扩展">¶</a>Embedding技术在其他领域的扩展</h5>
+<p>既然Embedding能够对“词”进行向量化，那么其他应用领域的物品也可以通过某种方式生成其向量化表示。</p>
+<p>例如，如果对电影进行Embedding，那么Embedding（复仇者联盟）和Embedding（钢铁侠）在Embedding 向量空间内两点之间的距离就应该很近，而Embedding（复仇者联盟）和Embedding（乱世佳人）的距离会相对远。</p>
+<p>同理，如果在电商领域对商品进行Embedding，那么Embedding（键盘）和Embedding（鼠标）的向量距离应该比较近，而Embedding（键盘）和Embedding（帽子）的距离会相对远。</p>
+<p>与词向量使用大量文本语料进行训练不同，不同领域的训练样本肯定是不同的，比如视频推荐往往使用用户的观看序列进行电影的Embedding化，而电商平台则会使用用户的购买历史作为训练样本。</p>
+<h5 id="Embedding技术对于深度学习推荐系统的重要性"><a class="header-anchor" href="#Embedding技术对于深度学习推荐系统的重要性">¶</a>Embedding技术对于深度学习推荐系统的重要性</h5>
+<ul>
+<li>推荐场景中大量使用one-hot编码对类别、id 型特征进行编码，导致样本特征向量极度稀疏，而深度学习的结构特点使其不利于稀疏特征向量的处理，因此几乎所有深度学习推荐模型都会由Embedding层负责将高维稀疏特征向量转换成<strong>稠密低维特征向量</strong>。</li>
+<li>Embedding本身就是极其重要的特征向量。相比MF等传统方法产生的特征向量，Embedding的<strong>表达能力更强</strong>，特别是Graph Embedding技术被提出后，Embedding几乎可以引入任何信息进行编码，使其本身就包含大量有价值的信息。在此基础上，Embedding向量往往会与其他推荐系统特征连接后一同输入后续深度学习网络进行训练。</li>
+<li>Embedding对物品、用户相似度的计算是常用的推荐系统召回层技术。在局部敏感哈希(Locality-Sensitive Hashing)等快速最近邻搜索技术应用于推荐系统后，Embedding 更适用于对海量备选物品进行<strong>快速“初筛”</strong>，过滤出几百到几千量级的物品交由深度学习网络进行“精排”。</li>
+</ul>
+<h4 id="Word2vec——经典的Embedding方法"><a class="header-anchor" href="#Word2vec——经典的Embedding方法">¶</a>Word2vec——经典的Embedding方法</h4>
+<h5 id="什么是Word2vec"><a class="header-anchor" href="#什么是Word2vec">¶</a>什么是Word2vec</h5>
+<p>Word2vec是“word to vector”的简称，顾名思义，Word2vec是一个生成对“词”的向量表达的模型。</p>
+<p>为了训练Word2vec模型，需要准备由一组句子组成的语料库。假设其中一个长度为T的句子为w1，w2，…，wT，假定每个词都跟其相邻的词的关系最密切，即每个词都是由相邻的词决定的（CBOW模型），或者每个词都决定了相邻的词（Skip-gram）。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240828202110467.png"
-                      alt="image-20240828202110467"
+                     data-src="/images/image-20240927191618277.png"
+                      alt="image-20240927191618277"
                 ></p>
-<p>其函数曲线如图2-8所示。可以直观地看到sigmoid的值域在0～1之间，符合“点击率”的物理意义。</p>
+<h5 id="Word2vec模型的训练过程"><a class="header-anchor" href="#Word2vec模型的训练过程">¶</a>Word2vec模型的训练过程</h5>
+<p>Skip-gram效果更好，因此以Skip-gram为框架讲解Word2vec模型的细节。</p>
+<p>为了基于语料库生成模型的训练样本，选取一个长度为2c+1（目标词前后各选c个词）的滑动窗口，从语料库中抽取一个句子，将滑动窗口由左至右滑动，每移动一次，窗口中的词组就形成了一个训练样本。</p>
+<p>既然每个词w<sub>t</sub>都决定了相邻词w<sub>t+j</sub>，基于极大似然估计的方法，希望所有样本的条件概率p(w<sub>t+j</sub>|w<sub>t</sub>)之积最大，这里使用对数概率。因此，Word2vec的目标函数如（式4-1）所示。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240828202221141.png"
-                      alt="image-20240828202221141"
+                     data-src="/images/image-20240927191908083.png"
+                      alt="image-20240927191908083"
                 ></p>
-<p>综上，逻辑回归模型整个推断过程的数学形式如（式2-13）所示。</p>
+<p>接下来的核心问题是如何定义p(w<sub>t+j</sub>|w<sub>t</sub>), 作为一个多分类问题，最直接的方法是使用softmax 函数。</p>
+<p>Word2vec希望用一个向量v<sub>w</sub>表示词w，用词之间的内积v<sub>i</sub><sup>T</sup>v<sub>j</sub>距离表示语义的接近程度，那么条件概率p(w<sub>t+j</sub>|w<sub>t</sub>)的定义就可以很直观地给出，如（式4-2）所示，其中w<sub>O</sub>代表w<sub>t+j</sub>，被称为输出词；w<sub>I</sub>代表w<sub>t</sub>，被称为输入词。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/image-20240828202432092.png"
-                      alt="image-20240828202432092"
+                     data-src="/images/image-20240927192208536.png"
+                      alt="image-20240927192208536"
                 ></p>
-<h5 id="逻辑回归模型的训练方法"><a class="header-anchor" href="#逻辑回归模型的训练方法">¶</a>逻辑回归模型的训练方法</h5>
-<p>使用梯度下降法训练逻辑回归模型</p>
-<p>梯度下降法是一个一阶最优化算法，也称为最速下降法。应用梯度下降法的目的是找到一个函数的局部极小值。</p>
-<p>这就利用了“梯度”的性质：如果实值函数F(x)在点x<sub>0</sub>处可微且有定义，那么函数F(x)在点x<sub>0</sub>处沿着梯度相反的方向-∇F(x)下降最快。</p>
-<p>因此，在优化某模型的目标函数时，只需对目标函数进行求导，得到梯度的方向，沿梯度的反方向下降，并迭代此过程直至寻找到局部最小点。</p>
-<h5 id="逻辑回归模型的优势"><a class="header-anchor" href="#逻辑回归模型的优势">¶</a>逻辑回归模型的优势</h5>
-<ol>
-<li>数学含义上的支撑：逻辑回归作为广义线性模型的一种，它的假设是因变量y服从伯努利分布。</li>
-<li>可解释性强：算法工程师可以轻易地根据权重的不同解释哪些特征比较重要，在CTR模型的预测有偏差时定位是哪些因素影响了最后的结果。</li>
-<li>工程化的需要：易于并行化、模型简单、训练开销小。</li>
-</ol>
-<h5 id="逻辑回归模型的局限性"><a class="header-anchor" href="#逻辑回归模型的局限性">¶</a>逻辑回归模型的局限性</h5>
-<p>表达能力不强，无法进行特征交叉、特征筛选等一系列较为“高级”的操作，因此不可避免地造成信息的损失。</p>
+<p>在Word2vec中是用w<sub>t</sub>预测w<sub>t+j</sub>，但其实二者的向量表达并不在一个向量空间内。就像上面的条件概率公式那样v<sub>w</sub><sub>0</sub> v<sub>w</sub><sub>1</sub>，分别是词w的输出向量表达和输入向量表达。</p>
+<p>根据条件概率p(w<sub>t+j</sub>|w<sub>t</sub>)的定义，可以把两个向量的乘积再套上一个softmax的形式，转换成图所示的神经网络结构。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20240927192446481.png"
+                      alt="image-20240927192446481"
+                ></p>
+<p>用神经网络表示Word2vec的模型架构后，在训练过程中就可以通过梯度下降的方式求解模型参数。那么，输入向量表达就是输入层(input layer)到隐层(hidden layer)的权重矩阵w<sub>V×N</sub>，而输出向量表达就是隐层到输出层(output layer)的权重矩阵w‘<sub>V×N</sub></p>
+<p>在获得输入向量矩阵w<sub>V×N</sub>后，其中每一行对应的权重向量就是通常意义上的“词向量”。于是这个权重矩阵自然转换成了Word2vec的查找表(lookup table) 。例如，输入向量是10000 个词组成的one-hot 向量，隐层维度是300维，那么输入层到隐层的权重矩阵为10000×300维。在转换为词向量查找表后，每行的权重即成了对应词的Embedding向量。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20240927192942323.png"
+                      alt="image-20240927192942323"
+                ></p>
+<h5 id="Word2vec的“负采样”训练方法"><a class="header-anchor" href="#Word2vec的“负采样”训练方法">¶</a>Word2vec的“负采样”训练方法</h5>
+<p>事实上，完全遵循原始的Word2vec 多分类结构的训练方法并不可行。假设语料库中的词的数量为10000，就意味着输出层神经元有10000 个，在每次迭代更新隐层到输出层神经元的权重时，都需要计算所有字典中的所有10000 个词的预测误差(prediction error)，在实际训练过程中几乎无法承受这样巨大的计算量。</p>
+<p>为了减轻Word2vec的训练负担，往往采用负采样(NegativeSampling)的方法进行训练。相比原来需要计算所有字典中所有词的预测误差，负采样方法只需要对采样出的几个负样本计算预测误差。在此情况下，Word2vec模型的优化目标从一个多分类问题退化成了一个近似二分类问题，</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/image-20240927194117101.png"
+                      alt="image-20240927194117101"
+                ></p>
+<p>由于负样本集合的大小非常有限（在实际应用中通常小于10），在每轮梯度下降的迭代中，计算复杂度至少可以缩小为原来的1/1000（假设词表大小为10000）。</p>
 
         </div>
 
@@ -651,18 +682,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 逻辑回归</li>
+        <li><strong>标题:</strong> Embedding</li>
         <li><strong>作者:</strong> haozizizi</li>
         <li><strong>创建于
-                :</strong> 2024-09-01 16:52:57</li>
+                :</strong> 2024-09-27 19:54:45</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-09-01 16:53:56
+                    :</strong> 2024-09-27 19:57:04
             </li>
         
         <li>
-            <strong>链接:</strong> https://haozizizizi.github.io/2024/09/01/逻辑回归/
+            <strong>链接:</strong> https://haozizizizi.github.io/2024/09/27/Embedding/
         </li>
         <li>
             <strong>
@@ -698,13 +729,13 @@
                     <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="prev"
                         rel="prev"
-                        href="/2024/09/01/%E4%BB%8EFM%E5%88%B0FFM/"
+                        href="/2024/09/27/Item2vec/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">从FM到FFM</span>
+                                <span class="post-nav-title-item">Item2vec</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -714,10 +745,10 @@
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/09/01/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3%E7%AE%97%E6%B3%95/"
+                        href="/2024/09/25/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E5%90%88/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">矩阵分解算法</span>
+                                <span class="post-nav-title-item">强化学习与推荐系统的结合</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -781,7 +812,7 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">逻辑回归</div>
+        <div class="page-title">Embedding</div>
         
 
     </div>
