@@ -25,14 +25,11 @@
 <meta property="og:site_name" content="haozizizi的个人主页">
 <meta property="og:description" content="¶过拟合&#x2F;欠拟合 Overfitting &#x2F; Underfitting 过拟合指模型与数据的匹配程度过高，将训练数据一些正常的起伏、波动、异常值也当作是数据的特征，过度学习训练数据中的噪声和细节，从而忽略了整体的趋势，导致模型对新数据的泛化能力变差。具体的表现为在训练集上表现非常优秀，而在验证集&#x2F;测试集中表现非常差，我们将这种情况称为高方差（high variance）。 泛化：在先前未观测到的输">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://haozizizizi.github.io/Users/zhangyuhao/Documents/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/Deep-Learning-Interview-Book-master/docs/imgs/DLIB-0003.png">
-<meta property="og:image" content="https://haozizizizi.github.io/Users/zhangyuhao/Documents/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/Deep-Learning-Interview-Book-master/docs/imgs/DLIB-0004.png">
 <meta property="article:published_time" content="2024-10-10T07:51:08.000Z">
-<meta property="article:modified_time" content="2024-10-15T09:02:09.365Z">
+<meta property="article:modified_time" content="2024-10-27T08:03:18.963Z">
 <meta property="article:author" content="haozizizi">
 <meta property="article:tag" content="八股">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://haozizizizi.github.io/Users/zhangyuhao/Documents/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/Deep-Learning-Interview-Book-master/docs/imgs/DLIB-0003.png">
     
     
     <!--- Icon Part-->
@@ -482,7 +479,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">36</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">37</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -536,8 +533,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-10-15 17:02:09</span>
-            <span class="mobile">2024-10-15 17:02:09</span>
+            <span class="desktop">2024-10-27 16:03:18</span>
+            <span class="mobile">2024-10-27 16:03:18</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -635,20 +632,7 @@
 <h4 id="L1-L2正则化"><a class="header-anchor" href="#L1-L2正则化">¶</a>L1/L2正则化</h4>
 <p>正则化是指修改学习算法，使其降低泛化误差而非训练误差。</p>
 <p>机器学习中几乎都可以看到损失函数后面会添加一个额外项，常用的额外项一般有两种，一般英文称作ℓ1-norm和ℓ2-norm，中文称作L1正则化和L2正则化，或者L1范数和L2范数。</p>
-<p>L1正则化和L2正则化可以看做是损失函数的惩罚项。所谓『惩罚』是指对损失函数中的某些参数做一些限制。对于线性回归模型，使用L1正则化的模型建叫做Lasso回归，使用L2正则化的模型叫做Ridge回归。下图是Python中Lasso回归的损失函数，式中加号后面一项α||w||1即为L1正则化项。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/Users/zhangyuhao/Documents/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/Deep-Learning-Interview-Book-master/docs/imgs/DLIB-0003.png"
-                      alt="Logistic Regression.png"
-                ></p>
-<p>下图是Python中Ridge回归的损失函数，式中加号后面一项即为L2正则化项。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/Users/zhangyuhao/Documents/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/Deep-Learning-Interview-Book-master/docs/imgs/DLIB-0004.png"
-                      alt="Logistic Regression.png"
-                ></p>
+<p>L1正则化和L2正则化可以看做是损失函数的惩罚项。所谓『惩罚』是指对损失函数中的某些参数做一些限制。</p>
 <p>一般回归分析中回归w表示特征的系数，从上式可以看到正则化项是对系数做了处理（限制）。L1正则化和L2正则化的说明如下：</p>
 <ul>
 <li>L1正则化是指权值向量w中各个元素的绝对值之和，通常表示为||w||<sub>1</sub></li>
@@ -710,7 +694,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-10-15 17:02:09
+                    :</strong> 2024-10-27 16:03:18
             </li>
         
         <li>
@@ -867,7 +851,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共 36 篇文章
+                        共 37 篇文章
                     </span>
                     
                 </p>
