@@ -5,6 +5,7 @@
 ## 当前主计划
 
 - [LeetCode 每日一题](每日一题/README.md)：热题 100 中等题优先，周三和周日进行间隔复习。
+- [Python 语法问答](Python语法/Python语法问答.md)：记录当前聊天页面提出的 Python 语法问题与可复用结论。
 - [网站进度页](https://haozizizizi.github.io/leetcode/)
 
 ## 记录模板
