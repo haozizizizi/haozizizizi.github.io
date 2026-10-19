@@ -5,7 +5,7 @@
 ## 当前主计划
 
 - [LeetCode 每日一题](每日一题/README.md)：热题 100 中等题优先，周三和周五重做旧题，周末休息。
-- [Python 语法问答](Python语法/Python语法问答.md)：记录当前聊天页面提出的 Python 语法问题，并作为普通文章发布到个人主页。
+- [Python 语法问答](Python语法/Python语法问答.md)：所有 Python 语法集中在这一个 Markdown，并同步到个人主页的同一篇普通文章。
 - [网站进度页](https://haozizizizi.github.io/leetcode/)
 
 ## 记录模板

@@ -4,19 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="haozizizi">
-    <meta name="description" content="Python 中 dict、list、tuple、set 及算法题常见数据结构的创建方式。">
+    <meta name="description" content="持续整理 Python 常用语法，包括数据结构、字符串排序和字典遍历。">
     <meta name="robots" content="index,follow">
-    <link rel="canonical" href="https://haozizizizi.github.io/2026/10/19/Python常用数据结构/">
+    <link rel="canonical" href="https://haozizizizi.github.io/2026/10/19/Python语法问答/">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Python 常用数据结构的创建方式">
-    <meta property="og:url" content="https://haozizizizi.github.io/2026/10/19/Python%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+    <meta property="og:title" content="Python 语法问答">
+    <meta property="og:url" content="https://haozizizizi.github.io/2026/10/19/Python%E8%AF%AD%E6%B3%95%E9%97%AE%E7%AD%94/">
     <meta property="og:site_name" content="haozizizi的个人主页">
-    <meta property="og:description" content="Python 中 dict、list、tuple、set 及算法题常见数据结构的创建方式。">
+    <meta property="og:description" content="持续整理 Python 常用语法，包括数据结构、字符串排序和字典遍历。">
     <meta property="og:locale" content="zh_CN">
     <meta property="article:published_time" content="2026-10-19T00:00:00.000+08:00">
     <meta property="article:modified_time" content="2026-10-19T00:00:00.000+08:00">
     <meta property="article:author" content="haozizizi">
-    <title>Python 常用数据结构的创建方式 - haozizizi</title>
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="语法">
+    <title>Python 语法问答 - haozizizi</title>
 
     <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
@@ -78,7 +80,7 @@
                     <div class="article-content-container">
                         <div class="article-title relative w-full">
                             <div class="w-full flex items-center pt-6 justify-start">
-                                <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Python 常用数据结构的创建方式</h1>
+                                <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Python 语法问答</h1>
                             </div>
                         </div>
 
@@ -93,14 +95,17 @@
                                 </div>
                                 <div class="meta-info">
                                     <div class="article-meta-info">
-                                        <span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp;<span>2026-10-19</span><span class="hover-info">创建</span></span>
+                                        <span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp;<span>2026-10-19</span><span class="hover-info">创建 / 更新</span></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-                            <h2 id="dict-键值映射"><a class="header-anchor" href="#dict-键值映射">¶</a><code>dict</code>：键值映射</h2>
+                            <blockquote><p>持续整理 Python 语法问题，形成一份可检索、可复用的速查笔记。后续问题都更新在这一篇文章中。</p></blockquote>
+
+                            <h2 id="常用数据结构"><a class="header-anchor" href="#常用数据结构">¶</a>1. 创建 dict 和其他常用数据结构</h2>
+                            <h3 id="dict-键值映射"><a class="header-anchor" href="#dict-键值映射">¶</a><code>dict</code>：键值映射</h3>
                             <pre><code># 空字典
 d = {}
 d = dict()
@@ -108,27 +113,17 @@ d = dict()
 # 直接写键值对
 user = {"name": "Tom", "age": 18}
 
-# 关键字参数：键只能写成合法的字符串标识符
-user = dict(name="Tom", age=18)
-
 # 从 (key, value) 序列创建
 d = dict([("a", 1), ("b", 2)])
 
 # 合并两个序列
-keys = ["a", "b"]
-values = [1, 2]
-d = dict(zip(keys, values))
+d = dict(zip(["a", "b"], [1, 2]))
 
 # 字典推导式
 squares = {x: x * x for x in range(4)}</code></pre>
+                            <p>添加或更新元素使用 <code>d["c"] = 3</code>。不确定键是否存在时，可以使用 <code>d.get("missing", 0)</code> 提供默认值。</p>
 
-                            <p>添加或更新元素：</p>
-                            <pre><code>d["c"] = 3</code></pre>
-
-                            <p><code>d["missing"]</code> 会在键不存在时抛出 <code>KeyError</code>；不确定键是否存在时可以使用：</p>
-                            <pre><code>value = d.get("missing", 0)</code></pre>
-
-                            <h2 id="其他内置数据结构"><a class="header-anchor" href="#其他内置数据结构">¶</a>其他内置数据结构</h2>
+                            <h3 id="其他内置结构"><a class="header-anchor" href="#其他内置结构">¶</a>其他内置结构</h3>
                             <div class="table-container">
                                 <table>
                                     <thead><tr><th>数据结构</th><th>空结构</th><th>带初始值</th><th>主要用途</th></tr></thead>
@@ -140,42 +135,85 @@ squares = {x: x * x for x in range(4)}</code></pre>
                                     </tbody>
                                 </table>
                             </div>
-
-                            <p>两个常见误区：</p>
-                            <pre><code>empty = {}       # dict，不是 set
-one_item = (1,)  # 单元素 tuple 必须保留逗号</code></pre>
-
-                            <h2 id="算法题中常见的专用结构"><a class="header-anchor" href="#算法题中常见的专用结构">¶</a>算法题中常见的专用结构</h2>
                             <pre><code>from collections import Counter, defaultdict, deque
 
-queue = deque()            # 双端队列，也常用于 BFS
-groups = defaultdict(list) # 访问新键时自动创建空 list
-counts = Counter("aab")    # Counter({'a': 2, 'b': 1})
+queue = deque()
+groups = defaultdict(list)
+counts = Counter("aab")
 
 import heapq
-
 heap = []
-heapq.heappush(heap, 3)    # Python 的 heapq 默认为小顶堆
+heapq.heappush(heap, 3)
 smallest = heapq.heappop(heap)</code></pre>
 
-                            <p><strong>选择原则：</strong>键值关系用 <code>dict</code>，普通可变序列用 <code>list</code>，不可变序列用 <code>tuple</code>，去重或集合运算用 <code>set</code>，先进先出队列用 <code>deque</code>。</p>
+                            <h2 id="字符串排序"><a class="header-anchor" href="#字符串排序">¶</a>2. 对字符串进行排序</h2>
+                            <p><code>sorted()</code> 接收字符串后返回字符列表；需要字符串时使用 <code>"".join()</code>：</p>
+                            <pre><code>s = "dcab"
+
+chars = sorted(s)                         # ['a', 'b', 'c', 'd']
+result = "".join(sorted(s))               # "abcd"
+reverse_result = "".join(sorted(s, reverse=True))  # "dcba"</code></pre>
+                            <p>忽略大小写排序：</p>
+                            <pre><code>s = "bAcD"
+result = "".join(sorted(s, key=str.lower))  # "AbcD"</code></pre>
+                            <p>对字符串列表可以按字典序或长度排序：</p>
+                            <pre><code>words = ["pear", "apple", "fig"]
+
+alphabetical = sorted(words)
+by_length = sorted(words, key=len)</code></pre>
+                            <p>字符串不可变，也没有原地排序的 <code>sort()</code> 方法。默认排序使用 Unicode 顺序。</p>
+
+                            <h2 id="遍历字典"><a class="header-anchor" href="#遍历字典">¶</a>3. 遍历字典</h2>
+                            <pre><code>user = {"name": "Tom", "age": 18}
+
+# 遍历键
+for key in user:
+    print(key)
+
+# 遍历值
+for value in user.values():
+    print(value)
+
+# 同时遍历键和值（最常用）
+for key, value in user.items():
+    print(key, value)
+
+# 同时取得序号、键和值
+for index, (key, value) in enumerate(user.items()):
+    print(index, key, value)</code></pre>
+
+                            <h3 id="遍历时修改字典"><a class="header-anchor" href="#遍历时修改字典">¶</a>遍历时修改字典</h3>
+                            <p>可以修改已有键对应的值，但不要在遍历过程中直接新增或删除键，否则会抛出 <code>RuntimeError</code>：</p>
+                            <pre><code>scores = {"Alice": 80, "Bob": 90}
+
+# 可以修改已有值
+for name in scores:
+    scores[name] += 1
+
+# 删除键时，先遍历键的副本
+for name in list(scores):
+    if scores[name] &lt; 85:
+        del scores[name]</code></pre>
+                            <p>Python 3.7 起，字典遍历顺序保证与键的插入顺序一致。</p>
+
+                            <h2 id="易错点"><a class="header-anchor" href="#易错点">¶</a>易错点与边界</h2>
+                            <ul>
+                                <li><code>{}</code> 创建的是空字典；空集合必须写成 <code>set()</code>。</li>
+                                <li>单元素元组必须保留逗号，例如 <code>(1,)</code>。</li>
+                                <li><code>for x in dictionary</code> 中的 <code>x</code> 是键，不是值。</li>
+                                <li>遍历期间不能改变字典大小；新增或删除键时应遍历副本或先记录待处理的键。</li>
+                            </ul>
                         </div>
 
                         <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                             <div class="article-copyright-info-container">
                                 <ul>
-                                    <li><strong>标题:</strong> Python 常用数据结构的创建方式</li>
+                                    <li><strong>标题:</strong> Python 语法问答</li>
                                     <li><strong>作者:</strong> haozizizi</li>
                                     <li><strong>创建于:</strong> 2026-10-19</li>
-                                    <li><strong>链接:</strong> https://haozizizizi.github.io/2026/10/19/Python常用数据结构/</li>
+                                    <li><strong>链接:</strong> https://haozizizizi.github.io/2026/10/19/Python语法问答/</li>
                                     <li><strong>版权声明:</strong> 本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。</li>
                                 </ul>
-                            </div>
-                        </div>
-
-                        <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
-                            <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                                <a href="/2026/10/19/Python%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/"><span class="title flex justify-center items-center"><span class="post-nav-title-item">Python 对字符串进行排序</span><span class="post-nav-item">上一篇</span></span></a>
                             </div>
                         </div>
                     </div>
@@ -192,6 +230,5 @@ smallest = heapq.heappop(heap)</code></pre>
         </div>
     </div>
 </main>
-
 </body>
 </html>
