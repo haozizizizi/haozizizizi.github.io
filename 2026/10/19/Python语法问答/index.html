@@ -104,8 +104,12 @@
                         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
                             <blockquote><p>持续整理 Python 语法问题，形成一份可检索、可复用的速查笔记。后续问题都更新在这一篇文章中。</p></blockquote>
 
-                            <h2 id="常用数据结构"><a class="header-anchor" href="#常用数据结构">¶</a>1. 创建 dict 和其他常用数据结构</h2>
-                            <h3 id="dict-键值映射"><a class="header-anchor" href="#dict-键值映射">¶</a><code>dict</code>：键值映射</h3>
+                            <h2 id="背景"><a class="header-anchor" href="#背景">¶</a>背景</h2>
+                            <p>这篇文章集中记录日常遇到的 Python 语法问题。所有内容维护在同一个 Markdown 和同一篇主页文章中，同类问题优先合并，并尽量提供最小可运行示例。</p>
+
+                            <h2 id="核心内容"><a class="header-anchor" href="#核心内容">¶</a>核心内容</h2>
+                            <h3 id="常用数据结构"><a class="header-anchor" href="#常用数据结构">¶</a>1. 创建 dict 和其他常用数据结构</h3>
+                            <h4 id="dict-键值映射"><a class="header-anchor" href="#dict-键值映射">¶</a><code>dict</code>：键值映射</h4>
                             <pre><code># 空字典
 d = {}
 d = dict()
@@ -123,7 +127,7 @@ d = dict(zip(["a", "b"], [1, 2]))
 squares = {x: x * x for x in range(4)}</code></pre>
                             <p>添加或更新元素使用 <code>d["c"] = 3</code>。不确定键是否存在时，可以使用 <code>d.get("missing", 0)</code> 提供默认值。</p>
 
-                            <h3 id="其他内置结构"><a class="header-anchor" href="#其他内置结构">¶</a>其他内置结构</h3>
+                            <h4 id="其他内置结构"><a class="header-anchor" href="#其他内置结构">¶</a>其他内置结构</h4>
                             <div class="table-container">
                                 <table>
                                     <thead><tr><th>数据结构</th><th>空结构</th><th>带初始值</th><th>主要用途</th></tr></thead>
@@ -146,7 +150,7 @@ heap = []
 heapq.heappush(heap, 3)
 smallest = heapq.heappop(heap)</code></pre>
 
-                            <h2 id="字符串排序"><a class="header-anchor" href="#字符串排序">¶</a>2. 对字符串进行排序</h2>
+                            <h3 id="字符串排序"><a class="header-anchor" href="#字符串排序">¶</a>2. 对字符串进行排序</h3>
                             <p><code>sorted()</code> 接收字符串后返回字符列表；需要字符串时使用 <code>"".join()</code>：</p>
                             <pre><code>s = "dcab"
 
@@ -163,7 +167,7 @@ alphabetical = sorted(words)
 by_length = sorted(words, key=len)</code></pre>
                             <p>字符串不可变，也没有原地排序的 <code>sort()</code> 方法。默认排序使用 Unicode 顺序。</p>
 
-                            <h2 id="遍历字典"><a class="header-anchor" href="#遍历字典">¶</a>3. 遍历字典</h2>
+                            <h3 id="遍历字典"><a class="header-anchor" href="#遍历字典">¶</a>3. 遍历字典</h3>
                             <pre><code>user = {"name": "Tom", "age": 18}
 
 # 遍历键
@@ -182,7 +186,7 @@ for key, value in user.items():
 for index, (key, value) in enumerate(user.items()):
     print(index, key, value)</code></pre>
 
-                            <h3 id="遍历时修改字典"><a class="header-anchor" href="#遍历时修改字典">¶</a>遍历时修改字典</h3>
+                            <h4 id="遍历时修改字典"><a class="header-anchor" href="#遍历时修改字典">¶</a>遍历时修改字典</h4>
                             <p>可以修改已有键对应的值，但不要在遍历过程中直接新增或删除键，否则会抛出 <code>RuntimeError</code>：</p>
                             <pre><code>scores = {"Alice": 80, "Bob": 90}
 
@@ -196,12 +200,37 @@ for name in list(scores):
         del scores[name]</code></pre>
                             <p>Python 3.7 起，字典遍历顺序保证与键的插入顺序一致。</p>
 
+                            <h2 id="示例与实践"><a class="header-anchor" href="#示例与实践">¶</a>示例与实践</h2>
+                            <p>下面的例子综合使用字典创建、<code>get()</code>、<code>items()</code> 和 <code>sorted()</code>，统计字符出现次数并按字符排序输出：</p>
+                            <pre><code>text = "banana"
+counts = {}
+
+for char in text:
+    counts[char] = counts.get(char, 0) + 1
+
+for char, count in sorted(counts.items()):
+    print(char, count)</code></pre>
+                            <pre><code>a 3
+b 1
+n 2</code></pre>
+
                             <h2 id="易错点"><a class="header-anchor" href="#易错点">¶</a>易错点与边界</h2>
                             <ul>
                                 <li><code>{}</code> 创建的是空字典；空集合必须写成 <code>set()</code>。</li>
                                 <li>单元素元组必须保留逗号，例如 <code>(1,)</code>。</li>
+                                <li><code>sorted(string)</code> 返回字符列表，不是字符串；需要使用 <code>"".join()</code> 重新拼接。</li>
                                 <li><code>for x in dictionary</code> 中的 <code>x</code> 是键，不是值。</li>
                                 <li>遍历期间不能改变字典大小；新增或删除键时应遍历副本或先记录待处理的键。</li>
+                            </ul>
+
+                            <h2 id="总结"><a class="header-anchor" href="#总结">¶</a>总结</h2>
+                            <p>选择数据结构时先判断是否需要键值映射、有序可变序列、不可变序列或去重；字符串排序后需要重新拼接；字典则根据需求遍历键、值或键值对。新的 Python 语法问题继续追加到本文件和同一篇主页文章中。</p>
+
+                            <h2 id="参考资料"><a class="header-anchor" href="#参考资料">¶</a>参考资料</h2>
+                            <ul>
+                                <li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#sorted">Python 内置函数：<code>sorted()</code></a></li>
+                                <li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">Python 映射类型：<code>dict</code></a></li>
+                                <li><a target="_blank" rel="noopener" href="https://docs.python.org/3/tutorial/datastructures.html#looping-techniques">Python 教程：循环技巧</a></li>
                             </ul>
                         </div>
 

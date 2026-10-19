@@ -223,12 +223,44 @@ for name in list(scores):
 
 Python 3.7 起，字典遍历顺序保证与键的插入顺序一致。
 
+## 示例与实践
+
+下面的例子综合使用字典创建、`get()`、`items()` 和 `sorted()`，统计字符出现次数并按字符排序输出：
+
+```python
+text = "banana"
+counts = {}
+
+for char in text:
+    counts[char] = counts.get(char, 0) + 1
+
+for char, count in sorted(counts.items()):
+    print(char, count)
+```
+
+输出：
+
+```text
+a 3
+b 1
+n 2
+```
+
 ## 易错点与边界
 
+- `{}` 创建的是空字典；空集合必须写成 `set()`。
+- 单元素元组必须保留逗号，例如 `(1,)`。
+- `sorted(string)` 返回字符列表，不是字符串；需要使用 `"".join()` 重新拼接。
 - `for x in dictionary` 中的 `x` 是键，不是值。
 - 同时需要键和值时使用 `dictionary.items()`，不要再通过键进行一次多余查询。
 - 遍历期间不能改变字典的大小；需要新增或删除键时，应遍历副本或先记录待处理的键。
 
 ## 总结
 
-字典最常用的三种遍历方式分别是：直接遍历键、使用 `values()` 遍历值、使用 `items()` 同时遍历键和值。Python 语法新问题继续追加到本文件和同一篇主页文章中。
+选择数据结构时先判断是否需要键值映射、有序可变序列、不可变序列或去重；字符串排序后需要重新拼接；字典则根据需求遍历键、值或键值对。新的 Python 语法问题继续追加到本文件和同一篇主页文章中。
+
+## 参考资料
+
+- [Python 内置函数：`sorted()`](https://docs.python.org/3/library/functions.html#sorted)
+- [Python 映射类型：`dict`](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
+- [Python 教程：循环技巧](https://docs.python.org/3/tutorial/datastructures.html#looping-techniques)
