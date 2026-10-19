@@ -33,22 +33,35 @@
     <link rel="stylesheet" href="/fontawesome/solid.min.css">
     <link rel="stylesheet" href="/fontawesome/regular.min.css">
     <style>
+        html { scroll-behavior: smooth; }
         .article-content pre {
             overflow-x: auto;
             margin: 1rem 0 1.5rem;
             padding: 1.1rem 1.25rem;
             border-radius: 12px;
-            background: #1f2937;
-            color: #e5e7eb;
+            background: #0f172a !important;
+            color: #f8fafc !important;
             line-height: 1.65;
         }
-        .article-content pre code { font-family: "Geist Mono", monospace; }
+        .article-content pre code {
+            font-family: "Geist Mono", monospace;
+            color: #f8fafc !important;
+            background: transparent !important;
+            opacity: 1 !important;
+        }
         .article-content .table-container { overflow-x: auto; margin: 1rem 0 1.5rem; }
         .article-content table { min-width: 620px; }
         .article-content code:not(pre code) {
             padding: .12rem .35rem;
             border-radius: 5px;
             background: var(--third-background-color);
+        }
+        .python-toc .nav-link { display: block; text-decoration: none; }
+        .python-toc .nav-text { color: var(--second-text-color); }
+        .python-toc .nav-link:hover .nav-text,
+        .python-toc .nav-link.active-current .nav-text {
+            color: var(--primary-color) !important;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -75,8 +88,8 @@
         </div>
 
         <div class="main-content-body">
-            <div class="main-content">
-                <div class="post-page-container flex relative justify-between box-border w-full h-full">
+            <div class="main-content has-toc">
+                <div class="post-page-container show-toc flex relative justify-between box-border w-full h-full">
                     <div class="article-content-container">
                         <div class="article-title relative w-full">
                             <div class="w-full flex items-center pt-6 justify-start">
@@ -246,6 +259,30 @@ n 2</code></pre>
                             </div>
                         </div>
                     </div>
+
+                    <aside class="toc-content-container" aria-label="文章目录">
+                        <div class="post-toc-wrap">
+                            <nav class="post-toc python-toc">
+                                <div class="toc-title">此页目录</div>
+                                <div class="page-title">Python 语法问答</div>
+                                <ol class="nav">
+                                    <li class="nav-item"><a class="nav-link" href="#背景"><span class="nav-text">背景</span></a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#核心内容"><span class="nav-text">核心内容</span></a>
+                                        <ol class="nav-child">
+                                            <li class="nav-item"><a class="nav-link" href="#常用数据结构"><span class="nav-text">常用数据结构</span></a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#字符串排序"><span class="nav-text">字符串排序</span></a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#遍历字典"><span class="nav-text">遍历字典</span></a></li>
+                                        </ol>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="#示例与实践"><span class="nav-text">示例与实践</span></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#易错点"><span class="nav-text">易错点与边界</span></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </div>
@@ -259,5 +296,26 @@ n 2</code></pre>
         </div>
     </div>
 </main>
+<script>
+    (() => {
+        const links = [...document.querySelectorAll('.python-toc .nav-link')];
+        const sections = links
+            .map(link => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        const updateActiveLink = () => {
+            let currentId = sections[0]?.id;
+            for (const section of sections) {
+                if (section.getBoundingClientRect().top <= 140) currentId = section.id;
+            }
+            links.forEach(link => {
+                link.classList.toggle('active-current', link.getAttribute('href') === `#${currentId}`);
+            });
+        };
+
+        updateActiveLink();
+        document.addEventListener('scroll', updateActiveLink, { passive: true });
+    })();
+</script>
 </body>
 </html>
