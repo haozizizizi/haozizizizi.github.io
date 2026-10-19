@@ -1,0 +1,30 @@
+{
+  "updatedAt": "2026-10-19",
+  "stats": {
+    "completed": 0,
+    "newProblems": 0,
+    "reviews": 0,
+    "streak": 0,
+    "mediumQueue": 68
+  },
+  "current": {
+    "date": "2026-10-19",
+    "type": "基线校准 / 新题",
+    "id": "49",
+    "title": "字母异位词分组",
+    "difficulty": "中等",
+    "status": "待完成",
+    "problemUrl": "https://leetcode.cn/problems/group-anagrams/",
+    "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-19-49-%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84.md"
+  },
+  "recent": [
+    {
+      "date": "2026-10-19",
+      "id": "49",
+      "title": "字母异位词分组",
+      "kind": "基线题",
+      "status": "待完成",
+      "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-19-49-%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84.md"
+    }
+  ]
+}

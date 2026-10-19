@@ -2,6 +2,11 @@
 
 建议每道题一个文件，命名为 `YYYY-MM-DD-平台-题号-题目.md`。
 
+## 当前主计划
+
+- [LeetCode 每日一题](每日一题/README.md)：热题 100 中等题优先，周三和周日进行间隔复习。
+- [网站进度页](https://haozizizizi.github.io/leetcode/)
+
 ## 记录模板
 
 ```markdown
