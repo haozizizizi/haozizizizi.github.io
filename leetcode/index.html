@@ -57,12 +57,12 @@
     h1 { margin: 10px 0 18px; font-size: clamp(2.5rem, 8vw, 5.6rem); line-height: 1.02; letter-spacing: -.055em; }
     .hero p { max-width: 700px; color: var(--muted); font-size: 1.08rem; }
     .grid { display: grid; gap: 18px; }
-    .stats { grid-template-columns: repeat(5, 1fr); margin: 30px 0 18px; }
+    .stats { grid-template-columns: repeat(4, 1fr); margin: 30px 0 18px; }
     .card { border: 1px solid var(--line); border-radius: 22px; background: var(--surface); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
     .stat { padding: 20px; }
     .stat strong { display: block; font-size: 2rem; line-height: 1.2; }
     .stat span { color: var(--muted); font-size: .88rem; }
-    .current { display: grid; grid-template-columns: 1.5fr .8fr; gap: 18px; margin: 18px 0; }
+    .current { margin: 18px 0; }
     .task { padding: 30px; overflow: hidden; position: relative; }
     .task::after { content: "49"; position: absolute; right: -8px; bottom: -48px; color: var(--accent-soft); font-size: 11rem; font-weight: 900; line-height: 1; z-index: -1; }
     .pill { display: inline-flex; padding: 5px 11px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: .82rem; font-weight: 750; }
@@ -71,13 +71,10 @@
     .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
     .button { display: inline-flex; align-items: center; justify-content: center; padding: 11px 17px; border-radius: 12px; border: 1px solid var(--line); text-decoration: none; font-weight: 750; }
     .button.primary { color: white; background: var(--accent); border-color: var(--accent); }
-    .rules { padding: 28px; }
-    .rules ol { margin: 14px 0 0; padding-left: 22px; }
-    .rules li + li { margin-top: 8px; }
     .section { margin: 56px 0; }
     .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
     .section-head h2 { margin: 0; }
-    .week { grid-template-columns: repeat(7, 1fr); }
+    .week { grid-template-columns: repeat(5, 1fr); }
     .day { padding: 18px 14px; min-height: 118px; }
     .day strong { display: block; margin-bottom: 8px; }
     .day span { color: var(--muted); font-size: .9rem; }
@@ -90,7 +87,6 @@
     footer { padding: 20px 0 54px; color: var(--muted); font-size: .9rem; }
     @media (max-width: 820px) {
       .stats { grid-template-columns: repeat(2, 1fr); }
-      .current { grid-template-columns: 1fr; }
       .week { grid-template-columns: repeat(2, 1fr); }
       .history-row { grid-template-columns: 1fr; gap: 3px; }
     }
@@ -111,14 +107,13 @@
     <header class="hero">
       <div class="eyebrow">Daily practice · Spaced repetition</div>
       <h1>LeetCode<br>每日一题</h1>
-      <p>热题 100 中等题优先，每周五道新题、两次闭卷复习。不追求刷过，追求一段时间后仍然能独立写出。</p>
+      <p>周一到周五每天一题，周末休息。热题 100 中等题优先，每周三道新题、两次旧题重做。</p>
     </header>
 
     <section class="grid stats" aria-label="进度统计">
       <div class="card stat"><strong id="completed">0</strong><span>计划后完成</span></div>
       <div class="card stat"><strong id="newProblems">0</strong><span>新题</span></div>
       <div class="card stat"><strong id="reviews">0</strong><span>完整重做</span></div>
-      <div class="card stat"><strong id="streak">0</strong><span>连续天数</span></div>
       <div class="card stat"><strong id="mediumQueue">68</strong><span>中等题队列</span></div>
     </section>
 
@@ -129,27 +124,16 @@
         <div class="muted"><span id="taskDate">2026-10-19</span> · <span id="taskDifficulty">中等</span> · <span id="taskStatus">待完成</span></div>
         <div class="actions"><a class="button primary" id="problemLink" href="https://leetcode.cn/problems/group-anagrams/">开始做题</a><a class="button" id="recordLink" href="#">查看 Markdown 记录</a></div>
       </article>
-      <aside class="card rules">
-        <span class="pill">今日规则</span>
-        <ol>
-          <li>从空白编辑器开始。</li>
-          <li>中等题限时 30–40 分钟。</li>
-          <li>记录思路、复杂度与错误点。</li>
-          <li>按 A / B / C 计算复习日期。</li>
-        </ol>
-      </aside>
     </section>
 
     <section class="section">
-      <div class="section-head"><div><div class="eyebrow">Weekly rhythm</div><h2>每周固定节奏</h2></div><span class="muted">5 新题 + 2 复习</span></div>
+      <div class="section-head"><div><div class="eyebrow">Weekdays only</div><h2>周一到周五</h2></div><span class="muted">3 新题 + 2 重做</span></div>
       <div class="grid week">
         <div class="card day"><strong>周一</strong><span>中等新题</span></div>
         <div class="card day"><strong>周二</strong><span>中等新题</span></div>
-        <div class="card day review"><strong>周三</strong><span>到期题重做</span></div>
+        <div class="card day review"><strong>周三</strong><span>旧题重做</span></div>
         <div class="card day"><strong>周四</strong><span>中等新题</span></div>
-        <div class="card day"><strong>周五</strong><span>中等新题</span></div>
-        <div class="card day"><strong>周六</strong><span>中等新题</span></div>
-        <div class="card day review"><strong>周日</strong><span>到期题 + 周复盘</span></div>
+        <div class="card day review"><strong>周五</strong><span>旧题重做</span></div>
       </div>
     </section>
 
