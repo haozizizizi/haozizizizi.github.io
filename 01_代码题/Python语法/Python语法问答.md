@@ -12,6 +12,7 @@
 ## 问答目录
 
 1. [如何创建 `dict` 和其他常用数据结构](#1-如何创建-dict-和其他常用数据结构)
+2. [Python 如何对字符串排序](#2-python-如何对字符串排序)
 
 ## 1. 如何创建 `dict` 和其他常用数据结构
 
@@ -87,3 +88,62 @@ smallest = heapq.heappop(heap)
 ```
 
 选择原则：键值关系用 `dict`，普通可变序列用 `list`，不可变序列用 `tuple`，去重或集合运算用 `set`，先进先出队列用 `deque`。
+
+## 2. Python 如何对字符串排序
+
+- 日期：2026-10-19
+
+### 按字符排序
+
+`sorted()` 可以接收字符串，但返回的是字符列表：
+
+```python
+s = "dcab"
+chars = sorted(s)
+
+print(chars)  # ['a', 'b', 'c', 'd']
+```
+
+如果需要得到排序后的字符串，使用 `"".join()` 拼接：
+
+```python
+s = "dcab"
+result = "".join(sorted(s))
+
+print(result)  # abcd
+```
+
+降序排列：
+
+```python
+result = "".join(sorted(s, reverse=True))
+
+print(result)  # dcba
+```
+
+忽略大小写排序：
+
+```python
+s = "bAcD"
+result = "".join(sorted(s, key=str.lower))
+
+print(result)  # AbcD
+```
+
+### 对字符串列表排序
+
+```python
+words = ["pear", "apple", "fig"]
+
+# 按字典序
+alphabetical = sorted(words)
+
+# 按字符串长度
+by_length = sorted(words, key=len)
+```
+
+### 注意点
+
+- 字符串不可变，也没有原地排序的 `sort()` 方法；`sorted()` 不会修改原字符串，而是创建新列表。
+- 默认按字符的 Unicode 顺序比较，因此大写字母、数字和小写字母混合时，结果可能与自然语言顺序不同。
+- 对长度为 `n` 的字符串排序，时间复杂度通常为 `O(n log n)`，空间复杂度为 `O(n)`。
