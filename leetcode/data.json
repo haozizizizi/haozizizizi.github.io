@@ -1,35 +1,29 @@
 {
-  "updatedAt": "2026-10-20",
+  "updatedAt": "2026-10-21",
   "stats": {
     "completed": 2,
-    "newProblems": 2,
+    "newProblems": 0,
     "reviews": 0,
     "mediumQueue": 68
   },
   "current": {
     "date": "2026-10-21",
-    "type": "重做",
-    "id": "49",
-    "title": "字母异位词分组",
-    "difficulty": "中等",
-    "status": "待完成",
-    "problemUrl": "https://leetcode.cn/problems/group-anagrams/",
-    "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-21-49-%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84-%E9%87%8D%E5%81%9A.md"
+    "type": "复习",
+    "id": "待选",
+    "title": "等待导入历史已完成题目",
+    "difficulty": "待定",
+    "status": "待选题",
+    "problemUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%A1%E5%88%92.md",
+    "problemAction": "查看选题规则",
+    "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%BF%9B%E5%BA%A6.md",
+    "recordAction": "查看当前进度"
   },
   "recent": [
-    {
-      "date": "2026-10-21",
-      "id": "49",
-      "title": "字母异位词分组",
-      "kind": "重做",
-      "status": "待完成",
-      "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-21-49-%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84-%E9%87%8D%E5%81%9A.md"
-    },
     {
       "date": "2026-10-20",
       "id": "128",
       "title": "最长连续序列",
-      "kind": "新题",
+      "kind": "类型待确认",
       "status": "已完成",
       "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-20-128-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97.md"
     },
@@ -37,7 +31,7 @@
       "date": "2026-10-19",
       "id": "49",
       "title": "字母异位词分组",
-      "kind": "基线题",
+      "kind": "基线校准",
       "status": "已完成",
       "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-19-49-%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84.md"
     }
