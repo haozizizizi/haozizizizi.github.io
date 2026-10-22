@@ -21,6 +21,7 @@
 1. [如何创建 `dict` 和其他常用数据结构](#1-如何创建-dict-和其他常用数据结构)
 2. [Python 如何对字符串排序](#2-python-如何对字符串排序)
 3. [Python 如何遍历字典](#3-python-如何遍历字典)
+4. [Python 如何创建和操作队列](#4-python-如何创建和操作队列)
 
 ### 1. 如何创建 `dict` 和其他常用数据结构
 
@@ -224,6 +225,103 @@ for name in list(scores):
 
 Python 3.7 起，字典遍历顺序保证与键的插入顺序一致。
 
+### 4. Python 如何创建和操作队列
+
+- 日期：2026-10-22
+
+算法题和普通单线程程序通常使用 `collections.deque` 实现队列。它在两端添加和删除元素的时间复杂度都是 `O(1)`：
+
+```python
+from collections import deque
+
+# 空队列
+queue = deque()
+
+# 带初始元素的队列
+queue = deque([1, 2, 3])
+```
+
+#### 常用操作
+
+```python
+from collections import deque
+
+queue = deque()
+
+# 从队尾入队
+queue.append(10)
+queue.append(20)
+
+# 查看队首和队尾，不删除元素
+first = queue[0]   # 10
+last = queue[-1]   # 20
+
+# 从队首出队
+value = queue.popleft()  # 10
+
+# 队列长度
+size = len(queue)
+
+# 判断是否为空
+if queue:
+    print("队列非空")
+
+if not queue:
+    print("队列为空")
+```
+
+`deque` 也是双端队列，还支持：
+
+```python
+queue.appendleft(5)  # 从队首加入
+value = queue.pop()  # 从队尾取出
+```
+
+#### 队列中存元组
+
+队列可以存放元组等任意 Python 对象。坐标、状态等多个相关值通常打包成元组：
+
+```python
+from collections import deque
+
+queue = deque()
+
+# 存入二元组
+queue.append((0, 0))
+queue.append((1, 2))
+
+# 取出并解包
+row, col = queue.popleft()
+print(row, col)  # 0 0
+```
+
+初始化时也可以直接放入元组：
+
+```python
+queue = deque([(0, 0)])
+```
+
+单元素元组必须保留逗号：
+
+```python
+queue.append((1,))  # 单元素元组
+queue.append((1))   # 等价于 queue.append(1)，不是元组
+```
+
+#### 多线程队列
+
+如果多个线程需要安全地共享队列，应使用 `queue.Queue`：
+
+```python
+from queue import Queue
+
+queue = Queue()
+queue.put(10)       # 入队
+value = queue.get() # 出队
+```
+
+算法题一般不需要线程安全，使用 `deque` 更直接。
+
 ## 示例与实践
 
 下面的例子综合使用字典创建、`get()`、`items()` 和 `sorted()`，统计字符出现次数并按字符排序输出：
@@ -247,6 +345,22 @@ b 1
 n 2
 ```
 
+下面是队列存储坐标的 BFS 基本写法：
+
+```python
+from collections import deque
+
+queue = deque([(0, 0)])
+
+while queue:
+    row, col = queue.popleft()
+    print(row, col)
+
+    # 示例：把下方坐标加入队列
+    if row < 2:
+        queue.append((row + 1, col))
+```
+
 ## 易错点与边界
 
 - `{}` 创建的是空字典；空集合必须写成 `set()`。
@@ -255,13 +369,18 @@ n 2
 - `for x in dictionary` 中的 `x` 是键，不是值。
 - 同时需要键和值时使用 `dictionary.items()`，不要再通过键进行一次多余查询。
 - 遍历期间不能改变字典的大小；需要新增或删除键时，应遍历副本或先记录待处理的键。
+- 不要用列表的 `pop(0)` 频繁出队，它的时间复杂度是 `O(n)`；使用 `deque.popleft()` 可以达到 `O(1)`。
+- 空队列调用 `popleft()` 或 `pop()` 会抛出 `IndexError`，出队前应先判断队列是否非空。
+- `(value)` 不是元组；单元素元组必须写成 `(value,)`。
 
 ## 总结
 
-选择数据结构时先判断是否需要键值映射、有序可变序列、不可变序列或去重；字符串排序后需要重新拼接；字典则根据需求遍历键、值或键值对。新的 Python 语法问题继续追加到本文件和同一篇主页文章中。
+选择数据结构时先判断是否需要键值映射、有序序列、去重或先进先出；算法题中的队列优先使用 `deque`，通过 `append()` 入队、`popleft()` 出队，多个相关值可用元组打包。新的 Python 语法问题继续追加到本文件和同一篇主页文章中。
 
 ## 参考资料
 
 - [Python 内置函数：`sorted()`](https://docs.python.org/3/library/functions.html#sorted)
 - [Python 映射类型：`dict`](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
 - [Python 教程：循环技巧](https://docs.python.org/3/tutorial/datastructures.html#looping-techniques)
+- [Python `collections.deque`](https://docs.python.org/3/library/collections.html#collections.deque)
+- [Python 同步队列：`queue`](https://docs.python.org/3/library/queue.html)
