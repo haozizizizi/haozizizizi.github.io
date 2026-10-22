@@ -107,7 +107,7 @@
     <header class="hero">
       <div class="eyebrow">Daily practice · Spaced repetition</div>
       <h1>LeetCode<br>每日一题</h1>
-      <p>周一到周五每天一题，周末休息。新题来自历史从未完成的题目，复习题来自计划启动前累计完成的 200+ 道题。</p>
+      <p>周一到周五每天一题，周末休息。新题来自历史从未完成的题目，复习题来自已有 200+ 题；当天未做时，当前任务和后续计划自动顺延。</p>
     </header>
 
     <section class="grid stats" aria-label="进度统计">
@@ -121,19 +121,19 @@
       <article class="card task">
         <span class="pill" id="taskType">复习</span>
         <h2><span id="taskId">待选</span> · <span id="taskTitle">等待导入历史已完成题目</span></h2>
-        <div class="muted"><span id="taskDate">2026-10-21</span> · <span id="taskDifficulty">待定</span> · <span id="taskStatus">待选题</span></div>
+        <div class="muted"><span id="taskDate">2026-10-22（由 10-21 顺延）</span> · <span id="taskDifficulty">待定</span> · <span id="taskStatus">待选题 · 顺延中</span></div>
         <div class="actions"><a class="button primary" id="problemLink" href="https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%A1%E5%88%92.md">查看选题规则</a><a class="button" id="recordLink" href="https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%BF%9B%E5%BA%A6.md">查看当前进度</a></div>
       </article>
     </section>
 
     <section class="section">
-      <div class="section-head"><div><div class="eyebrow">Weekdays only</div><h2>周一到周五</h2></div><span class="muted">3 新题 + 2 重做</span></div>
+      <div class="section-head"><div><div class="eyebrow">Ordered slots</div><h2>顺序推进</h2></div><span class="muted">未完成则整体顺延</span></div>
       <div class="grid week">
-        <div class="card day"><strong>周一</strong><span>中等新题</span></div>
-        <div class="card day"><strong>周二</strong><span>中等新题</span></div>
-        <div class="card day review"><strong>周三</strong><span>旧题重做</span></div>
-        <div class="card day"><strong>周四</strong><span>中等新题</span></div>
-        <div class="card day review"><strong>周五</strong><span>旧题重做</span></div>
+        <div class="card day"><strong>第 1 项</strong><span>中等新题</span></div>
+        <div class="card day"><strong>第 2 项</strong><span>中等新题</span></div>
+        <div class="card day review"><strong>第 3 项</strong><span>历史题复习</span></div>
+        <div class="card day"><strong>第 4 项</strong><span>中等新题</span></div>
+        <div class="card day review"><strong>第 5 项</strong><span>历史题复习</span></div>
       </div>
     </section>
 
@@ -142,7 +142,7 @@
       <div class="card history" id="history"><a class="history-row" href="https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-20-128-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97.md"><span>2026-10-20</span><strong>128. 最长连续序列</strong><span>类型待确认</span><span>已完成</span></a><a class="history-row" href="https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-19-49-%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84.md"><span>2026-10-19</span><strong>49. 字母异位词分组</strong><span>基线校准</span><span>已完成</span></a></div>
     </section>
 
-    <footer>数据源于仓库中的 Markdown 学习记录 · 最后更新 <span id="updatedAt">2026-10-21</span></footer>
+    <footer>数据源于仓库中的 Markdown 学习记录 · 最后更新 <span id="updatedAt">2026-10-22</span></footer>
   </div>
   <script>
     const setText = (id, value) => { document.getElementById(id).textContent = value; };

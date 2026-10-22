@@ -4,7 +4,7 @@
 
 ## 当前主计划
 
-- [LeetCode 每日一题](每日一题/README.md)：热题 100 中等题优先，周三和周五重做旧题，周末休息。
+- [LeetCode 每日一题](每日一题/README.md)：热题 100 中等题优先，每轮 3 道新题、2 次历史题复习；未完成则顺延，周末休息。
 - [Python 语法问答](Python语法/Python语法问答.md)：所有 Python 语法集中在这一个 Markdown，并同步到个人主页的同一篇普通文章。
 - [网站进度页](https://haozizizizi.github.io/leetcode/)
 
