@@ -9,16 +9,24 @@
   "current": {
     "date": "2026-10-22（由 10-21 顺延）",
     "type": "复习",
-    "id": "待选",
-    "title": "等待导入历史已完成题目",
-    "difficulty": "待定",
-    "status": "待选题 · 顺延中",
-    "problemUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%A1%E5%88%92.md",
-    "problemAction": "查看选题规则",
-    "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%BF%9B%E5%BA%A6.md",
-    "recordAction": "查看当前进度"
+    "id": "200",
+    "title": "岛屿数量",
+    "difficulty": "中等",
+    "status": "待完成 · 顺延中",
+    "problemUrl": "https://leetcode.cn/problems/number-of-islands/",
+    "problemAction": "开始做题",
+    "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-22-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F-%E9%87%8D%E5%81%9A.md",
+    "recordAction": "查看 Markdown 记录"
   },
   "recent": [
+    {
+      "date": "2026-10-22",
+      "id": "200",
+      "title": "岛屿数量",
+      "kind": "历史题复习",
+      "status": "待完成",
+      "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-22-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F-%E9%87%8D%E5%81%9A.md"
+    },
     {
       "date": "2026-10-20",
       "id": "128",
