@@ -22,6 +22,7 @@
 2. [Python 如何对字符串排序](#2-python-如何对字符串排序)
 3. [Python 如何遍历字典](#3-python-如何遍历字典)
 4. [Python 如何创建和操作队列](#4-python-如何创建和操作队列)
+5. [Python 如何初始化和操作栈](#5-python-如何初始化和操作栈)
 
 ### 1. 如何创建 `dict` 和其他常用数据结构
 
@@ -322,6 +323,89 @@ value = queue.get() # 出队
 
 算法题一般不需要线程安全，使用 `deque` 更直接。
 
+### 5. Python 如何初始化和操作栈
+
+- 日期：2026-10-23
+
+Python 没有单独的内置栈类型。算法题和普通单线程程序通常使用 `list`，并把列表末尾作为栈顶：
+
+```python
+# 空栈
+stack = []
+
+# 带初始元素的栈：3 是栈顶
+stack = [1, 2, 3]
+```
+
+#### 常用操作
+
+```python
+stack = []
+
+# 入栈
+stack.append(10)
+stack.append(20)
+
+# 查看栈顶，不删除元素
+top = stack[-1]  # 20
+
+# 出栈
+value = stack.pop()  # 20
+
+# 栈的长度
+size = len(stack)
+
+# 判断是否为空
+if stack:
+    print("栈非空")
+
+if not stack:
+    print("栈为空")
+
+# 清空栈
+stack.clear()
+```
+
+`append()` 的均摊时间复杂度为 `O(1)`，`pop()` 和 `stack[-1]` 的时间复杂度为 `O(1)`。
+
+#### 栈中存元组
+
+栈也可以存储元组等任意 Python 对象：
+
+```python
+stack = []
+
+stack.append((0, 0))
+stack.append((1, 2))
+
+row, col = stack.pop()
+print(row, col)  # 1 2
+```
+
+#### 使用 `deque` 或线程安全栈
+
+`deque` 也能作为栈使用：
+
+```python
+from collections import deque
+
+stack = deque()
+stack.append(10)
+value = stack.pop()
+```
+
+多个线程需要安全共享栈时，可以使用 `queue.LifoQueue`：
+
+```python
+from queue import LifoQueue
+
+stack = LifoQueue()
+stack.put(10)       # 入栈
+value = stack.get() # 出栈
+```
+
+算法题通常直接使用 `list`，写法最简单。
+
 ## 示例与实践
 
 下面的例子综合使用字典创建、`get()`、`items()` 和 `sorted()`，统计字符出现次数并按字符排序输出：
@@ -361,6 +445,27 @@ while queue:
         queue.append((row + 1, col))
 ```
 
+下面用栈判断括号字符串是否合法：
+
+```python
+def is_valid_brackets(text: str) -> bool:
+    pairs = {")": "(", "]": "[", "}": "{"}
+    stack = []
+
+    for char in text:
+        if char in "([{":
+            stack.append(char)
+        elif char in pairs:
+            if not stack or stack.pop() != pairs[char]:
+                return False
+
+    return not stack
+
+
+print(is_valid_brackets("([])"))  # True
+print(is_valid_brackets("([)]"))  # False
+```
+
 ## 易错点与边界
 
 - `{}` 创建的是空字典；空集合必须写成 `set()`。
@@ -372,10 +477,12 @@ while queue:
 - 不要用列表的 `pop(0)` 频繁出队，它的时间复杂度是 `O(n)`；使用 `deque.popleft()` 可以达到 `O(1)`。
 - 空队列调用 `popleft()` 或 `pop()` 会抛出 `IndexError`，出队前应先判断队列是否非空。
 - `(value)` 不是元组；单元素元组必须写成 `(value,)`。
+- 空栈调用 `pop()` 或访问 `stack[-1]` 会抛出 `IndexError`，操作前应先判空。
+- 使用列表模拟栈时，应在列表末尾调用 `append()` 和 `pop()`；不要用 `insert(0, value)` 或 `pop(0)` 操作列表头部，它们是 `O(n)`。
 
 ## 总结
 
-选择数据结构时先判断是否需要键值映射、有序序列、去重或先进先出；算法题中的队列优先使用 `deque`，通过 `append()` 入队、`popleft()` 出队，多个相关值可用元组打包。新的 Python 语法问题继续追加到本文件和同一篇主页文章中。
+选择数据结构时先判断是否需要键值映射、有序序列、去重、先进先出或后进先出。算法题中的队列优先使用 `deque`，栈通常使用 `list`；两者都能存储元组等对象。新的 Python 语法问题继续追加到本文件和同一篇主页文章中。
 
 ## 参考资料
 
@@ -384,3 +491,5 @@ while queue:
 - [Python 教程：循环技巧](https://docs.python.org/3/tutorial/datastructures.html#looping-techniques)
 - [Python `collections.deque`](https://docs.python.org/3/library/collections.html#collections.deque)
 - [Python 同步队列：`queue`](https://docs.python.org/3/library/queue.html)
+- [Python 教程：将列表用作栈](https://docs.python.org/3/tutorial/datastructures.html#using-lists-as-stacks)
+- [Python `queue.LifoQueue`](https://docs.python.org/3/library/queue.html#queue.LifoQueue)
