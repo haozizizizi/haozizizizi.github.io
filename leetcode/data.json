@@ -3,27 +3,27 @@
   "stats": {
     "completed": 4,
     "newProblems": 0,
-    "reviews": 1,
+    "reviews": 2,
     "mediumQueue": 68
   },
   "current": {
-    "date": "2026-10-26（10-23 未完成，周末后顺延）",
-    "type": "待校准（新题槽位）",
-    "id": "11",
-    "title": "盛最多水的容器",
+    "date": "2026-10-27（新题槽位继续顺延）",
+    "type": "新题",
+    "id": "待选",
+    "title": "确认 15. 三数之和历史状态",
     "difficulty": "中等",
-    "status": "已完成 · 历史类型待确认",
-    "problemUrl": "https://leetcode.cn/problems/container-with-most-water/",
-    "problemAction": "查看题目",
-    "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-26-11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.md",
-    "recordAction": "查看 Markdown 记录"
+    "status": "待确认计划前从未做过",
+    "problemUrl": "https://leetcode.cn/problems/3sum/",
+    "problemAction": "查看候选题",
+    "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%BF%9B%E5%BA%A6.md",
+    "recordAction": "查看选题状态"
   },
   "recent": [
     {
       "date": "2026-10-26",
       "id": "11",
       "title": "盛最多水的容器",
-      "kind": "历史类型待确认",
+      "kind": "历史题复习",
       "status": "已完成",
       "recordUrl": "https://github.com/haozizizizi/haozizizizi.github.io/blob/main/01_%E4%BB%A3%E7%A0%81%E9%A2%98/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E8%AE%B0%E5%BD%95/2026-10-26-11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.md"
     },
